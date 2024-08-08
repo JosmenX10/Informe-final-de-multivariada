@@ -1,0 +1,8 @@
+---
+title: "Informe final del curso de multivariada"
+author: "Josué Mendoza Hewitt, Santrich Jimenez, Juan Porto Herrera & Jhonatan Diaz Camargo"
+format: docx
+editor: visual
+---
+
+## Titulo dependiendo de la base de datos  
