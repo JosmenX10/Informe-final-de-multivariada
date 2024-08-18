@@ -1,0 +1,5 @@
+"0",""
+"0","dato1 = datos %>% gather(columnas,valores)"
+"2","Error en datos %>% gather(columnas, valores): 
+  no se pudo encontrar la función ""%>%""
+"

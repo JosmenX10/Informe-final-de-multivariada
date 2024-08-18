@@ -1,0 +1,4 @@
+"0",""
+"0","datos.m.c <- datos %>%  filter(Sexo == ""m"", Estudiante == ""C"")"
+"0",""
+"0","datos.m.c"

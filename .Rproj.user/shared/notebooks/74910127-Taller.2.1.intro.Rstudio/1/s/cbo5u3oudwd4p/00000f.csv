@@ -1,0 +1,2 @@
+"0","datos.f.v2 <- datos %>% arrange(Variable2) %>% filter(Sexo == ""f"")"
+"0","datos.f.v2"
