@@ -47,6 +47,7 @@ datos2 <- datos_env[,c("Lítico","Esqueletico","Cambisoles","Fluvisoles", "Cober
 
 datos_env <- cbind(datos1,datos2)
 
+datos_trans <- sqrt(datos_bio)
 
 dist_comunidad <- vegdist(datos_bio, method = "bray")
 
@@ -57,10 +58,21 @@ nmds <- metaMDS(dist_comunidad, k = 2, trymax = 100)
 envfit_result <- envfit(nmds, datos_env[,c("Luz","Temperatura","Continentalidad","Humedad",
                                            "Reactividad","Nutrientes")], permutations = 999)
 
+#NMDs, con el factor de tipo de vegetación
 
-# Plot NMDS con vectores ambientales
+colores <- c("#a6d96a","#ca0020", "#c2a5cf",
+             "#92c5de")
+
 plot(nmds, type = "n")
-points(nmds, display = "sites", col = datos_env$Grupos)
-ordispider(nmds, datos_env$Grupos, col = "black")
-plot(envfit_result, p.max = 0.05, col = "blue")  # Solo muestra vectores significativos
+ordispider(nmds,factor(datos_env$Grupos), col = colores)
+points(nmds, display = "sites", col = colores[as.numeric(datos_env$Grupos)], pch = 16)
+plot(envfit_result, p.max = 0.05, col = "black")  # Solo muestra vectores significativos
+legend("topleft", title="Tipo de vegetación",
+       c("1","2","3","4"), fill=colores, horiz=FALSE, cex=.9) # adicionar leyenda
+
+
+
+
+
+
 
