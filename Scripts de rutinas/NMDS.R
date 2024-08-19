@@ -2,7 +2,6 @@
 setwd(choose.dir())
 
 #llamamos las librerias necesarias.
-library(readxl)
 library(dplyr)
 library(ade4)
 library(adespatial)
@@ -12,42 +11,11 @@ library(cluster)
 library(pvclust)
 library(RColorBrewer)
 
-#Cargamos la base de datos de vegetación.
+datos_env <- read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-final-de-multivariada/main/Base%20de%20datos%20y%20contextos/vltava_env.csv,sep"= ";")
 
-datos <- read_xlsx("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Base de datos y contextos\\vltava.xlsx",
-                   sheet = "Vltava-species")
+datos_bio <- read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-final-de-multivariada/main/Base%20de%20datos%20y%20contextos/datos_bio.csv", sep =",")
 
-#Se transpone la base de datos dejando las parcelas como filas
-datos_bio <- datos[,-1]
- 
-datos_bio <- t(datos_bio)
-
-colnames(datos_bio) <- datos$...1
-
-
-
-#Cargamos la base de datos ambientales.
-
-datos_env <- read_xlsx("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Base de datos y contextos\\vltava.xlsx",
-                       sheet = "Vltava-env data")
-
-# Preparamos la base de datos ambientales 
-colnames(datos_env) = c("Parcela","Transecto","Elevación","Pendiente","Orientación SE",
-                    "Orientación S-SE", "CCSE","CCS-SE","Superficie PD","Superficie ISO",
-                    "Lítico","Esqueletico","Cambisoles","Fluvisoles","P.del suelo","pH",
-                    "Cobertura veg.","Luz","Temperatura","Continentalidad","Humedad",
-                    "Reactividad","Nutrientes","Riqueza sp","Grupos")
-
-
-datos1 <- datos_env[,c("Parcela","Transecto","Elevación","Pendiente","Orientación SE",
-                   "Orientación S-SE", "CCSE","CCS-SE","Superficie PD","Superficie ISO","P.del suelo","pH")]
-
-datos2 <- datos_env[,c("Lítico","Esqueletico","Cambisoles","Fluvisoles", "Cobertura veg.","Luz","Temperatura","Continentalidad","Humedad",
-                   "Reactividad","Nutrientes","Riqueza sp","Grupos")]
-
-datos_env <- cbind(datos1,datos2)
-
-datos_trans <- sqrt(datos_bio)
+datos_bio <- datos_bio[,-1]
 
 dist_comunidad <- vegdist(datos_bio, method = "bray")
 
@@ -63,6 +31,7 @@ envfit_result <- envfit(nmds, datos_env[,c("Luz","Temperatura","Continentalidad"
 colores <- c("#a6d96a","#ca0020", "#c2a5cf",
              "#92c5de")
 
+x11()
 plot(nmds, type = "n")
 ordispider(nmds,factor(datos_env$Grupos), col = colores)
 points(nmds, display = "sites", col = colores[as.numeric(datos_env$Grupos)], pch = 16)

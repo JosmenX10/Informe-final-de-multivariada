@@ -1,6 +1,8 @@
 #Cargamos la base de datos de vegetación.
 library(readxl)
 
+setwd(choose.dir())
+
 datos <- read_xlsx("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Base de datos y contextos\\vltava.xlsx",
                    sheet = "Vltava-species")
 
@@ -36,3 +38,4 @@ datos2 <- datos_env[,c("Lítico","Esqueletico","Cambisoles","Fluvisoles", "Cober
 datos_env <- cbind(datos1,datos2)
 
 write.csv(datos_env,"vltava_env.csv")
+
