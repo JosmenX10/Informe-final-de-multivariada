@@ -9,27 +9,14 @@ library(ellipse)
 library(corrplot)
 library(Hmisc)
 
-datos = read_xlsx(choose.files(),sheet = "Vltava-env data") #Llamamos a la base de datos.
+ #Llamamos a la base de datos.
 
-colnames(datos) = c("Parcela","Transecto","Elevación","Pendiente","Orientación SE",
-                    "Orientación S-SE", "CCSE","CCS-SE","Superficie PD","Superficie ISO",
-                    "Lítico","Esqueletico","Cambisoles","Fluvisoles","P.del suelo","pH",
-                    "Cobertura veg.","Luz","Temperatura","Continentalidad","Humedad",
-                    "Reactividad","Nutrientes","Riqueza sp","Grupos")
-
-
-datos1 <- datos[,c("Parcela","Transecto","Elevación","Pendiente","Orientación SE",
-                "Orientación S-SE", "CCSE","CCS-SE","Superficie PD","Superficie ISO","P.del suelo","pH")]
-
-datos2 <- datos[,c("Lítico","Esqueletico","Cambisoles","Fluvisoles", "Cobertura veg.","Luz","Temperatura","Continentalidad","Humedad",
-                   "Reactividad","Nutrientes","Riqueza sp","Grupos")]
-
-datos <- cbind(datos1,datos2)
+datos_env <- read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-final-de-multivariada/main/Base%20de%20datos%20y%20contextos/vltava_env.csv,sep"= ";")
 
 #Seleccionamos entre grupos de variables
-topo <- datos[,3:16]#Seleccionamos solamente las variables topograficas.
+topo <- datos_env[,3:16]#Seleccionamos solamente las variables topograficas y de suelo.
 
-ellin <- datos[,18:23]#seleccionamos solo las variables indices-ellinger.
+ellin <- datos_env[,18:23]#seleccionamos solo las variables indices-ellinger.
 #-----------------------------------------------------------------------
 
 #Generamos las matrices de correlación para analisis 
