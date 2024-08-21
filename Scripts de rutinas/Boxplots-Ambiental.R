@@ -1,40 +1,47 @@
 library(ggplot2)
 
-datos_env = read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-final-de-multivariada/main/Base%20de%20datos%20y%20contextos/vltava_env.csv,sep"= ";")
+datos_env = read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-final-de-multivariada/main/Base%20de%20datos%20y%20contextos/vltava_env.csv",sep= ",")
 
-ggboxplot <- function(datos,X,Y,ejex,ejey) { 
-ggplot(data = datos,aes(x= factor(X),y=Y)) + 
-    geom_boxplot(notch = T,fill = colores) + theme_classic() +
+datos_amb 
+#se generan los colores
+colores <- c("#a6d96a","#ca0020", "#c2a5cf","#92c5de") 
+
+require(ggplot2)
+ggboxplot <- function(datos,vX,vY,ejex,ejey) { 
+ggplot(data = datos) + geom_boxplot(aes(x= factor(vX), y=vY,),fill=colores, notch = T)  + theme_classic() +
 xlab(ejex) + ylab(ejey)}
+
 
 x11()
 
 attach(datos_env)
 
-ggboxplot(datos=datos_env,X = Grupos, 
-          Y = Elevación,ejex = "Grupos",ejey="Elevación(m.s.n.m)")
+ggboxplot(datos=datos_env,vX = Grupos, 
+          vY = Elevación,ejex = "Grupos",ejey="Elevación(m.s.n.m)")
 
-ggboxplot(datos=datos_env,X = Grupos, 
-          Y = Pendiente,ejex = "Grupos",ejey="Pendiente")
+geomboxplot(datos=datos_env,vX = Grupos, 
+          Y = Pendiente,ejeX = "Grupos",ejey="Pendiente")
 
-ggboxplot(datos=datos_env,X = Grupos, Y = `Cobertura veg.`,
-          ejex = "Grupos",ejey="Cobertura vegetal")
+geomboxplot(datos=datos_env,vX = Grupos, Y = `Cobertura veg.`,
+          ejeX = "Grupos",ejey="Cobertura vegetal")
 
-ggboxplot(datos=datos_env,X = Grupos, 
-          Y = `Riqueza sp` ,ejex = "Grupos", ejey="Riqueza de especies")
+geomboxplot(datos=datos_env,vX = Grupos, 
+          Y = `Riqueza sp` ,ejeX = "Grupos", ejey="Riqueza de especies")
 
-ggboxplot(datos=datos_env,X = Grupos, 
-          Y = datos_env$pH ,ejex = "Grupos", ejey="pH")
+geomboxplot(datos=datos_env,vX = Grupos, 
+          Y = datos_env$pH ,ejeX = "Grupos", ejey="pH")
 
-ggboxplot(datos=datos_env,X = Grupos, 
-            Y = datos_env$`P.del suelo`,ejex = "Grupos", ejey="Profundidad del suelo")
+geomboxplot(datos=datos_env,vX = Grupos, 
+            Y = datos_env$`P.del suelo`,ejeX = "Grupos", ejey="Profundidad del suelo")
 
-ggboxplot(datos=datos_env,X = Grupos, 
-            Y = datos_env$`Orientación S-SE` ,ejex = "Grupos", ejey="Orientación S-SE")
+geomboxplot(datos=datos_env,vX = Grupos, 
+            Y = datos_env$`Orientación S-SE` ,ejeX = "Grupos", ejey="Orientación S-SE")
 
-ggboxplot(datos=datos_env,X = Grupos, 
-            Y = datos_env$CCSE ,ejex = "Grupos", ejey="Indice de carga calorifica SE")+scale_y_continuous(limits = c(0,1.5))
+geomboxplot(datos=datos_env,vX = Grupos, 
+            Y = datos_env$CCSE ,ejeX = "Grupos", ejey="Indice de carga calorifica SE")+scale_y_continuous(limits = c(0,1.5))
 
-ggboxplot(datos=datos_env,X = Grupos, 
-          Y = datos_env$`CCS-SE` ,ejex = "Grupos", ejey="Indice de carga calorifica S-SE")+scale_y_continuous(limits = c(0,1.5))
+geomboxplot(datos=datos_env,vX = Grupos, 
+          Y = datos_env$`CCS-SE` ,ejeX = "Grupos", ejey="Indice de carga calorifica S-SE")+scale_y_continuous(limits = c(0,1.5))
+
+
 

@@ -8,6 +8,6 @@ ggpoint <- function(datos,X,Y,grupo,ejex,ejey,grupolab) {ggplot(data = datos,aes
 
 attach(datos_env)
 ggpoint(datos_env,X = `CCS-SE`, Y = Humedad,grupo = Grupos,ejex="CCS-SE",ejey ="EIV - Humedad", 
-        grupolab = "Tipo de vegetación")
+        grupolab = "Tipo de vegetación") + scale_x_continuous(limits = c(-2.5,3))
 
 
