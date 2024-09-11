@@ -4,7 +4,7 @@ datos_env = read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-fina
 
 datos_amb 
 #se generan los colores
-colores <- c("#a6d96a","#ca0020", "#c2a5cf","#92c5de","black") 
+colores <- c("#a6d96a","#ca0020", "#c2a5cf","#92c5de") 
 
 require(ggplot2)
 ggboxplot <- function(datos,vX,vY,ejex,ejey) { 

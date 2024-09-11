@@ -1,4 +1,0 @@
-"0","#Combinar los formatos filter, mutate y arrange"
-"0",""
-"0","datos.3 = datos %>%  filter(Sexo == ""f"") %>%  mutate(Variable3 = Variable2 *12) %>%  arrange(desc(Variable3)) "
-"0",""

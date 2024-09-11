@@ -1,3 +1,0 @@
-"0","library(ggplot2)"
-"0",""
-"0","ggplot(datos, aes(x= Sexo, y = Variable2)) + geom_boxplot(fill =c(""#8856a7"",""#e0ecf4"")) + theme_classic()"
