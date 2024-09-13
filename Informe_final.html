@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ES-es" xml:lang="ES-es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.555">
@@ -8,7 +8,7 @@
 
 <meta name="author" content="Josué Mendoza Hewitt, Santrich Jimenez, Juan Porto Herrera &amp; Jhonatan Diaz Camargo">
 
-<title>Informe final del curso de multivariada</title>
+<title>Influencia de la topologia y topografia sobre la diversidad de plantas en los Valles profundos de Moldava</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -54,82 +88,491 @@ div.csl-indent {
 <script src="Informe_final_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Informe_final_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Informe_final_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #99d8c9;
+      }
+</style>
 
 
+<link rel="stylesheet" href="stile-justify.css">
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Influencia de la topologia y topografia sobre la diversidad de plantas en los Valles profundos de Moldava</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
 
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Informe final del curso de multivariada</h1>
+      <div>
+      <div class="quarto-title-meta-heading">Autor/a</div>
+      <div class="quarto-title-meta-contents">
+               <p>Josué Mendoza Hewitt, Santrich Jimenez, Juan Porto Herrera &amp; Jhonatan Diaz Camargo </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">13 de septiembre de 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Menú flotante</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">Introducción</a></li>
+  <li><a href="#pregunta-de-análisis" id="toc-pregunta-de-análisis" class="nav-link" data-scroll-target="#pregunta-de-análisis"><strong>Pregunta de análisis</strong></a></li>
+  <li><a href="#objetivo-general" id="toc-objetivo-general" class="nav-link" data-scroll-target="#objetivo-general"><strong>Objetivo general</strong></a></li>
+  <li><a href="#objetivos-específicos" id="toc-objetivos-específicos" class="nav-link" data-scroll-target="#objetivos-específicos"><strong>Objetivos específicos</strong></a></li>
+  <li><a href="#diseño-experimental-del-análisis-multivariado" id="toc-diseño-experimental-del-análisis-multivariado" class="nav-link" data-scroll-target="#diseño-experimental-del-análisis-multivariado">Diseño experimental del análisis Multivariado</a></li>
+  <li><a href="#organización-de-la-base-de-datos" id="toc-organización-de-la-base-de-datos" class="nav-link" data-scroll-target="#organización-de-la-base-de-datos">Organización de la base de datos</a>
+  <ul class="collapse">
+  <li><a href="#cargue-de-librerias-y-bases-de-datos" id="toc-cargue-de-librerias-y-bases-de-datos" class="nav-link" data-scroll-target="#cargue-de-librerias-y-bases-de-datos">Cargue de librerias y bases de datos</a></li>
+  <li><a href="#organización-de-las-bases-de-datos" id="toc-organización-de-las-bases-de-datos" class="nav-link" data-scroll-target="#organización-de-las-bases-de-datos">Organización de las bases de datos</a></li>
+  </ul></li>
+  <li><a href="#análisis-exploratorios" id="toc-análisis-exploratorios" class="nav-link" data-scroll-target="#análisis-exploratorios">Análisis exploratorios</a>
+  <ul class="collapse">
+  <li><a href="#evaluación-de-la-relación-entre-variables-topograficas-y-topologicas" id="toc-evaluación-de-la-relación-entre-variables-topograficas-y-topologicas" class="nav-link" data-scroll-target="#evaluación-de-la-relación-entre-variables-topograficas-y-topologicas">Evaluación de la relación entre variables topograficas y topologicas</a></li>
+  <li><a href="#evaluación-de-la-relación-de-las-variables-topograficas-y-topologicas-con-variables-ambientalesindices-de-hellinberg" id="toc-evaluación-de-la-relación-de-las-variables-topograficas-y-topologicas-con-variables-ambientalesindices-de-hellinberg" class="nav-link" data-scroll-target="#evaluación-de-la-relación-de-las-variables-topograficas-y-topologicas-con-variables-ambientalesindices-de-hellinberg"><strong>Evaluación de la relación de las variables topograficas y topologicas con variables ambientales(indices de Hellinberg)</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
 </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Josué Mendoza Hewitt, Santrich Jimenez, Juan Porto Herrera &amp; Jhonatan Diaz Camargo </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="influencia-de-la-topologia-y-topografia-sobre-la-diversidad-de-plantas-en-los-valles-profundos-de-moldava" class="level1">
-<h1>Influencia de la topologia y topografia sobre la diversidad de plantas en los Valles profundos de Moldava</h1>
-<p>Las técnicas multivariadas han sido ampliamente utilizadas en la biología y ecología, permitiendo la caracterización o clasificación las comunidades biológicas considerando la variación en las estructuras de las comunidades. entre las unidades de muestreo, a la vez que se puede evaluar la influencia de gradientes ambientales sobre esta variación. Esto es posible gracias a que estos análisis permiten dilucidar patrones que brindan información sobre la relación de múltiples elementos inherentes a estos sistemas naturales, facilitando la interpretación de generalidades y especificidades de estas relaciones <span class="citation" data-cites="Borcard2011NumericalEW book Javier">(<a href="#ref-Borcard2011NumericalEW" role="doc-biblioref">Borcard, Gillet, and Legendre 2011</a>; <a href="#ref-book" role="doc-biblioref">Palacio, Apodaca, and Crisci 2020</a> ; <a href="#ref-Javier" role="doc-biblioref">Rodríguez-Barrios 2022</a>)</span>. Además, la aplicación de estas técnicas multivariadas por medio de algoritmos computacionales ha permitido estos se vuelvan cada vez más sofisticados, permitiendo que existan métodos cada vez más eficaces según las bases de datos y objetivos de estudio (<span class="citation" data-cites="AYOUBHANNAA201348">Ayoub-Hannaa, Huntley, and Fürsich (<a href="#ref-AYOUBHANNAA201348" role="doc-biblioref">2013</a>)</span>; <span class="citation" data-cites="LI2022104806">Li, Qiu, and Xu (<a href="#ref-LI2022104806" role="doc-biblioref">2022</a>)</span>).</p>
-<p>Por esta razón, para el presente trabajo de caso se dispone de una base de datos de acceso público para la aplicación de estas técnicas multivariadas, la cual consiste en un estudio de la vegetación en valles profundos del río de Moldava en Republica checa, donde se tomaron valores de la cobertura contribuida por cada especie de planta en las unidades de muestreo o parcelas, a la vez que se tomaron condiciones topográficas, condiciones del suelo y aproximaciones a los niveles de nutrientes, continentalidad, humedad, temperatura y reactividad por medio de índices basados en las especies presentes en cada parcela <span class="citation" data-cites="ellenberg1974">Ellenberg (<a href="#ref-ellenberg1974" role="doc-biblioref">1974</a>)</span>; <span class="citation" data-cites="ellenberg1979">Ellenberg (<a href="#ref-ellenberg1979" role="doc-biblioref">1979</a>)</span>. Este estudio se realizó con el objetivo de probar las predicciones del “fenómeno fluvial” por métodos cuantitativos, el cual mencionaba una serie de observaciones sobre los patrones de vegetación en estos ecosistemas <span class="citation" data-cites="blazkova1964">Blažková (<a href="#ref-blazkova1964" role="doc-biblioref">1964</a>)</span>; <span class="citation" data-cites="turk1994">Türk (<a href="#ref-turk1994" role="doc-biblioref">1994</a>)</span>, entre ellos, se destaca la observación de que la distribución y riqueza de la vegetación no es aleatoria. Al ser los patrones de vegetación dependientes del ambiente es posible que estas puedan presentar una influencia similar entre dos o más ecosistemas independientes, tal cual como <span class="citation" data-cites="article">Zelený and Chytry (<a href="#ref-article" role="doc-biblioref">2007</a>)</span> encontró en los valles del Río de Moldava y el Río de Dyje.</p>
-<p>Las técnicas multivariadas aplicadas en este caso permitieron revelar información importante para el entendimiento de la interacción ambiente-vegetación en el macizo de bohemia, por lo que es un indispensable entender los fundamentos de estos métodos de manera practica y teórica, para comprender su plausibilidad ante otros casos de estudio. Sin embargo, más allá de replicar objetivos de análisis de <span class="citation" data-cites="article">Zelený and Chytry (<a href="#ref-article" role="doc-biblioref">2007</a>)</span>, se pretende analizar la influencia en otros aspectos de la diversidad a parte de la composición, como podría ser la riqueza, uniformidad y dominancia, aplicando el método de números efectivos de Hill propuesto por <span class="citation" data-cites="chao2014">Chao et al. (<a href="#ref-chao2014" role="doc-biblioref">2014</a>)</span>.</p>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>Las técnicas multivariadas han sido ampliamente utilizadas en la biología y ecología, permitiendo la caracterización o clasificación las comunidades biológicas considerando la variación en las estructuras de las comunidades. entre las unidades de muestreo, a la vez que se puede evaluar la influencia de gradientes ambientales sobre esta variación. Esto es posible gracias a que estos análisis permiten dilucidar patrones que brindan información sobre la relación de múltiples elementos inherentes a estos sistemas naturales, facilitando la interpretación de generalidades y especificidades de estas relaciones <span class="citation" data-cites="Borcard2011NumericalEW book Javier">(<a href="#ref-Borcard2011NumericalEW" role="doc-biblioref">Borcard et&nbsp;al., 2011</a>; <a href="#ref-book" role="doc-biblioref">Palacio et&nbsp;al., 2020</a> ; <a href="#ref-Javier" role="doc-biblioref">Rodríguez-Barrios, 2022</a>)</span>. Además, la aplicación de estas técnicas multivariadas por medio de algoritmos computacionales ha permitido estos se vuelvan cada vez más sofisticados, permitiendo que existan métodos cada vez más eficaces según las bases de datos y objetivos de estudio (<span class="citation" data-cites="AYOUBHANNAA201348">Ayoub-Hannaa et&nbsp;al. (<a href="#ref-AYOUBHANNAA201348" role="doc-biblioref">2013</a>)</span>; <span class="citation" data-cites="LI2022104806">Li et&nbsp;al. (<a href="#ref-LI2022104806" role="doc-biblioref">2022</a>)</span>).</p>
+<p>Por esta razón, para el presente trabajo de caso se dispone de una base de datos de acceso público para la aplicación de estas técnicas multivariadas, la cual consiste en un estudio de la vegetación en valles profundos del río de Moldava en Republica checa, donde se tomaron valores de la cobertura contribuida por cada especie de planta en las unidades de muestreo o parcelas, a la vez que se tomaron condiciones topográficas, condiciones del suelo y aproximaciones a los niveles de nutrientes, continentalidad, humedad, temperatura y reactividad por medio de índices basados en las especies presentes en cada parcela <span class="citation" data-cites="ellenberg1974">Ellenberg (<a href="#ref-ellenberg1974" role="doc-biblioref">1974</a>)</span>; <span class="citation" data-cites="ellenberg1979">Ellenberg (<a href="#ref-ellenberg1979" role="doc-biblioref">1979</a>)</span>. Este estudio se realizó con el objetivo de probar las predicciones del “fenómeno fluvial” por métodos cuantitativos, el cual mencionaba una serie de observaciones sobre los patrones de vegetación en estos ecosistemas <span class="citation" data-cites="blazkova1964">Blažková (<a href="#ref-blazkova1964" role="doc-biblioref">1964</a>)</span>; <span class="citation" data-cites="turk1994">Türk (<a href="#ref-turk1994" role="doc-biblioref">1994</a>)</span>, entre ellos, se destaca la observación de que la distribución y riqueza de la vegetación no es aleatoria. Al ser los patrones de vegetación dependientes del ambiente es posible que estas puedan presentar una influencia similar entre dos o más ecosistemas independientes, tal cual como <span class="citation" data-cites="article">Zelený &amp; Chytry (<a href="#ref-article" role="doc-biblioref">2007</a>)</span> encontró en los valles del Río de Moldava y el Río de Dyje.</p>
+<p>Las técnicas multivariadas aplicadas en este caso permitieron revelar información importante para el entendimiento de la interacción ambiente-vegetación en el macizo de bohemia, por lo que es un indispensable entender los fundamentos de estos métodos de manera practica y teórica, para comprender su plausibilidad ante otros casos de estudio. Sin embargo, más allá de replicar objetivos de análisis de <span class="citation" data-cites="article">Zelený &amp; Chytry (<a href="#ref-article" role="doc-biblioref">2007</a>)</span>, se pretende analizar la influencia en otros aspectos de la diversidad a parte de la composición, como podría ser la riqueza, uniformidad y dominancia, aplicando el método de números efectivos de Hill propuesto por <span class="citation" data-cites="chao2014">Chao et&nbsp;al. (<a href="#ref-chao2014" role="doc-biblioref">2014</a>)</span>.</p>
+</section>
+<section id="pregunta-de-análisis" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-de-análisis"><strong>Pregunta de análisis</strong></h2>
+<p>¿Qué influencia tiene la topología y topografia en la estructura de las comunidades de plantas en los valles profundos del río de Moldava?</p>
+</section>
+<section id="objetivo-general" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo-general"><strong>Objetivo general</strong></h2>
+<p>-Evaluar la influencia de los parámetros ambientales en múltiples aspectos de la estructura de las comunidades de plantas en el valle profundo del río de Moldava.</p>
+</section>
+<section id="objetivos-específicos" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-específicos"><strong>Objetivos específicos</strong></h2>
+<p>-Caracterizar los distintos tipos de comunidades de plantas en el valle profundo de Moldava.</p>
+<p>- Determinar la diversidad para cada uno de los tipos de comunidades en función de especies totales, comunes y dominantes en el valle profundo de Moldava.</p>
+<p>-Evaluar el grado de explicación que tendrían las variables ambientales sobre la variación en la composición de los tipos de comunidades en el valle profundo de Moldava.</p>
+</section>
+<section id="diseño-experimental-del-análisis-multivariado" class="level2">
+<h2 class="anchored" data-anchor-id="diseño-experimental-del-análisis-multivariado">Diseño experimental del análisis Multivariado</h2>
+<p><img src="Base%20de%20datos%20y%20contextos/diagrama_de_flujo.svg" class="img-fluid"></p>
+</section>
+<section id="organización-de-la-base-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="organización-de-la-base-de-datos">Organización de la base de datos</h2>
+<section id="cargue-de-librerias-y-bases-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="cargue-de-librerias-y-bases-de-datos">Cargue de librerias y bases de datos</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ellipse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>datos_env <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Asus</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">Analisis multivariado</span><span class="sc">\\</span><span class="st">Informe-final-de-multivariada</span><span class="sc">\\</span><span class="st">Base de datos y contextos</span><span class="sc">\\</span><span class="st">vltava.xlsx"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sheet =</span> <span class="st">"Vltava-env data"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Asus</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">Analisis multivariado</span><span class="sc">\\</span><span class="st">Informe-final-de-multivariada</span><span class="sc">\\</span><span class="st">Base de datos y contextos</span><span class="sc">\\</span><span class="st">vltava.xlsx"</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                   <span class="at">sheet =</span> <span class="st">"Vltava-species"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="organización-de-las-bases-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="organización-de-las-bases-de-datos">Organización de las bases de datos</h3>
+<p>En la matriz de datos biologicos, las variables que son las especies se presentan como filas, mientras que las unidades de muestreo que son las parcelas estarían en columnas por lo que se realiza una transposición de la matriz original.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Se transpone la base de datos dejando las parcelas como filas</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>datos_bio <span class="ot">&lt;-</span> datos[,<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>datos_bio <span class="ot">&lt;-</span> <span class="fu">t</span>(datos_bio)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(datos_bio) <span class="ot">&lt;-</span> datos<span class="sc">$</span>...<span class="dv">1</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(datos_bio,<span class="at">file =</span> <span class="st">"datos_bio.csv"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(datos_bio)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> num [1:97, 1:342] 0 0 0 0 0 0 0 0 0 0 ...
+ - attr(*, "dimnames")=List of 2
+  ..$ : chr [1:97] "1" "2" "3" "4" ...
+  ..$ : chr [1:342] "Abiealb1" "Acerpla1" "Acerpse1" "Alnuglu1" ...</code></pre>
+</div>
+</div>
+<p>Mientras que la base de datos ambientales simplemente se le debe organizar las variables y un cambio de nombres para ciertos productos visuales.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparamos la base de datos ambientales </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(datos_env) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Parcela"</span>,<span class="st">"Transecto"</span>,<span class="st">"Elevación"</span>,<span class="st">"Pendiente"</span>,<span class="st">"Orientación.SE"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Orientación.S.SE"</span>, <span class="st">"CCSE"</span>,<span class="st">"CCS.SE"</span>,<span class="st">"Superficie.PD"</span>,<span class="st">"Superficie.ISO"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Lítico"</span>,<span class="st">"Esqueletico"</span>,<span class="st">"Cambisoles"</span>,<span class="st">"Fluvisoles"</span>,<span class="st">"P.del suelo"</span>,<span class="st">"pH"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Cobertura veg."</span>,<span class="st">"Luz"</span>,<span class="st">"Temperatura"</span>,<span class="st">"Continentalidad"</span>,<span class="st">"Humedad"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Reactividad"</span>,<span class="st">"Nutrientes"</span>,<span class="st">"Riqueza sp"</span>,<span class="st">"Grupos"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>datos1 <span class="ot">&lt;-</span> datos_env[,<span class="fu">c</span>(<span class="st">"Parcela"</span>,<span class="st">"Transecto"</span>,<span class="st">"Elevación"</span>,<span class="st">"Pendiente"</span>,<span class="st">"Orientación.SE"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Orientación.S.SE"</span>, <span class="st">"CCSE"</span>,<span class="st">"CCS.SE"</span>,<span class="st">"Superficie.PD"</span>,<span class="st">"Superficie.ISO"</span>,<span class="st">"P.del suelo"</span>,<span class="st">"pH"</span>)]</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>datos2 <span class="ot">&lt;-</span> datos_env[,<span class="fu">c</span>(<span class="st">"Lítico"</span>,<span class="st">"Esqueletico"</span>,<span class="st">"Cambisoles"</span>,<span class="st">"Fluvisoles"</span>, <span class="st">"Cobertura veg."</span>,<span class="st">"Luz"</span>,<span class="st">"Temperatura"</span>,<span class="st">"Continentalidad"</span>,<span class="st">"Humedad"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Reactividad"</span>,<span class="st">"Nutrientes"</span>,<span class="st">"Riqueza sp"</span>,<span class="st">"Grupos"</span>)]</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>datos_env <span class="ot">&lt;-</span> <span class="fu">cbind</span>(datos1,datos2)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(datos_env,<span class="st">"vltava_env.csv"</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(datos_env) <span class="ot">&lt;-</span> datos_env<span class="sc">$</span>Parcela</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>datos_env <span class="ot">&lt;-</span> datos_env[,<span class="sc">-</span><span class="dv">1</span>]</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(datos_env)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   97 obs. of  24 variables:
+ $ Transecto       : num  1 1 2 2 2 3 3 3 4 4 ...
+ $ Elevación       : num  440 420 440 425 405 435 450 475 440 460 ...
+ $ Pendiente       : num  30 37 30 50 50 5 35 35 65 70 ...
+ $ Orientación.SE  : num  135 155 115 125 115 115 125 115 155 105 ...
+ $ Orientación.S.SE: num  158 178 138 148 138 ...
+ $ CCSE            : num  0.408 0.683 0.244 0.684 0.504 ...
+ $ CCS.SE          : num  0.533 0.753 0.426 1.005 0.879 ...
+ $ Superficie.PD   : num  1 0 1 0 -1 -1 0 1 1 1 ...
+ $ Superficie.ISO  : num  1 -1 1 1 -1 0 1 1 -1 1 ...
+ $ P.del suelo     : num  18 11 28.2 15.3 44.7 ...
+ $ pH              : num  5.1 4.09 4.1 4.15 5.35 5.09 3.58 3.77 3.75 3.81 ...
+ $ Lítico          : num  0 1 0 1 0 0 0 0 1 1 ...
+ $ Esqueletico     : num  0 0 0 0 1 1 1 0 0 0 ...
+ $ Cambisoles      : num  1 1 1 1 0 1 1 1 1 0 ...
+ $ Fluvisoles      : num  0 0 0 0 1 1 0 0 0 0 ...
+ $ Cobertura veg.  : num  50 70 90 30 140 130 85 60 13 17 ...
+ $ Luz             : num  6.35 6.8 6.59 6.7 6.15 5.65 5 5.8 6.12 6.74 ...
+ $ Temperatura     : num  5.44 5.7 5.54 5.58 5.47 5.47 5.38 5.33 5.67 5.79 ...
+ $ Continentalidad : num  4.21 4.38 4.36 4.29 3.74 3.92 4.22 4.09 4.15 4.45 ...
+ $ Humedad         : num  4.07 3.85 4.1 3.91 6.62 6.71 5.17 5.05 4.64 3.79 ...
+ $ Reactividad     : num  5.63 5.48 5.95 5.83 6.67 6.74 5.14 5.36 5.06 4.33 ...
+ $ Nutrientes      : num  3.33 3.1 4.03 3 6.46 7.1 6.15 5.55 3.56 3.41 ...
+ $ Riqueza sp      : num  38 37 39 28 30 46 19 26 35 27 ...
+ $ Grupos          : num  1 1 1 1 4 4 1 1 1 2 ...</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="análisis-exploratorios" class="level2">
+<h2 class="anchored" data-anchor-id="análisis-exploratorios">Análisis exploratorios</h2>
+<section id="evaluación-de-la-relación-entre-variables-topograficas-y-topologicas" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación-de-la-relación-entre-variables-topograficas-y-topologicas">Evaluación de la relación entre variables topograficas y topologicas</h3>
+<p>A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación y el nivel de significancia de estas relaciones. Por ejemplo, la <a href="#fig-fig1" class="quarto-xref">Figura&nbsp;1</a> refleja la estrecha relación positiva entre las variables de orientación sureste y la orientación sur-sureste al tener un 83% de correlación entre sus datos con el mayor nivel de significancia(p-value&lt;0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 79% de los datos, esto se entiende ya que el cambio en la orientación sureste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-sureste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 62% . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia. A continuación se realizará una exploración visual de las relaciones con el mayor nivel de significancia y con un grado de correlación mayor al 60%.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Seleccionamos entre grupos de variables</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>topo <span class="ot">&lt;-</span> datos_env[,<span class="dv">3</span><span class="sc">:</span><span class="dv">16</span>]<span class="co">#Seleccionamos solamente las variables topograficas y de suelo.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>ellin <span class="ot">&lt;-</span> datos_env[,<span class="dv">18</span><span class="sc">:</span><span class="dv">23</span>]<span class="co">#seleccionamos solo las variables indices-ellinger.</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Generamos las matrices de correlación para analisis </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>topocor <span class="ot">&lt;-</span> <span class="fu">cor</span>(topo, <span class="at">method =</span> <span class="st">"spearman"</span>) <span class="co">#correlación entre topograficas.</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>pval_topo <span class="ot">&lt;-</span> <span class="fu">corr.test</span>(topo, <span class="at">adjust=</span><span class="st">"none"</span>,<span class="at">method =</span> <span class="st">"spearman"</span>)<span class="sc">$</span>p <span class="co">#p-value de correlaciones entre topograficas.</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>ellin_topocor <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="at">y =</span> topo, <span class="at">x =</span> ellin, <span class="at">method =</span> <span class="st">"spearman"</span>) <span class="co">#correlación entre topograficas.</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>pval_ellin<span class="ot">&lt;-</span> <span class="fu">corr.test</span>(<span class="at">y=</span> topo, <span class="at">x=</span> ellin, <span class="at">adjust=</span><span class="st">"none"</span>,<span class="at">method =</span> <span class="st">"spearman"</span>)<span class="sc">$</span>p <span class="co">#p-value de correlaciones entre topograficas.</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(topocor,<span class="at">method =</span> <span class="st">"ellipse"</span>,<span class="at">type =</span><span class="st">"lower"</span>,<span class="at">diag =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">tl.pos =</span> <span class="st">"ld"</span>,<span class="at">order =</span><span class="st">"original"</span>,<span class="at">tl.col =</span> <span class="st">"black"</span>,<span class="at">addCoef.col=</span> <span class="cn">NULL</span>, <span class="at">cl.pos =</span> T, <span class="at">sig.level =</span> <span class="fu">c</span>(<span class="fl">0.001</span>,<span class="fl">0.01</span>,<span class="fl">0.05</span>),</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">p.mat =</span> pval_topo,<span class="at">insig =</span> <span class="fu">c</span>(<span class="st">"label_sig"</span>), <span class="at">pch=</span> <span class="st">"*"</span>,<span class="at">pch.cex =</span> <span class="fl">0.5</span>, <span class="at">pch.col =</span><span class="st">"black"</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">tl.cex =</span> <span class="fl">1.0</span>, <span class="at">number.cex =</span> <span class="fl">0.9</span>, <span class="at">cl.cex =</span> <span class="fl">0.8</span>,<span class="at">tl.srt =</span> <span class="dv">50</span>,<span class="at">addgrid.col =</span> <span class="st">"#f5f5f5"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig1-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Correlograma de las relaciones de las variables topologicas y topograficas usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos (* = 0.05, ** = 0.01, 0.001 = ***).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>En la <a href="#fig-fig2" class="quarto-xref">Figura&nbsp;2</a> (A) se confirma la relación lineal postiva entre la orientación sureste y la orientación sur-sureste, tener estas dos variables en cuenta para los analisis podría generar ruido y disminuir la posibilidad de una correcta interpretación. Cabe resaltar que al medir los valores de orientación medido en una magnitud escalar, aumentando el valor de manera positiva a medida que la orientación de las parcelas se acercan a la orientación sureste puede generar que dos parcelas con dos direcciones diferentes tengan el mismo valor al situarse a la misma cantidad de grados desviados del noroeste, pero en la orientación sur-sureste estas tendran valores diferentes <a href="#fig-fig3" class="quarto-xref">Figura&nbsp;3</a>, razon por la que en el grafico se observa que cada valor en el eje x tendría dos valores en eje y, generando dos lineas de puntos en las partes de arriba y abajo de la linea de tendencia. La <a href="#fig-fig2" class="quarto-xref">Figura&nbsp;2</a> (B) evidencia una estrecha relación entre las vairables de carga calorifica en valores cercanos a 0, pero a medida que aumenta la carga calorifica del sureste parece haber valores más desviados de la linea suavizada de tendencia. Los datos que muestran cierta diferencia a los patrones generales podrían ser debido a mediciones erradas de las orientaciones o situaciones particulares de ciertas parcelas.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env, <span class="fu">aes</span>(<span class="at">x =</span> Orientación.SE , <span class="at">y =</span> Orientación.S.SE)) <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> Orientación.SE, <span class="at">y =</span> Orientación.S.SE), <span class="at">se =</span> F, <span class="at">span =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">"orange"</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Orientación Sureste"</span>,<span class="at">y=</span> <span class="st">"Orientación S-SE"</span> , <span class="at">tag =</span> <span class="st">"A)"</span>) <span class="sc">+</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>g2 <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env, <span class="fu">aes</span>(<span class="at">x =</span> CCSE , <span class="at">y =</span> CCS.SE)) <span class="sc">+</span> </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> CCSE, <span class="at">y =</span> CCS.SE), <span class="at">se =</span> F, <span class="at">span =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">"orange"</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Indice de CC sureste"</span>, <span class="at">y =</span> <span class="st">"Indice de CC S-SE"</span>, <span class="at">tag =</span> <span class="st">"B)"</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>g1<span class="sc">/</span>g2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Diagrama de dispersión de las variables de orientación y capacidad calorífica. A) Relación entre orientación Sur con la orientación Sur-Sureste. B)Relación entre el indice de capacidad calorífica.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">include_graphics</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Asus</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">Analisis multivariado</span><span class="sc">\\</span><span class="st">Informe-final-de-multivariada</span><span class="sc">\\</span><span class="st">Graficos</span><span class="sc">\\</span><span class="st">Explicaciones</span><span class="sc">\\</span><span class="st">Orientación.svg"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Graficos/Explicaciones/Orientación.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Diagrama explicativo de las mediciones de orientación.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A partir de la <a href="#fig-fig4" class="quarto-xref">Figura&nbsp;4</a> se evidencia un claro patron de los tipos de superficie o relieve a favor de la pendiente a medida que aumenta la altitud, siendo posible observar más parcelas con relieve concavo en altitudes bajas que en altitudes altas, así mismo los relieves neutros son más comunes en altitudes intermedias y los relieves convexos más comunes en altitudes mayores, aunque lpor as muescas dan la posibilidad de que no hubiera diferencias significativas en la altitud de los relieves neutros y convexos.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>g3 <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(Superficie.PD),<span class="at">y=</span>Elevación)) <span class="sc">+</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">y=</span> Elevación, <span class="at">fill =</span> <span class="fu">factor</span>(Superficie.PD)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span>   <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"1"</span> <span class="ot">=</span> <span class="st">"Convexo"</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="st">"Neutro"</span>, <span class="st">"-1"</span> <span class="ot">=</span> <span class="st">"Concavo"</span>)) <span class="sc">+</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de relieve a lo largo de la pendiente"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>g3</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig4-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Diagrama de cajas y bigotes para comparar las altitudes entre distintos tipos de superficie en las parcelas según el eje a favor de la pendiente.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>También es posible observar cierto grado de diferencia en el tipo de suelo lítico y no lítico en diferentes altitudes, aunque podría no haber diferencias significativas en la <a href="#fig-fig5" class="quarto-xref">Figura&nbsp;5</a> se puede observar que en los diagramas de cajas bigotes la condición litica mantiene datos más concentrados a valores de mayor altitud que los no liticos.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>g4 <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(Lítico),<span class="at">y=</span>Elevación)) <span class="sc">+</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">y=</span> Elevación, <span class="at">fill =</span> <span class="fu">factor</span>(Lítico)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span>   <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"1"</span> <span class="ot">=</span> <span class="st">"Lítico"</span>, <span class="st">"0"</span> <span class="ot">=</span> <span class="st">"No Litico"</span>)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Condición del lítica del suelo"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>g4</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig5" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig5-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Diagrama de cajas y bigotes para comparar las altitudes para las parcelas en suelos líticos y no líticos.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La condición de suelo litica es también dependiente del tipo de relieve, siendo que en las parcelas de relieve convexo son más frecuentes que los suelos no liticos, y en las parcelas con relieve neutro ya los suelos líticos son menos frecuente, y en los relieves concavos las parcelas con suelos no líticos son mucho más frecuentes que los líticos. Por lo tanto, los relieves convexos pueden favorecer el asentamiento de suelos líticos antes que de suelos no líticos, mientras que en los concavos pasa lo contrario.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Sup.pd <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Superficie.PD, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Convexo"</span>, <span class="st">"Neutro"</span>, <span class="st">"Cóncavo"</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Pendiente.pd <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Lítico, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Lítico"</span>, <span class="st">"No Lítico"</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>factores <span class="ot">&lt;-</span> <span class="fu">paste</span>(Sup.pd,Pendiente.pd, <span class="at">sep =</span><span class="st">"-"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>je <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Cóncavo-No Lítico"</span>, <span class="st">"Cóncavo-Lítico"</span>,<span class="st">"Neutro-No Lítico"</span>,<span class="st">"Neutro-Lítico"</span>,<span class="st">"Convexo-No Lítico"</span> , <span class="st">"Convexo-Lítico"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>datos_env<span class="sc">$</span>factores <span class="ot">&lt;-</span> <span class="fu">factor</span>(factores, <span class="at">levels =</span> je)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>frecuencia_factores <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(datos_env<span class="sc">$</span>factores))</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>frecuencia <span class="ot">&lt;-</span> frecuencia_factores<span class="sc">$</span>Freq</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(frecuencia, </span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Comparación frecuencias de relieves y suelos líticos"</span>, </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Frecuencia"</span>, </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"orange"</span>, </span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">border =</span> <span class="st">"black"</span>, <span class="at">cex.names =</span> <span class="fl">0.7</span>,<span class="at">width =</span> <span class="fl">2.5</span>, <span class="at">names.arg =</span> je, <span class="at">space =</span> <span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig6" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig6-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: histograma para comparar las frecuencias de las parcelas con distintos tipos de superficie según el eje a favor de la pendiente y si presenta o no el tipo de suelo lítico.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluación-de-la-relación-de-las-variables-topograficas-y-topologicas-con-variables-ambientalesindices-de-hellinberg" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación-de-la-relación-de-las-variables-topograficas-y-topologicas-con-variables-ambientalesindices-de-hellinberg"><strong>Evaluación de la relación de las variables topograficas y topologicas con variables ambientales(indices de Hellinberg)</strong></h3>
+<p>En el correlograma presentado en la <a href="#fig-fig7" class="quarto-xref">Figura&nbsp;7</a> observamos los grados de correlación entre las variables topograficas y topologicas con las variables ambientales medidas de manera indirecta con el promedio de indices de hellinberg en cada parcela, entonces habrían seis indices, una por cada variable y ambas se representan numericamente en las mismas escalas. De las seis variables cinco se relacionan de manera significativa con las variables de orientación y carga calorifica de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes se relacionan negativamente, estas relaciones se ven más detalladas en los diagramas de dispersión de la <a href="#fig-fig8" class="quarto-xref">Figura&nbsp;8</a> (A-D). Por lo tanto la orientación y la capacidad calorifica de la parcela puede ser determinantes para la variación en las condiciones de habitats entre las parcelas.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(ellin_topocor,<span class="at">method =</span> <span class="st">"ellipse"</span>,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">tl.pos =</span> <span class="st">"dt"</span>,<span class="at">tl.col =</span> <span class="st">"black"</span>,<span class="at">sig.level =</span> <span class="fu">c</span>(<span class="fl">0.001</span>,<span class="fl">0.01</span>,<span class="fl">0.05</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">p.mat =</span> pval_ellin, <span class="at">insig =</span> <span class="fu">c</span>(<span class="st">"label_sig"</span>), <span class="at">pch=</span> <span class="st">"*"</span>,<span class="at">pch.cex =</span> <span class="fl">1.0</span>, <span class="at">pch.col =</span><span class="st">"black"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>         ,<span class="at">tl.cex =</span> <span class="fl">1.0</span>, <span class="at">number.cex =</span> <span class="fl">0.9</span>,<span class="at">addgrid.col =</span> <span class="st">"#f5f5f5"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig7" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig7-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Correlograma de las relaciones de las variables topologicas y topograficas con los indices de Hellinberg usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos(* = 0.05, ** = 0.01, 0.001 = ***).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Entonces si se toma a los indices de hellinberg como medidas indirectas de las condiciones de habitat y vemos como estás se relacionan con las variables topograficas y topologias, podriamos determinar dos grupos de variables, de las cuales uno se conforma por la luz ,temperatura y continentalidad mientras el otro se conforma por la humedad, reactividad y nutrientes, de modo que si un grupo se relaciona positivamente con una de las variables topologicas y topograficas positiva o negativamente, el otro podría relacionarse de manera contraria o no relacionarse. Caso en los que una variable se relaciona con uno de estos dos grupos pero no con el otro estaría la inclinación de la pendiente de las parcelas y el pH de las muestras de suelo, pues la inclinación de la pendiente se relaciona negativamente con la humedad, reactividad y nutrientes, pero no mostraría ningún tipo de correlación con la luz, temperatura y continentalidad (<a href="#fig-fig8" class="quarto-xref">Figura&nbsp;8</a> <strong>(F)</strong> y <a href="#fig-fig7" class="quarto-xref">Figura&nbsp;7</a>) . Por otro lado, el pH diluido de muestras de suelo también se relacionan significativamente con el mismo grupo de variables pero de manera positiva, y tampoco tienen un grado de correlación considerable con la luz, temperatura y continentalidad (<a href="#fig-fig8" class="quarto-xref">Figura&nbsp;8</a> <strong>(E)</strong> y <a href="#fig-fig7" class="quarto-xref">Figura&nbsp;7</a>).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">include_graphics</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Asus</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">Analisis multivariado</span><span class="sc">\\</span><span class="st">Informe-final-de-multivariada</span><span class="sc">\\</span><span class="st">Graficos</span><span class="sc">\\</span><span class="st">Excel</span><span class="sc">\\</span><span class="st">Ellenberg vs ambientales.svg"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig8" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Graficos/Excel/Ellenberg%20vs%20ambientales.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8: Diagrama de dispersión de las variables topograficas y topolagicas contra los indices de Hellinberg.A) Relación entre continentalidad, temperatura y luz con la orientación sur-sureste. B) Relación entre humedad, reactividad y nutrientes con la orientación sur-sureste, C)Relación entre continentalidad, temperatura y luz con la capacidad calorifica sur-sureste. D)Relación entre humedad, reactividad y nutrientes con la capacidad calorifica sur-sureste, E)Relación entre humedad, reactividad y nutrientes con el pH diluido de las muestras de suelo. F)Relación entre humedad, reactividad y nutrientes con la pendiente de la parcela.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>El tipo de relieve también tiene una influencia significativa sobre la humedad, reactividad y nutrientes, aunque las correlaciones solo son considerables para la humedad y nutrientes, esta relación queda mejor evidenciada en la <a href="#fig-fig9" class="quarto-xref">Figura&nbsp;9</a>(A-B), donde se observa una clara tendencia en la que los valores de humedad y nutrientes se distribuyen en valores más altos, seguidos por el relive neutro, y el relieve convexo que mantiene una distribución en valores más bajos. También se observa que los suelos con condiciones de fluvisoles tendian a tener datos concentrados en valores de humedad más altos que los que no tenian condiciones de fluvisoles. <a href="#fig-fig9" class="quarto-xref">Figura&nbsp;9</a>(C).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">include_graphics</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Asus</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">Analisis multivariado</span><span class="sc">\\</span><span class="st">Informe-final-de-multivariada</span><span class="sc">\\</span><span class="st">Graficos</span><span class="sc">\\</span><span class="st">Excel</span><span class="sc">\\</span><span class="st">Boxplot_ Ellenberg vs ambientales.svg"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig9" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Graficos/Excel/Boxplot_%20Ellenberg%20vs%20ambientales.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;9: Diagrama de cajas y bigotes para comparar los indices de Hellinberg en distintas condiciones topograficas.A)Comparación del indice de humedad entre distintos tipos de superficie.B)Comparación del indice de nutrientes entre distintos tipos de superficie.C)Comparación del indice de humedad entre suelos líticos y no líticos.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 </section>
+</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-AYOUBHANNAA201348" class="csl-entry" role="listitem">
-Ayoub-Hannaa, W., J. W. Huntley, and F. T. Fürsich. 2013. <span>“Significance of Detrended Correspondence Analysis (DCA) in Palaeoecology and Biostratigraphy: A Case Study from the Upper Cretaceous of Egypt.”</span> <em>Journal of African Earth Sciences</em> 80: 48–59. https://doi.org/<a href="https://doi.org/10.1016/j.jafrearsci.2012.11.012">https://doi.org/10.1016/j.jafrearsci.2012.11.012</a>.
+Ayoub-Hannaa, W., Huntley, J. W., &amp; Fürsich, F. T. (2013). Significance of Detrended Correspondence Analysis (DCA) in palaeoecology and biostratigraphy: A case study from the Upper Cretaceous of Egypt. <em>Journal of African Earth Sciences</em>, <em>80</em>, 48-59. https://doi.org/<a href="https://doi.org/10.1016/j.jafrearsci.2012.11.012">https://doi.org/10.1016/j.jafrearsci.2012.11.012</a>
 </div>
 <div id="ref-blazkova1964" class="csl-entry" role="listitem">
-Blažková, D. 1964. <span>“Rozčlenění Vegetace Na Údolních Svazích v Oblasti Orlické Nádrže [Pattern of Distribution of Plant Communities in the Area of Orlík Reservoir].”</span> In <em>Vegetační Problémy Při Budování Vodních Děl [Vegetation Issues Related to the Construction of Water Reservoirs]</em>, edited by J. Jeník, 21–37. Praha: NČSAV.
+Blažková, D. (1964). Rozčlenění vegetace na údolních svazích v oblasti Orlické nádrže [Pattern of distribution of plant communities in the area of Orlík reservoir]. En J. Jeník (Ed.), <em>Vegetační problémy při budování vodních děl [Vegetation issues related to the construction of water reservoirs]</em> (pp. 21-37). NČSAV.
 </div>
 <div id="ref-Borcard2011NumericalEW" class="csl-entry" role="listitem">
-Borcard, Daniel, François Gillet, and Pierre Legendre. 2011. <span>“Numerical Ecology with r.”</span> In. <a href="https://api.semanticscholar.org/CorpusID:128434110">https://api.semanticscholar.org/CorpusID:128434110</a>.
+Borcard, D., Gillet, F., &amp; Legendre, P. (2011). <em>Numerical Ecology with R</em>. <a href="https://api.semanticscholar.org/CorpusID:128434110">https://api.semanticscholar.org/CorpusID:128434110</a>
 </div>
 <div id="ref-chao2014" class="csl-entry" role="listitem">
-Chao, Anne, Nicholas J. Gotelli, T. C. Hsieh, Elizabeth L. Sander, K. H. Ma, Robert K. Colwell, and Aaron M. Ellison. 2014. <span>“Rarefaction and Extrapolation with Hill Numbers: A Framework for Sampling and Estimation in Species Diversity Studies.”</span> <em>Ecological Monographs</em> 84 (1): 45–67. <a href="https://doi.org/10.1890/13-0133.1">https://doi.org/10.1890/13-0133.1</a>.
+Chao, A., Gotelli, N. J., Hsieh, T. C., Sander, E. L., Ma, K. H., Colwell, R. K., &amp; Ellison, A. M. (2014). Rarefaction and extrapolation with Hill numbers: a framework for sampling and estimation in species diversity studies. <em>Ecological Monographs</em>, <em>84</em>(1), 45-67. <a href="https://doi.org/10.1890/13-0133.1">https://doi.org/10.1890/13-0133.1</a>
 </div>
 <div id="ref-ellenberg1974" class="csl-entry" role="listitem">
-Ellenberg, H. 1974. <em>Zeigerwerte Der Gefäßpflanzen Mitteleuropas</em>. <em>Scripta Geobotanica</em>. Vol. 9.
+Ellenberg, H. (1974). Zeigerwerte der Gefäßpflanzen Mitteleuropas. En <em>Scripta Geobotanica</em> (Vol. 9, pp. 1-97).
 </div>
 <div id="ref-ellenberg1979" class="csl-entry" role="listitem">
-———. 1979. <em>Zeigerwerte Der Gefäßpflanzen Mitteleuropas. 2. Aufl.</em> <em>Scripta Geobotanica</em>. Vol. 9.
+Ellenberg, H. (1979). Zeigerwerte der Gefäßpflanzen Mitteleuropas. 2. Aufl. En <em>Scripta Geobotanica</em> (Vol. 9, pp. 1-122).
 </div>
 <div id="ref-LI2022104806" class="csl-entry" role="listitem">
-Li, Yehua, Yumou Qiu, and Yuhang Xu. 2022. <span>“From Multivariate to Functional Data Analysis: Fundamentals, Recent Developments, and Emerging Areas.”</span> <em>Journal of Multivariate Analysis</em> 188: 104806. https://doi.org/<a href="https://doi.org/10.1016/j.jmva.2021.104806">https://doi.org/10.1016/j.jmva.2021.104806</a>.
+Li, Y., Qiu, Y., &amp; Xu, Y. (2022). From multivariate to functional data analysis: Fundamentals, recent developments, and emerging areas. <em>Journal of Multivariate Analysis</em>, <em>188</em>, 104806. https://doi.org/<a href="https://doi.org/10.1016/j.jmva.2021.104806">https://doi.org/10.1016/j.jmva.2021.104806</a>
 </div>
 <div id="ref-book" class="csl-entry" role="listitem">
-Palacio, Facundo, María Apodaca, and Jorge Crisci. 2020. <em>ANÁLISIS MULTIVARIADO PARA DATOS BIOLÓGICOS Teoría y Su Aplicación Utilizando El Lenguaje r</em>.
+Palacio, F., Apodaca, M., &amp; Crisci, J. (2020). <em>ANÁLISIS MULTIVARIADO PARA DATOS BIOLÓGICOS Teoría y su aplicación utilizando el lenguaje R</em>.
 </div>
 <div id="ref-Javier" class="csl-entry" role="listitem">
-Rodríguez-Barrios, Javier. 2022. <em>Análisis de Datos Ecológicos y Ambientales: Aplicaciones Con Programa r</em>. Ediciones Díaz de Santos.
+Rodríguez-Barrios, J. (2022). <em>Análisis de datos ecológicos y ambientales: aplicaciones con programa R</em>. Ediciones Díaz de Santos.
 </div>
 <div id="ref-turk1994" class="csl-entry" role="listitem">
-Türk, W. 1994. <span>“Das <span>‘Höllental’</span> Im Frankenwald – Flora Und Vegetation Eines Floristisch Bemerkenswerten Mittelgebirgstales.”</span> <em>Tuexenia</em> 14: 17–52.
+Türk, W. (1994). Das <span>«Höllental»</span> im Frankenwald – Flora und Vegetation eines floristisch bemerkenswerten Mittelgebirgstales. <em>Tuexenia</em>, <em>14</em>, 17-52.
 </div>
 <div id="ref-article" class="csl-entry" role="listitem">
-Zelený, David, and Milan Chytry. 2007. <span>“Environmental Control of Vegetation Pattern in Deep River Valleys of the Bohemian Massif.”</span> <em>Preslia -Praha-</em> 79 (September): 205–22.
+Zelený, D., &amp; Chytry, M. (2007). Environmental control of vegetation pattern in deep river valleys of the Bohemian Massif. <em>Preslia -Praha-</em>, <em>79</em>, 205-222.
 </div>
 </div></section></div></main>
 <!-- /main column -->
@@ -187,12 +630,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

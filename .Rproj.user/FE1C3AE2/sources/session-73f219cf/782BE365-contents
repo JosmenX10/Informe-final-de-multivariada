@@ -1,0 +1,144 @@
+---
+title: "Taller 3.1 Exploración multivariada"
+date: last-modified #now #today
+description: Exploración de bases de datos con dos o más variables. 
+author: 
+    name: Josué David Mendoza Hewitt
+    url: https://grupogien.jimdofree.com/
+    affiliation: Grupo de Investigación GIEN
+    affiliation-url: https://grupogien.jimdofree.com/ 
+title-block-banner: "#3BBDD9"
+format: 
+  html:
+    toc: true                 # Barra de menú
+    toc-title: Menú flotante  # Nombre de la barra de menú flotante
+    code-tools: false         # Códigos descargables (activar con true)
+    code-fold: true
+    css: "stile-justify.css"  # Justificación del texto
+lang: "ES-es"
+---
+
+<b style='color:#1f78b4;'>
+
+# Exploración gráfica multivariada - base *Insectos*
+
+</b>
+
+<b style='color:#1f78b4;'>
+
+**Objetivo de la actividad:**
+
+</b>
+
+Poner en práctica el manejo de bases de datos y la visualización de datos uni, bi, tri y multivariados, para responder principalmente a dos tipos de objetivos:
+
+1.  **Relaciones** entre variables biológicas y de estas con las ambientales (ej. figuras de elipses, pares, dispersión y coplot).
+
+2.  **Diferencias** para el caso en el que contemos con variables agrupadoras (factores o v. cualitativas), orientado a evaluar las diferencias entre variables biológicas en gradientes espaciales o temporales (ej. entre grupos de sitios).
+
+La base de datos a utilizar se presenta en dos formatos: **Insectos.csv** e **Insectos.xlsx**. Esta base cuenta con 2 variables ambientales y 6 biológicas, así como con un factor o variable agrupadora (cuencas), todo esto distribuido en las columnas. Además cuenta con y 20 localidades o quebradas (filas).
+
+<b style='color:#1f78b4;'>
+
+## Procedimiento de la exploración
+
+</b>
+
+-   Cargar librerías requeridas
+
+-   Cargar la base `Insectos` (usar diferentes opciones para practicar)
+
+-   Explorar al **objetivo 1** (figuras de elipses, pares, dispersión y coplot).
+
+-   Explorar al **objetivo 2** (figuras de elipses, pares, dispersión y coplot).
+
+-   Realizar las opciones gráficas relacionadas a los objetivos.
+
+-   Realizar transformaciones de los datos, para mejorar la visualización de patrones.
+
+-   Practicar con leyendas y resultados de la visualización realizada.
+
+<b style='color:#1f78b4;'>
+
+#### Cargar las librerías requeridas
+
+</b>
+
+```{r, message=FALSE, warning=FALSE}
+# Librerías requeridas
+library(tidyverse)
+library(readxl)       # Importar y exportar
+library(gtable)       # Importar y exportar
+require(stats)        # No se requiere instalar
+library(lattice)      # No se requiere instalar
+library(ggrepel)      # insertar rótulos a los puntos
+require(SciViews)     # Fig. dispersión con coef. de pearson
+library(plotrix)      # Figuras de cajas con múltiples variables
+library(corrplot)     # Figuras de elipses
+library(reshape)      # Figuras de cajas con múltiples variables
+library(gridExtra)    # Para figuras estadísticas (varios factores)
+library(grid)         # Para figuras estadísticas (varios factores)
+library(kableExtra)
+```
+
+------------------------------------------------------------------------
+
+### Cargar la base de datos
+
+```{r}
+#Cargar la base de datos insectos
+
+datos = read_xlsx("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Taller\\Taller 3.1 Exploratorios\\Insectos.xlsx", sheet = "Insectos")
+```
+
+La @tbl-tbl1 nos muestra la información inicial de los datos biologicos
+
+```{r}
+#| label: tbl-tbl1
+#| tbl-cap: Datos crudos para la abundad de macroinvertebrados acuaticos y variables fisicoquimicas en cuatro cuencas hidrograficas
+
+datos = read.csv2("insectos.csv", row.names = 1)
+
+head(datos)
+
+datos$cuenca = as.factor(datos$cuenca)
+
+str(datos)
+
+head(datos) %>% 
+  kbl(caption =  "", booktabs = F, longtable = T) %>% 
+  kable_classic(full_width = F, html_font = "cambria")
+```
+
+### Objetivo 1. Relación entre variables biologicas y ambientales
+
+```{r}
+#Elipses con colores
+
+M <- cor(datos[,2:9], method = "spearman")
+
+M
+```
+
+En la @fig-fig1 se observan pocas relaciones lineales. Los tricopteros presentan la mayor frecuencia de relaciones negativas con pH, Efemeropteros y Plecopteros. El pH es la variable ambiental que genera un mayor efecto con los grupos biologicos, presentando una relación positiva con la abundancia de Efemeropteros y negativa con la abundancia de los Tricópteros.
+
+```{r}
+#| label: fig-fig1
+#| fig-cap: Relaciones enttres parejas de variables fisicoquimicas y biologicas,  las elipses azules resperesentas las relaciones lineales positivas y la rojas relaciones lineales negativas.
+
+corrplot(M, method = "ellipse")
+
+```
+
+```{r}
+#| label: fig-fig2
+#| fig-cap: Relaciones enttres parejas de variables fisicoquimicas y biologicas,  las elipses azules resperesentas las relaciones lineales positivas y la rojas relaciones lineales negativas.
+
+corrplot(M, method = "circle")
+```
+
+```{r}
+M1 = cor(datos[,2:3], datos[,4:9])
+
+corrplot(M1, method = "ellipse")
+```
