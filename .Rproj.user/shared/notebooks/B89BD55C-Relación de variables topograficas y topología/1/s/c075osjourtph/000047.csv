@@ -1,0 +1,9 @@
+"0","g3 = ggplot(datos_env,aes(x=factor(Superficie.PD),y=Elevación)) + "
+"0","  geom_boxplot(aes(y= Elevación, fill = factor(Superficie.PD)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") +   scale_x_discrete(labels = c(""1"" = ""Convexo"", ""0"" = ""Neutro"", ""-1"" = ""Concavo"")) + "
+"0","  labs( x = ""Tipos de relieve a lo largo de la pendiente"")"
+"0",""
+"0","g3"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
