@@ -1,0 +1,8 @@
+"0","#| label: fig-fig3 "
+"0","#| fig-cap: ""Diagrama de cajas y bigotes para comparar las altitudes para las parcelas en distintos tipos de superficie según el eje a favor de la pendiente."""
+"0",""
+"0","g4 = ggplot(datos_env,aes(x=factor(Lítico),y=Elevación)) + "
+"0","  geom_boxplot(aes(y= Elevación, fill = factor(Lítico)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") +   scale_x_discrete(labels = c(""1"" = ""Lítico"", ""0"" = ""No Litico"")) + labs(x = ""Condición del lítica del suelo"")"
+"0",""
+"0","g4"

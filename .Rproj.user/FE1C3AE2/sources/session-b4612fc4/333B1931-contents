@@ -1,0 +1,267 @@
+---
+title: "Taller Exploratorios en Excel y R"
+date: last-modified #now #today
+description: Exploración de bases de datos con dos o más variables. 
+author: 
+    name: Josué David Mendoza Hewitt
+    url: https://grupogien.jimdofree.com/
+    affiliation: Grupo de Investigación GIEN
+    affiliation-url: https://grupogien.jimdofree.com/ 
+title-block-banner: "#3BBDD9"
+format: 
+  html:
+    toc: true                 # Barra de menú
+    toc-title: Menú flotante  # Nombre de la barra de menú flotante
+    code-tools: false         # Códigos descargables (activar con true)
+    code-fold: true
+    css: "stile-justify.css"  # Justificación del texto
+lang: "ES-es"
+---
+
+# Introducción
+
+## Pregunta
+
+¿Qué tanto se explica la variación en las condiciones fisico-quimicas de los ríos de la sabana de Bogotá por los cambios en los parametros altitudinales e hidrometricos?
+
+## Objetivos
+
+-   Determinar la variación de los parametros altitudinales e hidrometricos en los tramos de ríos de la sabana de Bogotá muestreados.
+
+-   Evaluar la relación entre la altitud y las variables hidrometricas con las variables fisico-quimicas en los tramos de los ríos en la sabana de Bogota muestrados.
+
+## Hipótesis
+
+**Ho:** La variación en las condiciones fisico-quimicas **no** se explica por un efecto de las variables de hidrometricas y altitud de los ríos de la sabana de Bogotá.
+
+**Ha:** La variación en las condiciones fisico-quimicas se explica por un efecto de las variables de hidrometricas y altitud de los ríos de la sabana de Bogotá.
+
+------------------------------------------------------------------------
+
+**Carga de librerias requeridas**
+
+```{r,message=FALSE, warning=FALSE}
+#| label: tbl-tbl1
+#| tbl-cap: Resumen de datos crudos de variables ambientales de los ríos en las cuencas de la sabana de Bogotá.
+
+library(ggplot2)
+library(readxl)
+library(corrplot)
+library(knitr)
+library(gridExtra)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(patchwork)
+library(kableExtra)
+
+
+
+```
+
+**Carga de base de datos**
+
+```{r,message=FALSE, warning=FALSE}
+Datos <- read_xlsx("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Actividades\\Asignación exploratorios\\Ambiental.xlsx", sheet = "Ambiental")
+
+head(Datos) %>% 
+  kbl(caption =  "", booktabs = F, longtable = T) %>% 
+  kable_classic(full_width = F, html_font = "cambria")
+
+```
+
+## **Distribución general de las variables explicativas (Altitud, caudal, variación de caudal y velocidad de corriente)**
+
+A partir de @fig-fig1 se puede obser que altitud de los tramos de ríos muestrados varían aproximidamente entre 2400 y 3400 metros sobre el nivel del mar(MSNM), teniendo la mayoria de datos en valores de 2400 y 2800 MSNM. El caudal de los ríos mantiene valores que van desde los 0 L/s hasta los 6 L/s, estando la mayoria de los datos entre los valores de 0 a 2 L/s. En cuanto a la variación o cambio en el caudal los datos oscilan entre valores de 20 a 160% y la velocidad de corriente que oscila entre los valores de 10 a 80 m/s.
+
+La @fig-fig1 también permite observar la distribución de los datos de las variables explicativas, de manera que se evidencia que tanto en la variable de altitud como la de caudal existe sesgo a la derecha concentrando la mayoria de datos en valores bajos de estas variables, mientras que el caudal muestra una repartición más homogenea entre las clases pero aun mantienendo cierto sesgo a la izquierda, y la velocidad de corriente mantiene una distribución más normal pero con un unico valor de 80 m/s que generaría cierto sesgo a la derecha.
+
+```{r,message=FALSE, warning=FALSE}
+#| label: fig-fig1
+#| fig-cap: Distribución de las variables explicativas en la cuencas de la sabana de bogotá. 
+
+par(mfrow = c(2,2))
+
+hist(Datos$altitud, main = paste("Histograma de las altitudes", "(M.S.N.M)"), col = "orange",ylab = "Frecuencia", xlab = "Altitud (M.S.N.M)"
+     )
+
+hist(Datos$caudal, main = paste("Histograma de los caudales","(L/s)"), col = "blue",ylab = "Frecuencia", 
+                                xlab = "Caudal (L/s)")
+
+hist(Datos$`var-caudal`, main = paste("Histograma de var.de caudales","(%)"), col = "lightgreen",ylab = "Frecuencia", 
+                                xlab = "Variablidad de caudal (%)")
+
+hist(Datos$vel, main = "Histograma de vel. de corriente (m/s)", col = "red", ylab = "Frecuencia", 
+                                xlab = "velocidad de corriente (m/s)")
+
+
+```
+
+## Comparación del promedio de las variables explicativas entre las cuencas muestreadas en la Sabana de Bogotá
+
+\
+En cuanto a la altura el mayor promedio sería el de la cuenca de Río Frio(2953 M.S.N.M), siendo muy similar a los promedios de Río Neusa(2980 M.S.N.M) y Río Aves(2845 M.S.N.M), sin embargo estas tres mantienen mayor variabilidad como muestra las barras de error cuyos valores extremos se definen por el error estandar, mientras que el Río Tunjuelito (2600 M.S.N.M) tiene el valor más bajo, seguido por la cuenca de Río siecha, Río Teusaca, y Río susagua.
+
+```{r}
+#| label: fig-fig2
+#| fig-cap: Comparación de las variables explicativas en la cuencas de la sabana de bogotá.A)Altitud(m), B)Caudal(L/s) C)Variabilidad del caudal(%) y D)Velocidad de la corriente(m/s).
+
+include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Actividades\\Asignación exploratorios\\Graficos_excel.svg")
+```
+
+```{r,message=FALSE, warning=FALSE}
+#| label: fig-fig3
+#| fig-cap: Correlograma - Indices de correlación de pearson entre las variables explicativas con las variables fisico-químicas. Las elipses azules respresentan las relaciones lineales positivas y la rojas relaciones lineales negativas.
+
+
+
+m <- cor(y=Datos[,c(3:11,13:17,21)], x =Datos[,c(12,18:20)],method = "pearson")
+
+corrplot(m, method ="ellipse", order = "original",
+              , tl.pos = "lt",tl.col = "black"
+               ,tl.cex = 0.9,number.cex = 0.45, addCoef.col = "black")
+
+```
+
+```{r,message=FALSE, warning=FALSE}
+#| label: fig-fig4
+#| fig-cap: Correlograma - Indices de correlación de Spearman entre las variables explicativas con las variables fisico-químicas. Las elipses azules respresentan las relaciones lineales positivas y la rojas relaciones lineales negativas.
+
+c <- cor(y=Datos[,c(3:11,13:17,21)], x =Datos[,c(12,18:20)],method = "spearman")
+
+corrplot(c, method ="ellipse", order = "original",
+              , tl.pos = "lt",tl.col = "black"
+               ,tl.cex = 0.9,number.cex = 0.45, addCoef.col = "black")
+```
+
+```{r,message=FALSE, warning=FALSE, fig.height=7}
+#| label: fig-fig5
+#| fig-cap: D entre las variables explicativas con las variables fisico-química. Las elipses azules resperesentan las relaciones lineales positivas y la rojas relaciones lineales negativas.
+
+
+g1 = ggplot(Datos, aes(x = altitud, y = temp)) + 
+  geom_smooth(aes(x = altitud, y = temp), se = F, span = 1, col = "black") +
+  geom_point(aes(colour = Cuencas)) + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Altitud (MSNM)", y = "Temperatura (c°)")
+
+g2 = ggplot(Datos, aes(x = altitud, y = `conc-O2`)) + 
+  geom_smooth(aes(x = altitud, y = `conc-O2`), se = F, span = 1, col = "black") +
+  geom_point(aes(colour = Cuencas)) + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Altitud (MSNM)", y = "Concentración (mg/l)")
+
+g3 = ggplot(Datos, aes(x = altitud , y = pH)) + 
+  geom_smooth(aes(x = altitud , y = pH), se = F, span = 1, col = "black") +
+  geom_point(aes(colour = Cuencas)) + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Altitud (MSNM)", y = "pH")
+
+g4 = ggplot(Datos, aes(x = vel, y = temp)) + 
+  geom_smooth(aes(x = vel, y = temp), se = F, span = 1, col = "black") +
+  geom_point(aes(colour = Cuencas)) + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Vel. de corriente (m/s)", y = "Temperatura (c°)")
+
+g5 = ggplot(Datos, aes(x = vel, y = pH)) + 
+  geom_smooth(aes(x = vel, y = pH), se = F, span = 1, col = "black") +
+  geom_point(aes(colour = Cuencas)) + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Vel. de corriente (m/s)", y = "pH")
+
+g6 = ggplot(Datos, aes(x = caudal, y = Motot)) + 
+  geom_smooth(aes(x = caudal, y = Motot), se = F, span = 1, col = "black") +
+  geom_point(aes(colour = Cuencas)) + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Caudal (L/s)", y = "MOT (mg/l)")
+
+
+g7 = ggplot(Datos, aes(x = caudal, y = MOP)) + 
+  geom_smooth(aes(x = caudal, y = MOP), se = F, span = 1, col = "black") +
+  geom_point(aes(colour = Cuencas)) + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Caudal (L/s)", y = "MOP (mg/l)")
+
+g8 = ggplot(Datos, aes(x = `var-caudal`, y = MOP)) + 
+  geom_smooth(aes(x = `var-caudal`, y = MOP), se = F, span = 1, col = "black") +
+  geom_point(aes(colour = Cuencas)) + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Var. Caudal (%)", y = "MOP (mg/l)")
+
+
+# Combinar todos los gráficos con patchwork y compartir una única leyenda
+(g1 + g2) / (g3 + g4 )/(g5 + g6)/(g6+g7) + plot_layout(guides = "collect")
+
+```
+
+```{r,message=FALSE, warning=FALSE, fig.height=7}
+
+m1 = ggplot(Datos, aes(x = altitud, y = temp, colour = Cuencas)) + 
+  geom_smooth(method = "lm",se = F, span = 1) +
+  geom_point() + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Altitud (MSNM)", y = "Temperatura (c°)")
+
+m2 = ggplot(Datos, aes(x = altitud, y = `conc-O2`, colour = Cuencas)) + 
+  geom_smooth(se = F, span = 1, method = "lm") +
+  geom_point() + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Altitud (MSNM)", y = "Concentración (mg/l)")
+
+m3 = ggplot(Datos, aes(x = altitud , y = pH, colour = Cuencas)) + 
+  geom_smooth(se = F, span = 1, method = "lm") +
+  geom_point() + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Altitud (MSNM)", y = "pH")
+
+m4 = ggplot(Datos, aes(x = vel, y = temp, colour = Cuencas)) + 
+  geom_smooth(se = F, span = 1, method = "lm") +
+  geom_point() + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Vel. de corriente (m/s)", y = "Temperatura (c°)")
+
+m5 = ggplot(Datos, aes(x = vel, y = pH, colour = Cuencas)) + 
+  geom_smooth(se = F, span = 1, method= "lm") +
+  geom_point() + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Vel. de corriente (m/s)", y = "pH")
+
+m6 = ggplot(Datos, aes(x = caudal, y = Motot, colour = Cuencas)) + 
+  geom_smooth(se = F, span = 1, method = "lm") +
+  geom_point() + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Caudal (L/s)", y = "MOT (mg/l)")
+
+m7 = ggplot(Datos, aes(x = caudal, y = MOP, colour = Cuencas)) + 
+  geom_smooth(se = F, span = 1, method= "lm") +
+  geom_point() + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Caudal (L/s)", y = "MOP (mg/l)")
+
+m8 = ggplot(Datos, aes(x = `var-caudal`, y = MOP, colour = Cuencas)) + 
+  geom_smooth(se = F, span = 1, method= "lm") +
+  geom_point() + 
+  theme_classic() + 
+  scale_color_manual(values = c("Av" = "#d73027", "Fr" = "#fc8d59","Ne" = "#1b95b8", "Si"="#5e0069","Su"="yellow","Teu"="#9f5602","Tu"="#1a9850")) +
+  labs(x = "Var. Caudal (%)", y = "MOP (mg/l)")
+
+# Combinar todos los gráficos con patchwork y compartir una única leyenda
+(m1 + m2) / (m3 + m4)/(m5 + m6) / (m7 + m8)  + plot_layout(guides = "collect")
+
+
+```
