@@ -145,7 +145,7 @@ div.csl-indent {
   <li><a href="#cargue-de-librerias-y-bases-de-datos" id="toc-cargue-de-librerias-y-bases-de-datos" class="nav-link" data-scroll-target="#cargue-de-librerias-y-bases-de-datos">Cargue de librerias y bases de datos</a></li>
   <li><a href="#organización-de-las-bases-de-datos" id="toc-organización-de-las-bases-de-datos" class="nav-link" data-scroll-target="#organización-de-las-bases-de-datos">Organización de las bases de datos</a></li>
   </ul></li>
-  <li><a href="#análisis-exploratorios" id="toc-análisis-exploratorios" class="nav-link" data-scroll-target="#análisis-exploratorios">Análisis exploratorios</a>
+  <li><a href="#análisis-exploratorios" id="toc-análisis-exploratorios" class="nav-link" data-scroll-target="#análisis-exploratorios"><strong>Análisis exploratorios</strong></a>
   <ul class="collapse">
   <li><a href="#evaluación-de-la-relación-entre-variables-topograficas-y-topologicas" id="toc-evaluación-de-la-relación-entre-variables-topograficas-y-topologicas" class="nav-link" data-scroll-target="#evaluación-de-la-relación-entre-variables-topograficas-y-topologicas"><strong>Evaluación de la relación entre variables topograficas y topologicas</strong></a></li>
   <li><a href="#evaluación-de-la-relación-de-las-variables-topograficas-y-topologicas-con-variables-ambientalesindices-de-hellinberg" id="toc-evaluación-de-la-relación-de-las-variables-topograficas-y-topologicas-con-variables-ambientalesindices-de-hellinberg" class="nav-link" data-scroll-target="#evaluación-de-la-relación-de-las-variables-topograficas-y-topologicas-con-variables-ambientalesindices-de-hellinberg"><strong>Evaluación de la relación de las variables topograficas y topologicas con variables ambientales(indices de Hellinberg)</strong></a></li>
@@ -217,7 +217,7 @@ div.csl-indent {
 </section>
 <section id="organización-de-las-bases-de-datos" class="level3">
 <h3 class="anchored" data-anchor-id="organización-de-las-bases-de-datos">Organización de las bases de datos</h3>
-<p>En la matriz de datos biologicos, las variables que son las especies se presentan como filas, mientras que las unidades de muestreo que son las parcelas estarían en columnas por lo que se realiza una transposición de la matriz original.</p>
+<p>En la matriz de datos biologicos, las variables que son las especies se presentan como filas, mientras que las unidades de muestreo que son las parcelas estarían en columnas por lo que se debe realizar una transposición de la matriz original.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
@@ -239,7 +239,7 @@ div.csl-indent {
   ..$ : chr [1:342] "Abiealb1" "Acerpla1" "Acerpse1" "Alnuglu1" ...</code></pre>
 </div>
 </div>
-<p>Mientras que la base de datos ambientales simplemente se le debe organizar las variables y un cambio de nombres para ciertos productos visuales.</p>
+<p>En la matriz de datos ambientales simplemente se debe organizar las variables y generar un cambio de los nombres para ciertos productos visuales.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
@@ -299,7 +299,7 @@ div.csl-indent {
 </section>
 </section>
 <section id="análisis-exploratorios" class="level2">
-<h2 class="anchored" data-anchor-id="análisis-exploratorios">Análisis exploratorios</h2>
+<h2 class="anchored" data-anchor-id="análisis-exploratorios"><strong>Análisis exploratorios</strong></h2>
 <section id="evaluación-de-la-relación-entre-variables-topograficas-y-topologicas" class="level3">
 <h3 class="anchored" data-anchor-id="evaluación-de-la-relación-entre-variables-topograficas-y-topologicas"><strong>Evaluación de la relación entre variables topograficas y topologicas</strong></h3>
 <p>A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación y el nivel de significancia de estas relaciones. Por ejemplo, la <a href="#fig-fig1" class="quarto-xref">Figura&nbsp;1</a> refleja la estrecha relación positiva entre las variables de orientación sureste y la orientación sur-sureste al tener un 83% de correlación entre sus datos con el mayor nivel de significancia(p-value&lt;0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 79% de los datos, esto se entiende ya que el cambio en la orientación sureste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-sureste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 62% . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia. A continuación se realizará una exploración visual de las relaciones con el mayor nivel de significancia y con un grado de correlación mayor al 60%.</p>
@@ -436,7 +436,7 @@ Figura&nbsp;5: Diagrama de cajas y bigotes para comparar las altitudes para las 
 </div>
 </div>
 </div>
-<p>La condición de suelo litica es también dependiente del tipo de relieve, siendo que en las parcelas de relieve convexo son más frecuentes que los suelos no liticos, y en las parcelas con relieve neutro ya los suelos líticos son menos frecuente, y en los relieves concavos las parcelas con suelos no líticos son mucho más frecuentes que los líticos. Por lo tanto, los relieves convexos pueden favorecer el asentamiento de suelos líticos antes que de suelos no líticos, mientras que en los concavos pasa lo contrario.</p>
+<p>La condición de suelo Lítico también es dependiente del tipo de relieve, siendo que en las parcelas de relieve convexo son más frecuentes que los suelos no liticos, y en las parcelas con relieve neutro ya los suelos líticos son menos frecuente, y en los relieves concavos las parcelas con suelos no líticos son mucho más frecuentes que los líticos. Por lo tanto, los relieves convexos pueden favorecer el asentamiento de suelos líticos antes que de suelos no líticos, mientras que en los concavos pasa lo contrario.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>

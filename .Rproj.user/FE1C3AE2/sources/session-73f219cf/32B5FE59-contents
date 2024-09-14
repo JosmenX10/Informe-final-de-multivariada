@@ -77,7 +77,7 @@ datos <- read_xlsx("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-fin
 
 ### Organización de las bases de datos
 
-En la matriz de datos biologicos, las variables que son las especies se presentan como filas, mientras que las unidades de muestreo que son las parcelas estarían en columnas por lo que se realiza una transposición de la matriz original.
+En la matriz de datos biologicos, las variables que son las especies se presentan como filas, mientras que las unidades de muestreo que son las parcelas estarían en columnas por lo que se debe realizar una transposición de la matriz original.
 
 ```{r, warning=FALSE,message=FALSE}
 #Se transpone la base de datos dejando las parcelas como filas
@@ -93,7 +93,7 @@ str(datos_bio)
 
 ```
 
-Mientras que la base de datos ambientales simplemente se le debe organizar las variables y un cambio de nombres para ciertos productos visuales.
+En la matriz de datos ambientales simplemente se debe organizar las variables y generar un cambio de los nombres para ciertos productos visuales.
 
 ```{r}
 # Preparamos la base de datos ambientales 
@@ -122,7 +122,7 @@ datos_env <- datos_env[,-1]
 str(datos_env)
 ```
 
-## Análisis exploratorios
+## **Análisis exploratorios**
 
 ### **Evaluación de la relación entre variables topograficas y topologicas**
 
@@ -219,7 +219,7 @@ g4
 
 ```
 
-La condición de suelo litica es también dependiente del tipo de relieve, siendo que en las parcelas de relieve convexo son más frecuentes que los suelos no liticos, y en las parcelas con relieve neutro ya los suelos líticos son menos frecuente, y en los relieves concavos las parcelas con suelos no líticos son mucho más frecuentes que los líticos. Por lo tanto, los relieves convexos pueden favorecer el asentamiento de suelos líticos antes que de suelos no líticos, mientras que en los concavos pasa lo contrario.
+La condición de suelo Lítico también es dependiente del tipo de relieve, siendo que en las parcelas de relieve convexo son más frecuentes que los suelos no liticos, y en las parcelas con relieve neutro ya los suelos líticos son menos frecuente, y en los relieves concavos las parcelas con suelos no líticos son mucho más frecuentes que los líticos. Por lo tanto, los relieves convexos pueden favorecer el asentamiento de suelos líticos antes que de suelos no líticos, mientras que en los concavos pasa lo contrario.
 
 ```{r}
 #| label: fig-fig6 
