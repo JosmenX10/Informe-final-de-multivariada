@@ -18,9 +18,9 @@ csl: apa.csl
 
 ## Introducción
 
-Las técnicas multivariadas han sido ampliamente utilizadas en la biología y ecología, permitiendo la caracterización o clasificación las comunidades biológicas considerando la variación en las estructuras de las comunidades. entre las unidades de muestreo, a la vez que se puede evaluar la influencia de gradientes ambientales sobre esta variación. Esto es posible gracias a que estos análisis permiten dilucidar patrones que brindan información sobre la relación de múltiples elementos inherentes a estos sistemas naturales, facilitando la interpretación de generalidades y especificidades de estas relaciones [@Borcard2011NumericalEW; @book ; @Javier]. Además, la aplicación de estas técnicas multivariadas por medio de algoritmos computacionales ha permitido estos se vuelvan cada vez más sofisticados, permitiendo que existan métodos cada vez más eficaces según las bases de datos y objetivos de estudio (@AYOUBHANNAA201348; @LI2022104806).
+Las técnicas multivariadas han sido ampliamente utilizadas en la biología y ecología, permitiendo la caracterización o clasificación de las comunidades biológicas considerando la variación en la estructura comunitaria entre las unidades de muestreo, a la vez que se puede evaluar la influencia de gradientes ambientales sobre esta variación. Esto es posible gracias a que estos análisis permiten dilucidar patrones que brindan información sobre la relación de múltiples elementos inherentes a estos sistemas naturales, facilitando la interpretación de generalidades y especificidades de estas relaciones [@Borcard2011NumericalEW; @book ; @Javier]. Además, la aplicación de estas técnicas multivariadas por medio de algoritmos computacionales han facilitado que estos se vuelvan cada vez más sofisticados en sus calculos, permitiendo que existan métodos cada vez más eficaces según las bases de datos y objetivos de estudio [@AYOUBHANNAA201348; @LI2022104806].
 
-Por esta razón, para el presente trabajo de caso se dispone de una base de datos de acceso público para la aplicación de estas técnicas multivariadas, la cual consiste en un estudio de la vegetación en valles profundos del río de Moldava en Republica checa, donde se tomaron valores de la cobertura contribuida por cada especie de planta en las unidades de muestreo o parcelas, a la vez que se tomaron condiciones topográficas, condiciones del suelo y aproximaciones a los niveles de nutrientes, continentalidad, humedad, temperatura y reactividad por medio de índices basados en las especies presentes en cada parcela @ellenberg1974; @ellenberg1979. Este estudio se realizó con el objetivo de probar las predicciones del “fenómeno fluvial” por métodos cuantitativos, el cual mencionaba una serie de observaciones sobre los patrones de vegetación en estos ecosistemas @blazkova1964; @turk1994, entre ellos, se destaca la observación de que la distribución y riqueza de la vegetación no es aleatoria. Al ser los patrones de vegetación dependientes del ambiente es posible que estas puedan presentar una influencia similar entre dos o más ecosistemas independientes, tal cual como @article encontró en los valles del Río de Moldava y el Río de Dyje.
+Por esta razón, para el presente trabajo de caso se dispone de una base de datos de acceso público para la aplicación de estas técnicas multivariadas, la cual consiste en un estudio de la vegetación en valles profundos del río de Moldava en República Checa, donde se tomaron valores de cobertura de cada especie de planta en las unidades de muestreo o parcelas, a la vez que se midieron variables topográficas, topológicas y medidas indirectas de los niveles de nutrientes, continentalidad, humedad, temperatura y reactividad en las parcelas [@ellenberg1974; @ellenberg1979]. Este estudio se realizó con el objetivo de probar las predicciones del “fenómeno fluvial” por métodos cuantitativos, el cual mencionaba una serie de observaciones sobre los patrones de vegetación en estos ecosistemas [@blazkova1964; @turk1994], entre ellos, se destaca la observación de que la distribución y riqueza de la vegetación no es aleatoria. Al ser los patrones de vegetación dependientes del ambiente es posible que estas puedan presentar una influencia similar entre dos o más ecosistemas independientes, tal cual como @article encontró en los valles del Río de Moldava y el Río de Dyje.
 
 Las técnicas multivariadas aplicadas en este caso permitieron revelar información importante para el entendimiento de la interacción ambiente-vegetación en el macizo de bohemia, por lo que es un indispensable entender los fundamentos de estos métodos de manera practica y teórica, para comprender su plausibilidad ante otros casos de estudio. Sin embargo, más allá de replicar objetivos de análisis de @article, se pretende analizar la influencia en otros aspectos de la diversidad a parte de la composición, como podría ser la riqueza, uniformidad y dominancia, aplicando el método de números efectivos de Hill propuesto por @chao2014.
 
@@ -124,30 +124,30 @@ str(datos_env)
 
 ## **Análisis exploratorios**
 
-### **Evaluación de la relación entre variables topograficas y topologicas**
+### **Evaluación de la relación entre variables topográficas y topológicas**
 
 A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación y el nivel de significancia de estas relaciones. Por ejemplo, la @fig-fig1 refleja la estrecha relación positiva entre las variables de orientación sureste y la orientación sur-sureste al tener un 83% de correlación entre sus datos con el mayor nivel de significancia(p-value\<0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 79% de los datos, esto se entiende ya que el cambio en la orientación sureste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-sureste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 62% . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia. A continuación se realizará una exploración visual de las relaciones con el mayor nivel de significancia y con un grado de correlación mayor al 60%.
 
 ```{r, warning=FALSE,message=FALSE}
 #| label: fig-fig1 
-#| fig-cap: "Correlograma de las relaciones de las variables topologicas y topograficas usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos (* = 0.05, ** = 0.01, 0.001 = ***)."
+#| fig-cap: "Correlograma de las relaciones de las variables topológicas y topográficas usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos (* = 0.05, ** = 0.01, 0.001 = ***)."
 
 
 #Seleccionamos entre grupos de variables
-topo <- datos_env[,3:16]#Seleccionamos solamente las variables topograficas y de suelo.
+topo <- datos_env[,3:16]#Seleccionamos solamente las variables topográficas y de suelo.
 
 ellin <- datos_env[,18:23]#seleccionamos solo las variables indices-ellinger.
 #-----------------------------------------------------------------------
 
 #Generamos las matrices de correlación para analisis 
-topocor <- cor(topo, method = "spearman") #correlación entre topograficas.
+topocor <- cor(topo, method = "spearman") #correlación entre topográficas.
 
-pval_topo <- corr.test(topo, adjust="none",method = "spearman")$p #p-value de correlaciones entre topograficas.
+pval_topo <- corr.test(topo, adjust="none",method = "spearman")$p #p-value de correlaciones entre topográficas.
 
 
-ellin_topocor <- cor(y = topo, x = ellin, method = "spearman") #correlación entre topograficas.
+ellin_topocor <- cor(y = topo, x = ellin, method = "spearman") #correlación entre topográficas.
 
-pval_ellin<- corr.test(y= topo, x= ellin, adjust="none",method = "spearman")$p #p-value de correlaciones entre topograficas.
+pval_ellin<- corr.test(y= topo, x= ellin, adjust="none",method = "spearman")$p #p-value de correlaciones entre topográficas.
 
 corrplot(topocor,method = "ellipse",type ="lower",diag = FALSE,
          tl.pos = "ld",order ="original",tl.col = "black",addCoef.col= NULL, cl.pos = T, sig.level = c(0.001,0.01,0.05),
@@ -246,13 +246,13 @@ barplot(frecuencia,
         border = "black", cex.names = 0.7,width = 2.5, names.arg = je, space = 1)
 ```
 
-### **Evaluación de la relación de las variables topograficas y topologicas con variables ambientales(indices de Hellinberg)**
+### **Evaluación de la relación de las variables topográficas y topológicas con variables ambientales(indices de Hellinberg)**
 
-En el correlograma presentado en la @fig-fig7 observamos los grados de correlación entre las variables topograficas y topologicas con las variables ambientales medidas de manera indirecta con el promedio de indices de hellinberg en cada parcela, entonces habrían seis indices, una por cada variable y ambas se representan numericamente en las mismas escalas. De las seis variables cinco se relacionan de manera significativa con las variables de orientación y carga calorifica de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes se relacionan negativamente, estas relaciones se ven más detalladas en los diagramas de dispersión de la @fig-fig8 (A-D). Por lo tanto la orientación y la capacidad calorifica de la parcela puede ser determinantes para la variación en las condiciones de habitats entre las parcelas.
+En el correlograma presentado en la @fig-fig7 observamos los grados de correlación entre las variables topográficas y topológicas con las variables ambientales medidas de manera indirecta con el promedio de indices de hellinberg en cada parcela, entonces habrían seis indices, una por cada variable y ambas se representan numericamente en las mismas escalas. De las seis variables cinco se relacionan de manera significativa con las variables de orientación y carga calorifica de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes se relacionan negativamente, estas relaciones se ven más detalladas en los diagramas de dispersión de la @fig-fig8 (A-D). Por lo tanto la orientación y la capacidad calorifica de la parcela puede ser determinantes para la variación en las condiciones de habitats entre las parcelas.
 
 ```{r, message=FALSE,warning=FALSE}
 #| label: fig-fig7 
-#| fig-cap: "Correlograma de las relaciones de las variables topologicas y topograficas con los indices de Hellinberg usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos(* = 0.05, ** = 0.01, 0.001 = ***)."
+#| fig-cap: "Correlograma de las relaciones de las variables topológicas y topográficas con los indices de Hellinberg usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos(* = 0.05, ** = 0.01, 0.001 = ***)."
 #| 
 corrplot(ellin_topocor,method = "ellipse",
          tl.pos = "dt",tl.col = "black",sig.level = c(0.001,0.01,0.05),
@@ -260,11 +260,11 @@ corrplot(ellin_topocor,method = "ellipse",
          ,tl.cex = 1.0, number.cex = 0.9,addgrid.col = "#f5f5f5")
 ```
 
-Entonces si se toma a los indices de hellinberg como medidas indirectas de las condiciones de habitat y vemos como estás se relacionan con las variables topograficas y topologias, podriamos determinar dos grupos de variables, de las cuales uno se conforma por la luz ,temperatura y continentalidad mientras el otro se conforma por la humedad, reactividad y nutrientes, de modo que si un grupo se relaciona positivamente con una de las variables topologicas y topograficas positiva o negativamente, el otro podría relacionarse de manera contraria o no relacionarse. Caso en los que una variable se relaciona con uno de estos dos grupos pero no con el otro estaría la inclinación de la pendiente de las parcelas y el pH de las muestras de suelo, pues la inclinación de la pendiente se relaciona negativamente con la humedad, reactividad y nutrientes, pero no mostraría ningún tipo de correlación con la luz, temperatura y continentalidad (@fig-fig8 **(F)** y @fig-fig7) . Por otro lado, el pH diluido de muestras de suelo también se relacionan significativamente con el mismo grupo de variables pero de manera positiva, y tampoco tienen un grado de correlación considerable con la luz, temperatura y continentalidad (@fig-fig8 **(E)** y @fig-fig7).
+Entonces si se toma a los indices de hellinberg como medidas indirectas de las condiciones de habitat y vemos como estás se relacionan con las variables topográficas y topologias, podriamos determinar dos grupos de variables, de las cuales uno se conforma por la luz ,temperatura y continentalidad mientras el otro se conforma por la humedad, reactividad y nutrientes, de modo que si un grupo se relaciona positivamente con una de las variables topológicas y topográficas positiva o negativamente, el otro podría relacionarse de manera contraria o no relacionarse. Caso en los que una variable se relaciona con uno de estos dos grupos pero no con el otro estaría la inclinación de la pendiente de las parcelas y el pH de las muestras de suelo, pues la inclinación de la pendiente se relaciona negativamente con la humedad, reactividad y nutrientes, pero no mostraría ningún tipo de correlación con la luz, temperatura y continentalidad (@fig-fig8 **(F)** y @fig-fig7) . Por otro lado, el pH diluido de muestras de suelo también se relacionan significativamente con el mismo grupo de variables pero de manera positiva, y tampoco tienen un grado de correlación considerable con la luz, temperatura y continentalidad (@fig-fig8 **(E)** y @fig-fig7).
 
 ```{r}
 #| label: fig-fig8 
-#| fig-cap: "Diagrama de dispersión de las variables topograficas y topolagicas contra los indices de Hellinberg.A) Relación entre continentalidad, temperatura y luz con la orientación sur-sureste. B) Relación entre humedad, reactividad y nutrientes con la orientación sur-sureste, C)Relación entre continentalidad, temperatura y luz con la capacidad calorifica sur-sureste. D)Relación entre humedad, reactividad y nutrientes con la capacidad calorifica sur-sureste, E)Relación entre humedad, reactividad y nutrientes con el pH diluido de las muestras de suelo. F)Relación entre humedad, reactividad y nutrientes con la pendiente de la parcela."
+#| fig-cap: "Diagrama de dispersión de las variables topográficas y topolagicas contra los indices de Hellinberg.A) Relación entre continentalidad, temperatura y luz con la orientación sur-sureste. B) Relación entre humedad, reactividad y nutrientes con la orientación sur-sureste, C)Relación entre continentalidad, temperatura y luz con la capacidad calorifica sur-sureste. D)Relación entre humedad, reactividad y nutrientes con la capacidad calorifica sur-sureste, E)Relación entre humedad, reactividad y nutrientes con el pH diluido de las muestras de suelo. F)Relación entre humedad, reactividad y nutrientes con la pendiente de la parcela."
 
 include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Graficos\\Excel\\Ellenberg vs ambientales.svg")
 ```
@@ -273,7 +273,7 @@ El tipo de relieve también tiene una influencia significativa sobre la humedad,
 
 ```{r}
 #| label: fig-fig9 
-#| fig-cap: "Diagrama de cajas y bigotes para comparar los indices de Hellinberg en distintas condiciones topograficas.A)Comparación del indice de humedad entre distintos tipos de superficie.B)Comparación del indice de nutrientes entre distintos tipos de superficie.C)Comparación del indice de humedad entre suelos líticos y no líticos."
+#| fig-cap: "Diagrama de cajas y bigotes para comparar los indices de Hellinberg en distintas condiciones topográficas.A)Comparación del indice de humedad entre distintos tipos de superficie.B)Comparación del indice de nutrientes entre distintos tipos de superficie.C)Comparación del indice de humedad entre suelos líticos y no líticos."
 
 include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Graficos\\Excel\\Boxplot_ Ellenberg vs ambientales.svg")
 
