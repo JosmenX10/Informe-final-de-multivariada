@@ -189,7 +189,7 @@ g1/g2
 include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Graficos\\Explicaciones\\Orientación.svg")
 ```
 
-A partir de la @fig-fig4 se evidencia un claro patron de los tipos de superficie o relieve a favor de la pendiente a medida que aumenta la altitud, siendo posible observar más parcelas con relieve concavo en altitudes bajas que en altitudes altas, así mismo los relieves neutros son más comunes en altitudes intermedias y los relieves convexos más comunes en altitudes mayores, aunque lpor as muescas dan la posibilidad de que no hubiera diferencias significativas en la altitud de los relieves neutros y convexos.
+A partir de la @fig-fig4 se evidencia un claro patron de los tipos de superficies o relieves a favor de la pendiente, a medida que cambia la altitud, pues se observan más parcelas con relieve concavo en altitudes bajas que en altitudes altas, así mismo los relieves neutros son más comunes en altitudes intermedias y los relieves convexos más comunes en altitudes mayores, aunque el leve solapamiento de las muescas dan la posibilidad de que no hubiera diferencias significativas en la altitud de los relieves neutros y convexos.
 
 ```{r,warning=FALSE,message=FALSE}
 #| label: fig-fig4 
