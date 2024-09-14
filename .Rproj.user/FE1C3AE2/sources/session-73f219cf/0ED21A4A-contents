@@ -1,0 +1,229 @@
+---
+title: Titulo de la actividad
+date: last-modified #now #today
+description: Descripción de la actividad
+author: 
+    name: Josué David Mendoza Hewitt
+    url: https://grupogien.jimdofree.com/
+    affiliation: Grupo de Investigación GIEN
+    affiliation-url: https://grupogien.jimdofree.com/ 
+title-block-banner: "#9ebcda"
+format: 
+  html:
+    toc: true                 # Barra de menú
+    toc-title: Menú flotante  # Nombre de la barra de menú flotante
+    code-tools: false         # Códigos descargables (activar con true)
+    code-fold: false
+    css: "stile-justify.css"  # Justificación del texto
+      # Bibliografía
+csl: apa.csl.txt              # citation style language APA
+lang: "ES-es"
+---
+
+# R como calculadora
+
+```{r}
+# Operaciones aritméticas básicas
+5 + 7   # Suma
+5 - 3   # Resta
+5 * 7   # Multiplicación
+5/3     # División
+2^3     # Exponentes
+```
+
+```{r}
+# Logarítmos y exponenciales
+x = 5/3
+log2(x)     # Logarítmo en base 2 de x
+log10(x)    # Logarítmo en base 10 de x
+exp(x)      # Exponencial de x
+```
+
+```{r}
+# 2) Asignaciín de valores a objetos o a variables
+sitios <- 2         # Número de sitios = 2
+sitios = 2          # Otra forma
+n.sitios <- "dos"   # Número de sitios como un caracter
+dos.sitios <- TRUE  # Objeto lógico
+```
+
+## Ejercicio
+
+Generar tres asignaciones usando a R como calculadora
+
+```{r}
+A = c(1,2,3,4,5)
+A
+B = seq(1,5,by=1)
+B
+C= c(2,4,6,8,10)
+C
+D= seq(2,10, by = 2)
+D
+```
+
+```{r}
+# Vectores
+sitios <- c(2, 3, 2, 3,2,3)   # Vector sitios
+sitios                    # Imprimir el vector
+
+Sitios1 = rep(c(2,3),3)
+Sitios1 
+
+sitios <- sitios [1:3]      # Tres primeros elementos del vector sitios
+sitios                    # Imprimir el vector
+
+sitios2 <- c(2,2,2,3,3,3,4,4,4)
+sitios2
+
+sitios3<- rep(seq(2,4,by = 1),each=3)
+sitios3
+
+sitios[1:3]
+
+sitios <- c("a", "b", "c", "d")    # Vector como caracter
+sitios
+
+sitios1 <- letters[1:4]
+sitios1
+
+sitios3 <- c("A","A","A","B","B","B","C","C","C","D","D","D")
+sitios3
+
+sitios4 <- rep(LETTERS[1:4],each = 3)
+sitios4
+
+abundancia <- c(TRUE, FALSE, TRUE, TRUE)    # vector con elementos lógicos
+abundancia
+
+
+
+```
+
+# Ejercicio 2
+
+Generar tres vectores que represneten la abundancia de tres especies y fusionarles en un data.frame
+
+```{r}
+sp1 = seq(2,20,by=2)
+sp1
+
+sp2 = (seq(2,20,by=2))/2
+sp2
+
+sp3 = round(1/sp1,2) #round = redondeo de decímales
+sp3
+sitios=seq(1,10,by=1)
+sitios
+
+zonas = rep(LETTERS[1:2], each=5)
+
+zonas
+
+#crear la base de datos
+datos = data.frame(sitios,zonas, sp1,sp2,sp3)
+datos
+
+write.csv2(datos,"datos.csv")
+```
+
+# Taller Tidyverse
+
+Lenguaje de R que permite la comunicción de codigos entre diferentes plataformas (Python, SQL, R).
+
+## Nueva base de datos(data.frames)
+
+```{r}
+#Elementos de base de datos
+
+Estudiante = rep(LETTERS[1:4],each = 4) #Estudiante = factor 1
+Estudiante
+
+Sexo = rep(letters[c(6,13)], each = 8) #Sexo = factor2
+Sexo
+
+# Base de datos para 4 estudiantes (con 4 replicas)
+# a los que se les midieron dos variables en cuatro ocasiones.
+datos <- data.frame(n= 1:16,
+                    Estudiante, Sexo,
+                    Variable1= c(1.2,3.4,4.5,5.6,1.2,3.4,4.5,5.6,
+                                 0.8,2.4,1.8,1.5,1.6,2.1,1.2,0.8),
+                    Variable2= c(2.4,6.8,9.0,11.2,2.4,6.8,9.0,11.2,
+                                 1.6,4.8,3.6,3.0,3.2,4.2,2.4,1.6))
+```
+
+**Filtros(filter)**
+
+```{r}
+
+library(tidyverse)
+datos.f <- datos %>% filter(Sexo == "f")
+datos.f
+
+datos.m <- datos %>% filter(Sexo == "m")
+datos.m
+
+datos.f.A <- datos %>% filter(Sexo == "f", Estudiante == "A")
+
+datos.f.A
+
+datos.m.c <- datos %>%  filter(Sexo == "m", Estudiante == "C")
+
+datos.m.c
+```
+
+**Orden de los datos(arrange)**
+
+```{r}
+datos.desc.var1 = datos %>% arrange(desc(Variable1))
+datos.desc.var1
+
+datos.asc.var1 = datos %>%  arrange(Variable1)
+```
+
+**Filtrar en orden ascendente a los estudantes mujeres**
+
+```{r}
+datos.f.v2 <- datos %>% arrange(Variable2) %>% filter(Sexo == "f")
+datos.f.v2
+```
+
+**Creación de nuevas variables**
+
+```{r}
+datos3 <- datos %>% mutate(Variable3 = Variable1 + Variable2 )
+datos3
+```
+
+```{r}
+#Combinar los formatos filter, mutate y arrange
+datos$Estudiante <- as.factor(datos$Estudiante)
+
+
+datos.3 = datos %>%  filter(Sexo == "f") %>%  mutate(Variable3 = Variable2 *12) %>%  arrange(desc(Variable3)) 
+
+```
+
+**Formato alargado(gather)**
+
+%>% %>% %>% %>% %>% %>% %>% %>% %>% %>% ```{r, message=FALSE,warning=FALSE}
+
+dato1 = datos %>% gather(columnas,valores) 
+```
+
+**Bases de datos con estadisticos**
+
+```{r}
+
+attach(datos)
+resumen.estadistico = datos %>% group_by(Sexo, Estudiante) %>% summarise(promedio.variable1 = mean(Variable1),Promedio.varible2 = mean(Variable2), desv_estandarvar1 = sd(Variable1), desv_estandarvar2 = sd(Variable2), var.varible1 = var(Variable1), var.variable2 = var(Variable2), var1.n = length(Variable1) ,var2.n = length(Variable2), var1.ee = sd(Variable1)/sqrt(length(Variable1)-1), var2.ee= sd(Variable1)/sqrt(length(Variable2)-1), maxvar1 = max(Variable1), maxvar2= max(Variable2))
+
+resumen.estadistico
+
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(datos, aes(x= Sexo, y = Variable2)) + geom_boxplot(fill =c("#8856a7","#e0ecf4")) + theme_classic()
+```

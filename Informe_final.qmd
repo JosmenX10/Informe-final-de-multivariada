@@ -242,13 +242,13 @@ frecuencia <- frecuencia_factores$Freq
 barplot(frecuencia, 
         main = "Comparación frecuencias de relieves y suelos líticos", 
         ylab = "Frecuencia", 
-        col = "orange", 
+        col = rep(c("blue","orange"), times = 3), 
         border = "black", cex.names = 0.7,width = 2.5, names.arg = je, space = 1)
 ```
 
 ### **Evaluación de la relación de las variables topográficas y topológicas con variables ambientales(indices de Hellinberg)**
 
-En el correlograma presentado en la @fig-fig7 observamos los grados de correlación entre las variables topográficas y topológicas con las variables ambientales medidas de manera indirecta con el promedio de indices de hellinberg en cada parcela, entonces habrían seis indices, una por cada variable y ambas se representan numericamente en las mismas escalas. De las seis variables cinco se relacionan de manera significativa con las variables de orientación y carga calorifica de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes se relacionan negativamente, estas relaciones se ven más detalladas en los diagramas de dispersión de la @fig-fig8 (A-D). Por lo tanto la orientación y la capacidad calorifica de la parcela puede ser determinantes para la variación en las condiciones de habitats entre las parcelas.
+En el correlograma presentado en la @fig-fig7 observamos los grados de correlación entre las variables topográficas y topológicas con las variables ambientales medidas de manera indirecta con el promedio de indices de hellinberg en cada parcela, entonces habrían seis indices, una por cada variable y ambas se representan numericamente en las mismas escalas. De las seis variables cinco se relacionan de manera significativa con las variables de orientación y carga calorifica de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes se relacionan negativamente, estas relaciones se ven más detalladas en los diagramas de dispersión de la @fig-fig8 (A-D). Por lo tanto la orientación y la capacidad calorifica de la parcela pueden ser determinantes para la variación en las condiciones de habitats entre las parcelas.
 
 ```{r, message=FALSE,warning=FALSE}
 #| label: fig-fig7 
