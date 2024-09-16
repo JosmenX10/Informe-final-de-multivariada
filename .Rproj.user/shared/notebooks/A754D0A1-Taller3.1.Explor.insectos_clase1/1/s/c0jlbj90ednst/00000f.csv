@@ -1,0 +1,6 @@
+"0","# Frecuencias de abundancias por densidad"
+"0","ggplot(data = iris, aes(x = Petal.Width, color = Species)) +"
+"0","  geom_density(aes(fill = Species), alpha = 0.5) +"
+"0","  labs( y=""Frecuencia"", x=""Ancho de Petalos"") +"
+"0","  facet_wrap(~Species) +"
+"0","  theme_bw()"

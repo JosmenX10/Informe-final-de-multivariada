@@ -1,0 +1,4 @@
+"0","Datos <-"
+"0","  Datos %>% "
+"0","  mutate(clasealtitud = cut(altitud, c(2500,2800,3600), include.lowest = TRUE,"
+"0","                         labels = c(""alt.baja"",""alt.alta"")), clasecuadal = cut(caudal, c(0,1,6), include.lowest = TRUE,labels = c(""caudal.bajo"", ""caudal.alto"")), clasevel = cut(vel,c(15,30,40,75),include.lowest = TRUE,labels = c(""vel.baja"",""vel.media"",""vel.alta"")), clasevar.cau = cut(`var-caudal`,seq(20,165,47.5), include.lowest = TRUE,labels = c(""var.c.bajo"", ""var.c.medio"",""var.c.alto"")))"

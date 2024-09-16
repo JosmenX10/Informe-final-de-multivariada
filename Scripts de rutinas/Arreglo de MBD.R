@@ -39,3 +39,20 @@ datos_env <- cbind(datos1,datos2)
 
 write.csv(datos_env,"vltava_env.csv")
 
+#Seleccionamos entre grupos de variables
+topo <- datos_env[,4:17]#Seleccionamos solamente las variables topograficas y de suelo.
+
+ellin <- datos_env[,19:24]#seleccionamos solo las variables indices-ellinger.
+#-----------------------------------------------------------------------
+
+#Generamos las matrices de correlación para analisis 
+topocor <- cor(topo, method = "spearman") #correlación entre topograficas.
+
+pval_topo <- corr.test(topo, adjust="none",method = "spearman")$p #p-value de correlaciones entre topograficas.
+
+
+ellin_topocor <- cor(y = topo, x = ellin, method = "spearman") #correlación entre topograficas.
+
+pval_ellin<- corr.test(y= topo, x= ellin, adjust="none",method = "spearman")$p #p-value de correlaciones entre topograficas.
+
+

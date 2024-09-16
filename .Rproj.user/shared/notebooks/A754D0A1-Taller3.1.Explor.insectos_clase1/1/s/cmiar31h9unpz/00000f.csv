@@ -1,0 +1,8 @@
+"0","# Regresiones lineales (Esquema ggplot2) "
+"0","# ***Ejercicio*** Graficar la relación entre el pH y los efemerópteros"
+"0","ggplot(datos, aes(x= pH, y= Efem)) +   "
+"0","  geom_point(aes(color = cuenca), size = 3) +  "
+"0","  geom_smooth() +"
+"0","  theme_classic()"
+"1","[38;5;232m`geom_smooth()` using method = 'loess' and formula = 'y ~ x'[39m
+"

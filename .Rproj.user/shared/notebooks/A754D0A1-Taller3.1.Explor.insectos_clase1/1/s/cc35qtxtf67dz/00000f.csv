@@ -1,0 +1,3 @@
+"0","# Frecuencias de abundancias por cuencas"
+"0","histogram (~log10(Sepal.Length)|Species,data=iris, "
+"0","           ylab =""Porcentaje del Total"", xlab=""log10(Longitud de Sépalos)"")"

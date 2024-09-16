@@ -1,5 +1,5 @@
 "0","#| label: fig-fig7 "
-"0","#| fig-cap: ""Correlograma de las relaciones de las variables topologicas y topograficas con los indices de Hellinberg usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos(* = 0.05, ** = 0.01, 0.001 = ***)."""
+"0","#| fig-cap: ""Correlograma de las relaciones de las variables topológicas y topográficas con los indices de Hellinberg usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos(* = 0.05, ** = 0.01, 0.001 = ***)."""
 "0","#| "
 "0","corrplot(ellin_topocor,method = ""ellipse"","
 "0","         tl.pos = ""dt"",tl.col = ""black"",sig.level = c(0.001,0.01,0.05),"

@@ -1,0 +1,3 @@
+"0","# Cargar base de datos ""insectos.xlsx"""
+"0","datos = read_xlsx(""Insectos.xlsx"",""Insectos"")"
+"0","head(datos)"

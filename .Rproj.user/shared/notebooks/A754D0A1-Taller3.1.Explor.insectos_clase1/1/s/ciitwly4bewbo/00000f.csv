@@ -1,0 +1,16 @@
+"0","# Resumen estadístico ""datos_resum"""
+"0","datos_resum <- datos1 %>%        # Base de datos resumida"
+"0","  group_by(Lluvia,GF) %>%          # Factor o variable agrupadora"
+"0","  summarise(datos.m = round(mean(Biom), 2),   # Media de cada grupo del factor"
+"0","            datos.de  = round(sd(Biom),2),   # Desviacioes estándar de cada grupo"
+"0","            datos.var = round(var(Biom),2),  # Varianzas de cada grupo"
+"0","            n.Biom = n(),           # Tamaño de cada grupo"
+"0","            datos.ee = round(sd(Biom)/sqrt(n()),2))   # Error estándar de cada grupo"
+"1","[1m[33mError[39m in `group_by()`:[22m
+[38;5;232m[33m![38;5;232m Must group by variables found in `.data`.
+Column `Lluvia` is not found.
+Column `GF` is not found.[39m
+Backtrace:
+[90m 1. [39mdatos1 %>% group_by(Lluvia, GF) %>% ...
+[90m 4. [39m[1m[94mdplyr:::group_by.data.frame([39m[22m., Lluvia, GF[1m[94m)[39m[22m
+"

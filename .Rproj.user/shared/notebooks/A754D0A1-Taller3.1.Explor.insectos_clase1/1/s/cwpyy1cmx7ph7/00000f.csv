@@ -1,0 +1,5 @@
+"0","#| label: fig-fig1"
+"0","#| fig-cap: Relaciones entre parejas de variables ficoquímicas y biológicas, las elipses azules representan a las relaciones lineales positivas y las rojas a las relaciones negativas."
+"0",""
+"0","# Elipses con colores"
+"0","corrplot(M, method = ""ellipse"")  # Figura de correlaciones con elipses"

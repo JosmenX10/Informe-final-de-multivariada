@@ -1,0 +1,5 @@
+"0","# Frecuencias de abundancias "
+"0","# ***Ejercicio***= Rotular el eje Y con ""Porcentaje del Total"", "
+"0","# El eje X con ""Abundancia de insectos"""
+"0","histogram (~Ab,data=datos, "
+"0","           ylab =""Porcentaje del Total"", xlab=""Abundancia de insectos"")"

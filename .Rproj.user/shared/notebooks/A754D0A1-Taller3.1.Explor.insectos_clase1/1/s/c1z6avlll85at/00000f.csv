@@ -1,0 +1,7 @@
+"0","# Frecuencias de abundancias por densidad"
+"0","ggplot(data = datos, aes(x = Ab, color = cuenca)) +"
+"0","  geom_density(aes(fill = cuenca), alpha = 0.5) +"
+"0","  labs( y=""Frecuencia"", x=""Abundancia"") +"
+"0","  facet_wrap(~cuenca) +"
+"0","  theme_bw()"
+"0",""

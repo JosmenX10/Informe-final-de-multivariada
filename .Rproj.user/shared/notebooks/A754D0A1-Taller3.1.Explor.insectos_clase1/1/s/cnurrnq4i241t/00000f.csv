@@ -1,0 +1,4 @@
+"0","#| label: fig-fig4"
+"0","#| fig-cap: Relaciones entre parejas de variables ficoquímicas y biológicas, las elipses azules representan a las relaciones lineales positivas y las rojas a las relaciones negativas. Los valores corresponden a los coeficientes de correlación de Spearman entre las arejas de variables."
+"0","# Elipses con colores"
+"0","corrplot.mixed(M, upper=""ellipse"")"

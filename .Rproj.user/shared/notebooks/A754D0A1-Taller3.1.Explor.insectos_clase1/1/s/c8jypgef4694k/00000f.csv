@@ -1,0 +1,10 @@
+"0","# Regresiones lineales (Esquema ggplot2) "
+"0","# ***Ejercicio*** Graficar la relación entre el pH y los efemerópteros"
+"0","ggplot(iris, aes(x= Petal.Width, y= Sepal.Width)) +   "
+"0","  geom_point(aes(color = Species), size = 3) +  "
+"0","  geom_smooth(method= ""lm"") +"
+"0","  theme_bw() +"
+"0","  facet_wrap(~Species) +"
+"0","  labs(x=""Ancho de petalos"", y=""Ancho de sépalos"")"
+"1","[38;5;232m`geom_smooth()` using formula = 'y ~ x'[39m
+"

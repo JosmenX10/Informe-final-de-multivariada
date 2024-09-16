@@ -172,7 +172,7 @@ corrplot(ellin_topocor,method = "ellipse",
 
 ```
 
-Entonces si toma a los indices de hellinberg como medidas indirectas de las condiciones de habitat, podriamos determinar dos grupos de variables, de las cuales uno se conforma por la luz ,temperatura y continentalidad mientras el otro se conforma por la humedad, reactividad y nutrientes, de modo que si un grupo se relaciona positivamente con una de las variables topologicas y topograficas positiva o negativamente, el otro podría relacionarse de manera contraria o no relacionarse. Caso en los que una variable se relaciona con uno de estos dos grupos pero no con el otro estaría el pH y la inclinación de la pendiente, en el que la inclinación de la pendiente se relaciona negativamente con la humedad, reactividad y nutrientes, pero mostraría ningún tipo de correlación con la luz, temperatura y continentalidad. Por otro lado, el pH diluido de muestras de suelo también se relacionan significativamente con el mismo grupo de variables pero de manera positiva, y tampoco tienen un grado de correlación considerable con la luz, temperatura y continentalidad.
+Entonces si se toma a los indices de hellinberg como medidas indirectas de las condiciones de habitat, podriamos determinar dos grupos de variables, de las cuales uno se conforma por la luz ,temperatura y continentalidad mientras el otro se conforma por la humedad, reactividad y nutrientes, de modo que si un grupo se relaciona positivamente con una de las variables topologicas y topograficas positiva o negativamente, el otro podría relacionarse de manera contraria o no relacionarse. Caso en los que una variable se relaciona con uno de estos dos grupos pero no con el otro estaría el pH y la inclinación de la pendiente, en el que la inclinación de la pendiente se relaciona negativamente con la humedad, reactividad y nutrientes, pero mostraría ningún tipo de correlación con la luz, temperatura y continentalidad \@fig-fig8. Por otro lado, el pH diluido de muestras de suelo también se relacionan significativamente con el mismo grupo de variables pero de manera positiva, y tampoco tienen un grado de correlación considerable con la luz, temperatura y continentalidad.
 
 ```{r}
 #| label: fig-fig8 
@@ -180,6 +180,8 @@ Entonces si toma a los indices de hellinberg como medidas indirectas de las cond
 
 include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Graficos\\Excel\\Ellenberg vs ambientales.svg")
 ```
+
+El tipo de relieve también tiene una influencia significativa sobre la humedad, reactividad y nutrientes, aunque las correlaciones solo son considerables para la humedad y nutrientes, esta relación queda mejor evidenciada en la @fig-fig9(A-B), donde se observa una clara tendencia en la que los valores de humedad y nutrientes se distribuyen en valores más altos, seguidos por el relive neutro, y el relieve convexo que mantiene una distribución en valores más bajos. También se observa que los suelos con condiciones de fluvisoles tendian a tener datos concentrados en valores de humedad más altos que los que no.
 
 ```{r, fig.width=0.5,fig.height=0.5}
 #| label: fig-fig9 

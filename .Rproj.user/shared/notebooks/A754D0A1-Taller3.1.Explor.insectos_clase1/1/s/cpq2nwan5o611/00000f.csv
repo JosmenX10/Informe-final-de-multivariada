@@ -1,0 +1,6 @@
+"0","# Base de datos multifactorial (insectos1)"
+"0","datos1<-read_csv2(""Insectos2.csv"")    # Formato *Tidyr"
+"1","[36mℹ[39m Using [34m[34m""','""[34m[39m as decimal and [34m[34m""'.'""[34m[39m as grouping mark. Use `read_delim()` for more control.
+"
+"2","Error: 'Insectos2.csv' does not exist in current working directory ('C:/Users/Asus/Desktop/Analisis multivariado/Taller/Taller 3.1 Exploratorios').
+"

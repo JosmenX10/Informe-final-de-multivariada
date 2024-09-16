@@ -1,0 +1,124 @@
+"0",""
+"0","f1 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Luz)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Luz"")"
+"0",""
+"0","f2 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Nutrientes)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Nutrientes"")"
+"0",""
+"0","f3 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Temperatura)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Temperatura"")"
+"0",""
+"0","f4 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Humedad)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Humedad"")"
+"0",""
+"0",""
+"0","f5  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Continentalidad)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Continentalidad"")"
+"0",""
+"0","f6  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Reactividad)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Reactividad"")"
+"0",""
+"0",""
+"0","(f1 + f2)/(f3+f4)/(f5+f6)"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Luz` is discouraged.
+[36mℹ[38;5;232m Use `Luz` instead.[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Nutrientes` is discouraged.
+[36mℹ[38;5;232m Use `Nutrientes` instead.[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Temperatura` is discouraged.
+[36mℹ[38;5;232m Use `Temperatura` instead.[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Humedad` is discouraged.
+[36mℹ[38;5;232m Use `Humedad` instead.[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Continentalidad` is discouraged.
+[36mℹ[38;5;232m Use `Continentalidad` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Reactividad` is discouraged.
+[36mℹ[38;5;232m Use `Reactividad` instead.[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"

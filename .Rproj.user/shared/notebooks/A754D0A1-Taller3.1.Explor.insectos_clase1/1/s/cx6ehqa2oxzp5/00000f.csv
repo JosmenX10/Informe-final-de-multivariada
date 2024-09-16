@@ -1,0 +1,7 @@
+"0","# Buscar en google: colorbrewer2"
+"0","# Resultado: ColorBrewer: Color Advice for Maps"
+"0","ggplot (datos, aes(x= cuenca, y= Ab)) + "
+"0","  geom_boxplot(aes(fill = cuenca)) +"
+"0","  scale_fill_manual(values = c('#fc8d59','#ffffbf',"
+"0","                               '#99d594','#e78ac3')) +"
+"0","  theme_bw()"

@@ -1,0 +1,8 @@
+"0","# Parentesis datos de lirios"
+"0","data(iris)"
+"0","attach(iris)"
+"0",""
+"0","pairs ((iris[,c(1:4)]),panel=function(x,y)"
+"0","  {abline(lsfit(x,y)$coef,lwd=2,col=3)"
+"0","  lines(lowess(x,y),lty=2,lwd=2,col=2)"
+"0","  points(x,y,col= Species, cex=1.4,pch=19)})"

@@ -1,0 +1,8 @@
+"0","# Figuras de Cajas y bigotes (ggplot2)"
+"0","ggplot(melt(datos[,c(1,4:9)]), aes(x=variable, y=value)) + "
+"0","  geom_boxplot(aes(fill=cuenca)) + "
+"0","  labs(x="""",y=""Abundancia"") + "
+"0","  facet_wrap(~ variable,scales=""free"") + "
+"0","  theme_bw()"
+"2","Using cuenca as id variables
+"

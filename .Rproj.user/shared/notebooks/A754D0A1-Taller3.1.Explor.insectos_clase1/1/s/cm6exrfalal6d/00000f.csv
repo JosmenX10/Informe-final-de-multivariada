@@ -1,0 +1,3 @@
+"0","# Frecuencias de abundancias por cuencas"
+"0","histogram (~Ab|cuenca,data=datos, ylab=""Porcentaje del Total"","
+"0","   xlab=""Abundancia de insectos"")"

@@ -1,0 +1,6 @@
+"0","datos <-"
+"0","  datos %>% "
+"0","  mutate(clasetemp = cut(temp, seq(15, 20, 1.2), include.lowest = TRUE,"
+"0","                         labels = c(""t.baja"", ""t.media1"", ""t.media2"", ""t.alta"")),"
+"0","         clasepH = cut(pH, seq(5, 8, 1), include.lowest = TRUE,"
+"0","                         labels = c(""pH.bajo"", ""pH.medio"", ""pH.alto"")))"

@@ -1,0 +1,7 @@
+"0","# Figura de elipses con coeficientes de correlación"
+"0","corrplot(M,  method = ""circle"",            # Correlaciones con circulos"
+"0","         type = ""lower"", insig=""blank"",    # Forma del panel"
+"0","         order = ""AOE"", diag = FALSE,      # Ordenar por nivel de correlación"
+"0","         addCoef.col =""black"",             # Color de los coeficientes"
+"0","         number.cex = 0.8,                 # Tamaño del texto"
+"0","         col = COL2(""RdYlBu"", 200))        # Transparencia de los circulos"

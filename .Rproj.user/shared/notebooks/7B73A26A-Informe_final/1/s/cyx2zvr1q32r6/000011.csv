@@ -1,0 +1,30 @@
+"0",""
+"0",""
+"0",""
+"0","dirección <- ifelse((datos_env$Orientación.S.SE-datos_env$Orientación.SE < 0),yes = datos_env$Orientación.SE*-1 , no = datos_env$Orientación.SE)"
+"0",""
+"0","# Crear el gráfico"
+"0","ggplot(datos_env) + "
+"0","  geom_point(aes(x = dirección, y = datos_env$Elevación, shape = factor(datos_env$Grupos), colour = factor(datos_env$Grupos)), size = 2.5) + "
+"0","  coord_polar(start = 2.35619 ,direction = 1) +  # Transforma el gráfico en circular"
+"0","  theme_minimal() +"
+"0","  labs(title = ""Distribución de los TC en altitud y orientación"","
+"0","       x = ""Orientación"","
+"0","       y = ""Altitud"", colour = ""TC"",shape =""TC"") + "
+"0","  scale_x_continuous(limits = c(-180,180), breaks = c(-45,45,135,-135), "
+"0","                     labels = c(""O"",""N"",""E"",""S""), minor_breaks = c(-90,0,90,180)) + # Ejes con direcciones cardinales"
+"0","  theme(legend.position = ""right"") +"
+"0","  scale_y_continuous(limits = c(380, 540), breaks = c(400,425,450,475,500,525,550)) + # Dejar un espacio en el centro"
+"0","theme_light()"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Elevación` is discouraged.
+[36mℹ[38;5;232m Use `Elevación` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos_env$Grupos` is discouraged.
+[36mℹ[38;5;232m Use `Grupos` instead.[39m
+"

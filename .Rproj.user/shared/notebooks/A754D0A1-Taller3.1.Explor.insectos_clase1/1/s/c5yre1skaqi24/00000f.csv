@@ -1,0 +1,5 @@
+"0","# Frecuencias de abundancias "
+"0","# ***Ejercicio***= Rotular el eje Y con ""Porcentaje del Total"", "
+"0","# El eje X con ""Abundancia de insectos"""
+"0","histogram (~log10(Sepal.Length),data=iris, "
+"0","           ylab =""Porcentaje del Total"", xlab=""Longitud de Sépalos"")"

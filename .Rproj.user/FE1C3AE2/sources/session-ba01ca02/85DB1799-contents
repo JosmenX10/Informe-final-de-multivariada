@@ -1,0 +1,461 @@
+---
+title: "Taller 3.1 Exploración Multivariada"
+date: last-modified #now #today
+description: Ejercicio para la exploración con una o más variables, utilizando dos bases de datos de insectos acuáticos.
+author: 
+    name: Nombre del estudiante
+    url: https://grupogien.jimdofree.com/
+    affiliation: Grupo de Investigación GIEN
+    affiliation-url: https://grupogien.jimdofree.com/ 
+title-block-banner: "#3BBDD9"
+format: 
+  html:
+    toc: true                 # Barra de menú
+    toc-title: Menú flotante  # Nombre de la barra de menú flotante
+    code-tools: false         # Códigos descargables (activar con true)
+    code-fold: true
+    css: "stile-justify.css"  # Justificación del texto
+lang: "ES-es"
+---
+
+<b style='color:#1f78b4;'>
+
+# Exploración gráfica multivariada - base *Insectos*
+
+</b>
+
+<b style='color:#1f78b4;'>
+
+**Objetivo de la actividad:**
+
+</b>
+
+Poner en práctica el manejo de bases de datos y la visualización de datos uni, bi, tri y multivariados, para responder principalmente a dos tipos de objetivos:
+
+1.  **Relaciones** entre variables biológicas y de estas con las ambientales (ej. figuras de elipses, pares, dispersión y coplot).
+
+2.  **Diferencias** para el caso en el que contemos con variables agrupadoras (factores o v. cualitativas), orientado a evaluar las diferencias entre variables biológicas en gradientes espaciales o temporales (ej. entre grupos de sitios).
+
+La base de datos a utilizar se presenta en dos formatos: **Insectos.csv** e **Insectos.xlsx**. Esta base cuenta con 2 variables ambientales y 6 biológicas, así como con un factor o variable agrupadora (cuencas), todo esto distribuido en las columnas. Además cuenta con y 20 localidades o quebradas (filas).
+
+<b style='color:#1f78b4;'>
+
+## Procedimiento de la exploración
+
+</b>
+
+-   Cargar librerías requeridas
+
+-   Cargar la base `Insectos` (usar diferentes opciones para practicar)
+
+-   Explorar al **objetivo 1** (figuras de elipses, pares, dispersión y coplot).
+
+-   Explorar al **objetivo 2** (figuras de elipses, pares, dispersión y coplot).
+
+-   Realizar las opciones gráficas relacionadas a los objetivos.
+
+-   Realizar transformaciones de los datos, para mejorar la visualización de patrones.
+
+-   Practicar con leyendas y resultados de la visualización realizada.
+
+<b style='color:#1f78b4;'>
+
+#### Cargar las librerías requeridas
+
+</b>
+
+```{r, message=FALSE, warning=FALSE}
+# install.packages(c("SciViews","plotrix"))
+
+# Librerías requeridas
+library(tidyverse)
+library(readxl)       # Importar y exportar
+library(gtable)       # Importar y exportar
+require(stats)        # No se requiere instalar
+library(lattice)      # No se requiere instalar
+library(ggrepel)      # insertar rótulos a los puntos
+require(SciViews)     # Fig. dispersión con coef. de pearson
+library(plotrix)      # Figuras de cajas con múltiples variables
+library(corrplot)     # Figuras de elipses
+library(reshape)      # Figuras de cajas con múltiples variables
+library(gridExtra)    # Para figuras estadísticas (varios factores)
+library(grid)         # Para figuras estadísticas (varios factores)
+library(kableExtra)   # Edición de las tablas
+```
+
+------------------------------------------------------------------------
+
+## Cargar la base de datos
+
+```{r}
+# Cargar base de datos "insectos.xlsx"
+datos = read_xlsx("Insectos.xlsx","Insectos")
+head(datos)
+```
+
+Cargar base de datos en formato csv
+
+La @tbl-tbl1 nos muestra la información inicial de los datos biológicos y ambientales en las cuatro cuencas evaluadas.
+
+```{r}
+#| label: tbl-tbl1
+#| tbl-cap: "Datos crudos para la abundancia de insectos acuáticos y variables fisicoquímicas en cuatro cuencas hidrográficas"
+
+# Base de datos
+datos<-read.csv2("Insectos.csv",row.names=1)
+datos$cuenca = as.factor(datos$cuenca)
+str(datos)   # estructura de la base "datos"
+
+# Encabezado de la base de datos
+head(datos) %>% 
+  kbl(caption = "", booktabs = F, longtable = T) %>% 
+  kable_classic(full_width=F, html_font = "cambria")
+```
+
+------------------------------------------------------------------------
+
+## Objetivo 1. Relación entre variables biológicas y ambientales
+
+### 1. Figuras de elipses
+
+```{r}
+# Elipses con colores
+
+M <- cor(datos[,2:9], method = "spearman")            # Matriz de Correlación (M)
+round(M, 2)
+```
+
+En la @fig-fig1 se observan pocas relaciones lineales. Los **tricópteros** presentan la mayor frecuencia de relaciones negativas con el pH, los Efemerópteros y los Plecópteros. El **pH** es la variable ambiental que genera un mayor efecto con los grupos biológicos, presentando una relación positiva con la abundancia de Efemerópteros y negativa con la abundancia de los Tricópteros.
+
+```{r}
+#| label: fig-fig1
+#| fig-cap: Relaciones entre parejas de variables ficoquímicas y biológicas, las elipses azules representan a las relaciones lineales positivas y las rojas a las relaciones negativas.
+
+# Elipses con colores
+corrplot(M, method = "ellipse")  # Figura de correlaciones con elipses
+```
+
+```{r}
+#| label: fig-fig2
+#| fig-cap: Relaciones entre parejas de variables ficoquímicas y biológicas, las elipses azules representan a las relaciones lineales positivas y las rojas a las relaciones negativas.
+# Elipses con colores
+corrplot(M, method = "circle", order = "AOE")   # Figura de correlaciones con circulos
+```
+
+```{r}
+#| label: fig-fig3
+#| fig-cap: Relaciones entre parejas de variables ficoquímicas y biológicas, las elipses azules representan a las relaciones lineales positivas y las rojas a las relaciones negativas.
+M1 = cor(datos[,2:3], datos[,4:9])
+corrplot(M1, method = "ellipse")  # Figura de correlaciones con elipses
+```
+
+```{r}
+#| label: fig-fig4
+#| fig-cap: Relaciones entre parejas de variables ficoquímicas y biológicas, las elipses azules representan a las relaciones lineales positivas y las rojas a las relaciones negativas. Los valores corresponden a los coeficientes de correlación de Spearman entre las arejas de variables.
+# Elipses con colores
+corrplot.mixed(M, upper="ellipse")
+```
+
+```{r}
+# Figura de elipses con coeficientes de correlación
+corrplot(M,  method = "circle",            # Correlaciones con circulos
+         type = "lower", insig="blank",    # Forma del panel
+         order = "AOE", diag = FALSE,      # Ordenar por nivel de correlación
+         addCoef.col ="black",             # Color de los coeficientes
+         number.cex = 0.8,                 # Tamaño del texto
+         col = COL2("RdYlBu", 200))        # Transparencia de los circulos
+```
+
+------------------------------------------------------------------------
+
+### 2. Figuras de pares
+
+```{r}
+#| label: fig-fig5
+#| fig-cap: Relaciones entre parejas de variables ficoquímicas y biológicas. Los circulos representan a las quebradas, las líneas verdes representan las relaciones lineales y las rojas a las realaciones suavisadas o no lineales (loess o lowess).
+
+# 4. Figuras de pares
+# **Ejercicio**: incluir las variables 2 a la 8
+pairs ((datos[,2:8]),panel=function(x,y)
+  {abline(lsfit(x,y)$coef,lwd=2,col=3)    # lwd = Ancho de la línea
+  lines(lowess(x,y),lty=1,lwd=3,col=2)    # col= Color de la línea
+  points(x,y,cex=1)})
+```
+
+```{r}
+# Incluir el factor (cuenca)
+# ***Ejercicio***: Incluir las variables 2,6,7,9. Graficar la **cuenca**
+
+attach(datos)
+
+pairs ((datos[,c(2,6,7,9)]),panel=function(x,y)
+  {abline(lsfit(x,y)$coef,lwd=2,col=3)
+  lines(lowess(x,y),lty=2,lwd=2,col=2)
+  points(x,y,col= cuenca, cex=1.4,pch=19)})
+
+```
+
+```{r}
+# Parentesis datos de lirios
+data(iris)
+attach(iris)
+
+pairs ((iris[,c(1:4)]),panel=function(x,y)
+  {abline(lsfit(x,y)$coef,lwd=2,col=3)
+  lines(lowess(x,y),lty=2,lwd=2,col=2)
+  points(x,y,col= Species, cex=1.4,pch=19)})
+```
+
+```{r, warning=FALSE}
+#| label: fig-fig6
+#| fig-cap: Relaciones entre tres variables biológicas y el pH.Los histogramas de la diagonal principal representa el nivel de simetría de cada variable. los valores encima de la diagonal pricipal, representana a los coeficientes de correlación de Pearson y los asteriscos a la significancia de las correlaciones. Las líneas rojas representan a las relaciones suavisadas o loess entre las parejas de variables.
+
+library(SciViews)
+# Correlaciones de Pearson
+pairs(datos[,c(2,4,6,9)], diag.panel = panel.hist, 
+  upper.panel = panel.cor, lower.panel = panel.smooth)
+```
+
+------------------------------------------------------------------------
+
+### 3. Histogramas de frecuencias
+
+```{r}
+# Frecuencias de abundancias 
+# ***Ejercicio***= Rotular el eje Y con "Porcentaje del Total", 
+# El eje X con "Abundancia de insectos"
+histogram (~Ab,data=datos, 
+           ylab ="Porcentaje del Total", xlab="Abundancia de insectos")
+```
+
+```{r}
+# Frecuencias de abundancias 
+# ***Ejercicio***= Rotular el eje Y con "Porcentaje del Total", 
+# El eje X con "Abundancia de insectos"
+histogram (~log10(Sepal.Length),data=iris, 
+           ylab ="Porcentaje del Total", xlab="Longitud de Sépalos")
+```
+
+```{r}
+# Frecuencias de abundancias por cuencas
+histogram (~Ab|cuenca,data=datos, ylab="Porcentaje del Total",
+   xlab="Abundancia de insectos")
+```
+
+```{r}
+# Frecuencias de abundancias por cuencas
+histogram (~log10(Sepal.Length)|Species,data=iris, 
+           ylab ="Porcentaje del Total", xlab="log10(Longitud de Sépalos)")
+```
+
+```{r}
+# Frecuencias de abundancias por densidad
+ggplot(data = datos, aes(x = Ab, color = cuenca)) +
+  geom_density(aes(fill = cuenca), alpha = 0.5) +
+  labs( y="Frecuencia", x="Abundancia") +
+  facet_wrap(~cuenca) +
+  theme_bw()
+
+```
+
+```{r}
+# Frecuencias de abundancias por densidad
+ggplot(data = iris, aes(x = Petal.Width, color = Species)) +
+  geom_density(aes(fill = Species), alpha = 0.5) +
+  labs( y="Frecuencia", x="Ancho de Petalos") +
+  facet_wrap(~Species) +
+  theme_bw()
+```
+
+------------------------------------------------------------------------
+
+### 4. Graficos de dispersión
+
+```{r, message=FALSE, warning=FALSE}
+# Regresiones lineales (Esquema ggplot2) 
+# ***Ejercicio*** Graficar la relación entre el pH y los efemerópteros
+ggplot(datos, aes(x= pH, y= log10(Efem+1))) +   
+  geom_point(aes(color = cuenca), size = 3) +  
+  geom_smooth(method= "lm") +
+  theme_classic()
+```
+
+```{r, message=FALSE, warning=FALSE}
+# Regresiones lineales (Esquema ggplot2) 
+# ***Ejercicio*** Graficar la relación entre el pH y los efemerópteros
+ggplot(datos, aes(x= pH, y= Efem)) +   
+  geom_point(aes(color = cuenca), size = 3) +  
+  geom_smooth() +
+  theme_classic()
+```
+
+```{r, message=FALSE, warning=FALSE}
+# Regresiones lineales (Esquema ggplot2) 
+# ***Ejercicio*** Graficar la relación entre el pH y los efemerópteros
+ggplot(iris, aes(x= Petal.Width, y= Sepal.Width)) +   
+  geom_point(aes(color = Species), size = 3) +  
+  geom_smooth(method= "lm") +
+  theme_bw() +
+  facet_wrap(~Species) +
+  labs(x="Ancho de petalos", y="Ancho de sépalos")
+```
+
+------------------------------------------------------------------------
+
+## Objetivo 2. Diferencias en las variables biológicas y ambientales, para cada grupo (cuencas)
+
+### 1. Figuras de cajas y bigotes
+
+```{r}
+# Figuras de Cajas y bigotes
+datos$cuenca<-factor(datos$cuenca, 
+ levels=c("cuen1","cuen2","cuen3","cuen4"))
+```
+
+```{r, warning=FALSE}
+# Cajas y Bigotes con muescas
+# *** Ejercicio*** Graficar La abundancia (Ab) por tipos de cuencas.
+boxplot( Ab ~ cuenca, data= datos, notch =TRUE,
+xlab="Cuencas",ylab="Abundancia",
+col="#66c2a5", cex.lab=1.3)
+
+abline(h = 53, lty=2, col="blue")
+```
+
+```{r}
+summary(datos[,2:3])
+```
+
+```{r}
+datos <-
+  datos %>% 
+  mutate(clasetemp = cut(temp, seq(15, 20, 1.2), include.lowest = TRUE,
+                         labels = c("t.baja", "t.media1", "t.media2", "t.alta")),
+         clasepH = cut(pH, seq(5, 8, 1), include.lowest = TRUE,
+                         labels = c("pH.bajo", "pH.medio", "pH.alto")))
+```
+
+```{r, warning=FALSE}
+# Cajas y Bigotes con muescas
+boxplot( clasepH ~ cuenca, data= datos, notch =TRUE,
+xlab="Cuencas",ylab="niveles de pH",
+col="#66c2a5", cex.lab=1.3)
+```
+
+```{r}
+# Buscar en google: colorbrewer2
+# Resultado: ColorBrewer: Color Advice for Maps
+ggplot (datos, aes(x= cuenca, y= Ab)) + 
+  geom_boxplot(aes(fill = cuenca)) +
+  scale_fill_manual(values = c('#fc8d59','#ffffbf',
+                               '#99d594','#e78ac3')) +
+  theme_bw()
+```
+
+```{r}
+# Buscar en google: colorbrewer2
+# Resultado: ColorBrewer: Color Advice for Maps
+ggplot (datos, aes(x= clasetemp, y= Ab)) + 
+  geom_boxplot(aes(fill = clasetemp)) +
+  scale_fill_manual(values = c('#fc8d59','#ffffbf',
+                               '#99d594','#e78ac3')) +
+  theme_bw()
+```
+
+------------------------------------------------------------------------
+
+### 2. Figuras de cajas y bigotes con diferentes variables
+
+```{r, message=FALSE, warning=FALSE}
+# Figuras de Cajas y bigotes (ggplot2)
+ggplot(melt(datos[,c(1,4:8)]), aes(x=variable, y=value)) + 
+  geom_boxplot(aes(fill=cuenca)) + 
+  labs(x="",y="Abundancia") +
+  theme_bw()
+```
+
+```{r}
+# Figuras de Cajas y bigotes (ggplot2)
+ggplot(melt(datos[,c(1,4:9)]), aes(x=variable, y=value)) + 
+  geom_boxplot(aes(fill=cuenca)) + 
+  labs(x="",y="Abundancia") + 
+  facet_wrap(~ variable,scales="free") + 
+  theme_bw()
+```
+
+------------------------------------------------------------------------
+
+### 3. Figuras estadísticas
+
+```{r, message=FALSE, warning=FALSE}
+# Base de datos multifactorial (insectos1)
+datos1<-read_csv2("Insectos2.csv")    # Formato *Tidyr
+```
+
+```{r}
+# Resumen estadístico "datos_resum"
+datos_resum <- datos1 %>%        # Base de datos resumida
+  group_by(Lluvia,GF) %>%          # Factor o variable agrupadora
+  summarise(datos.m = round(mean(Biom), 2),   # Media de cada grupo del factor
+            datos.de  = round(sd(Biom),2),   # Desviacioes estándar de cada grupo
+            datos.var = round(var(Biom),2),  # Varianzas de cada grupo
+            n.Biom = n(),           # Tamaño de cada grupo
+            datos.ee = round(sd(Biom)/sqrt(n()),2))   # Error estándar de cada grupo
+datos_resum %>% 
+  kbl(caption = "", booktabs = F, longtable=T) %>% 
+  kable_classic(full_width=F, html_font = "cambria")
+```
+
+```{r}
+# Promedios y errores con colores automáticos (Figura p1)
+p1<-
+  ggplot(datos_resum, aes(x=GF, y=datos.m, fill=Lluvia)) + 
+  geom_bar(stat="identity", col="black", position=position_dodge()) +  
+  geom_errorbar(aes(ymin=datos.m, ymax=datos.m+datos.ee),width=0.2,
+                position=position_dodge(.9)) +
+  labs(x="Grupos Funcionales-GF", y ="Biomasa")
+# Figura con definición de colores por periodo (figura p2)
+p2 <-
+  p1 +
+  labs(title="Biomasa por GF",x="Grupos Funcionales-GF",y ="Biomasa") +
+  theme_classic() +
+  scale_fill_manual(values=c('#E69F00','#999999'))
+
+# Impresión de un panel con las dos figuras (p1 y p2)
+library(gridExtra)
+grid.arrange (p1, p2, ncol=2)
+```
+
+```{r}
+# Resumen estadístico "datos_resum"
+datos_resum <- datos %>%        # Base de datos resumida
+  group_by(cuenca,clasepH) %>%          # Factor o variable agrupadora
+  summarise(datos.m = round(mean(Ab), 2),   # Media de cada grupo del factor
+            datos.de  = round(sd(Ab),2),   # Desviacioes estándar de cada grupo
+            datos.var = round(var(Ab),2),  # Varianzas de cada grupo
+            n.Ab = n(),           # Tamaño de cada grupo
+            datos.ee = round(sd(Ab)/sqrt(n()),2))   # Error estándar de cada grupo
+datos_resum %>% 
+  kbl(caption = "", booktabs = F, longtable=T) %>% 
+  kable_classic(full_width=F, html_font = "cambria")
+```
+
+```{r}
+# Promedios y errores con colores automáticos (Figura p1)
+p1<-
+  ggplot(datos_resum, aes(x=clasepH, y=datos.m, fill=cuenca)) + 
+  geom_bar(stat="identity", col="black", position=position_dodge()) +  
+  geom_errorbar(aes(ymin=datos.m, ymax=datos.m+datos.ee),width=0.2,
+                position=position_dodge(.9)) +
+  labs(x="Niveles de pH", y ="Abundancia")
+# Figura con definición de colores por periodo (figura p2)
+p2 <-
+  p1 +
+  labs(title="Abundancias por niveles de pH",x="Niveles de pH",y ="Abundancias") +
+  theme_classic() +
+  scale_fill_manual(values=c('#E69F00','#999999','#66c2a5','#fc8d62'))
+
+# Impresión de un panel con las dos figuras (p1 y p2)
+library(gridExtra)
+grid.arrange (p1, p2, ncol=2)
+```

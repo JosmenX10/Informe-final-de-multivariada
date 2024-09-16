@@ -1,0 +1,7 @@
+"0","#| label: fig-fig6"
+"0","#| fig-cap: Relaciones entre tres variables biológicas y el pH.Los histogramas de la diagonal principal representa el nivel de simetría de cada variable. los valores encima de la diagonal pricipal, representana a los coeficientes de correlación de Pearson y los asteriscos a la significancia de las correlaciones. Las líneas rojas representan a las relaciones suavisadas o loess entre las parejas de variables."
+"0",""
+"0","library(SciViews)"
+"0","# Correlaciones de Pearson"
+"0","pairs(datos[,c(2,4,6,9)], diag.panel = panel.hist, "
+"0","  upper.panel = panel.cor, lower.panel = panel.smooth)"

@@ -1,9 +1,0 @@
-"0","# Preparamos la base de datos ambientales "
-"0","colnames(datos_env) = c(""Parcela"",""Transecto"",""Elevación"",""Pendiente"",""Orientación.SE"","
-"0","                        ""Orientación.S.SE"", ""CCSE"",""CCS.SE"",""Superficie.PD"",""Superficie.ISO"","
-"0","                        ""Lítico"",""Esqueletico"",""Cambisoles"",""Fluvisoles"",""P.del suelo"",""pH"","
-"0","                        ""Cobertura veg."",""Luz"",""Temperatura"",""Continentalidad"",""Humedad"","
-"0","                        ""Reactividad"",""Nutrientes"",""Riqueza sp"",""Grupos"")"
-"2","Error en names(x) <- value: 
-  'names' attribute [25] must be the same length as the vector [24]
-"

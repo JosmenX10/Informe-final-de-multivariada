@@ -1,0 +1,35 @@
+"0","# Promedios y errores con colores automáticos (Figura p1)"
+"0","p1<-"
+"0","  ggplot(datos_resum, aes(x=clasepH, y=datos.m, fill=cuenca)) + "
+"0","  geom_bar(stat=""identity"", col=""black"", position=position_dodge()) +  "
+"0","  geom_errorbar(aes(ymin=datos.m, ymax=datos.m+datos.ee),width=0.2,"
+"0","                position=position_dodge(.9)) +"
+"0","  labs(x=""Niveles de pH"", y =""Abundancia"")"
+"0","# Figura con definición de colores por periodo (figura p2)"
+"0","p2 <-"
+"0","  p1 +"
+"0","  labs(title=""Abundancias por niveles de pH"",x=""Niveles de pH"",y =""Abundancias"") +"
+"0","  theme_classic() +"
+"0","  scale_fill_manual(values=c('#E69F00','#999999','#66c2a5','#fc8d62'))"
+"0",""
+"0","# Impresión de un panel con las dos figuras (p1 y p2)"
+"0","library(gridExtra)"
+"0","grid.arrange (p1, p2, ncol=2)"
+"1","[1m[33mError[39m in `geom_bar()`:[22m
+[38;5;232m[33m![38;5;232m Problem while computing aesthetics.
+[36mℹ[38;5;232m Error occurred in the 1st layer.[39m
+[1mCaused by error:[22m
+[33m![39m objeto 'clasepH' no encontrado
+Backtrace:
+[90m  1. [39m[1mgridExtra[22m::grid.arrange(p1, p2, ncol = 2)
+[90m  2. [39mgridExtra::arrangeGrob(...)
+[90m  3. [39m[1mbase[22m::lapply(grobs[toconv], ggplot2::ggplotGrob)
+[90m  4. [39mggplot2 (local) FUN(X[[i]], ...)
+[90m  9. [39mggplot2:::ggplot_build.ggplot(x)
+     ...
+[90m 17. [39mggplot2 (local) f(l = layers[[i]], d = data[[i]])
+[90m 18. [39ml$compute_aesthetics(d, plot)
+[90m 19. [39mggplot2 (local) compute_aesthetics(..., self = self)
+[90m 20. [39m[1mbase[22m::lapply(aesthetics, eval_tidy, data = data, env = env)
+[90m 21. [39m[1mrlang[22m (local) FUN(X[[i]], ...)
+"

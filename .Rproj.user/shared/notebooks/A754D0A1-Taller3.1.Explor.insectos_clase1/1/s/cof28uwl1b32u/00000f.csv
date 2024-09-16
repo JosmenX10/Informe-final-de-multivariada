@@ -1,0 +1,5 @@
+"0","# Cajas y Bigotes con muescas"
+"0","# *** Ejercicio*** Graficar La abundancia (Ab) por tipos de cuencas."
+"0","boxplot( Ab ~ cuenca, data= datos, notch =TRUE,"
+"0","xlab=""Cuencas"",ylab=""Abundancia"","
+"0","col=""#66c2a5"", cex.lab=1.3)"

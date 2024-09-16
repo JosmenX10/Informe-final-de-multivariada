@@ -1,0 +1,4 @@
+"0","# Cajas y Bigotes con muescas"
+"0","boxplot( clasepH ~ cuenca, data= datos, notch =TRUE,"
+"0","xlab=""Cuencas"",ylab=""niveles de pH"","
+"0","col=""#66c2a5"", cex.lab=1.3)"

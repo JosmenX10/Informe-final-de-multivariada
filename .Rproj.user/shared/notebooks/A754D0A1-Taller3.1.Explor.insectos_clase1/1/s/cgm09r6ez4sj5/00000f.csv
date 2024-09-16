@@ -1,0 +1,3 @@
+"0","# Figuras de Cajas y bigotes"
+"0","datos$cuenca<-factor(datos$cuenca, "
+"0"," levels=c(""cuen1"",""cuen2"",""cuen3"",""cuen4""))"
