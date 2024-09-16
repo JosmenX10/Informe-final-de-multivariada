@@ -1,5 +1,5 @@
 ---
-title: "Influencia de la topológia y topográfia sobre la diversidad de plantas en los Valles profundos del río de Moldava"
+title: "Influencia de la topológia y topográfia sobre la diversidad de plantas en los Valles profundos del río de Moldavia"
 date: last-modified
 title-block-banner: "#99d8c9" 
 author: "Josué Mendoza Hewitt, Santrich Jimenez, Juan Porto Herrera & Jhonatan Diaz Camargo"
@@ -20,9 +20,9 @@ csl: apa.csl
 
 Las técnicas multivariadas han sido ampliamente utilizadas en la biología y ecología, permitiendo la caracterización o clasificación de las comunidades biológicas considerando la variación en la estructura comunitaria entre las unidades de muestreo, a la vez que se puede evaluar la influencia de gradientes ambientales sobre esta variación. Esto es posible gracias a que estos análisis permiten dilucidar patrones que brindan información sobre la relación de múltiples elementos inherentes a estos sistemas naturales, facilitando la interpretación de generalidades y especificidades de estas relaciones [@Borcard2011NumericalEW; @book ; @Javier]. Además, la aplicación de estas técnicas multivariadas por medio de algoritmos computacionales han facilitado que estos se vuelvan cada vez más sofisticados en sus calculos, permitiendo que existan métodos cada vez más eficaces según las bases de datos y objetivos de estudio [@AYOUBHANNAA201348; @LI2022104806].
 
-Por esta razón, para el presente trabajo de caso se dispone de una base de datos de acceso público para la aplicación de estas técnicas multivariadas, la cual consiste en un estudio de la vegetación en valles profundos del río de Moldava en República Checa, donde se tomaron valores de cobertura de cada especie de planta en las unidades de muestreo o parcelas, a la vez que se midieron variables topográficas, topológicas y medidas indirectas de los niveles de nutrientes, continentalidad, humedad, temperatura y reactividad en las parcelas [@ellenberg1974; @ellenberg1979]. Este estudio se realizó con el objetivo de probar las predicciones del “fenómeno fluvial” por métodos cuantitativos, el cual mencionaba una serie de observaciones sobre los patrones de vegetación en estos ecosistemas [@blazkova1964; @turk1994], entre ellos, se destaca la observación de que la distribución y riqueza de la vegetación no es aleatoria. Al ser los patrones de vegetación dependientes del ambiente es posible que estas puedan presentar una influencia similar entre dos o más ecosistemas independientes, tal cual como @article encontró en los valles del Río de Moldava y el Río de Dyje.
+Por esta razón, para el presente trabajo de caso se dispone de una base de datos de acceso público para la aplicación de estas técnicas multivariadas, la cual consiste en un estudio de la vegetación en valles profundos del río de Moldavia en República Checa, donde se tomaron valores de cobertura de cada especie de planta en las unidades de muestreo o parcelas, a la vez que se midieron variables topográficas, topológicas y medidas indirectas de los niveles de nutrientes, continentalidad, humedad, temperatura y reactividad en las parcelas [@ellenberg1974; @ellenberg1979]. Este estudio se realizó con el objetivo de probar las predicciones del “fenómeno fluvial” por métodos cuantitativos, el cual mencionaba una serie de observaciones sobre los patrones de vegetación en estos ecosistemas [@blazkova1964; @turk1994], entre ellos, se destaca la observación de que la distribución y riqueza de la vegetación no es aleatoria. Al ser los patrones de vegetación dependientes del ambiente es posible que estas puedan presentar una influencia similar entre dos o más ecosistemas independientes, tal cual como @article encontró en los valles del Río de Moldavia y el Río de Dyje.
 
-Las técnicas multivariadas aplicadas en este caso permitieron revelar información importante para el entendimiento de la interacción ambiente-vegetación en el macizo de bohemia, por lo que es un indispensable entender los fundamentos de estos métodos de manera practica y teórica, para comprender su plausibilidad ante otros casos de estudio. Sin embargo, más allá de replicar objetivos de análisis de @article, se pretende analizar la influencia en otros aspectos de la diversidad a parte de la composición, como podría ser la riqueza, uniformidad y dominancia, aplicando el método de números efectivos de Hill propuesto por @chao2014.
+Las técnicas multivariadas aplicadas en este caso permitieron revelar información importante para el entendimiento de la interacción ambiente-vegetación en el macizo de bohemia, por lo que es un indispensable entender los fundamentos de estos métodos de manera practica y teórica, para comprender su plausibilidad ante otros casos de estudio.
 
 ## Contextualización de base de datos
 
@@ -78,21 +78,19 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ## **Pregunta de análisis**
 
-¿Qué influencia tiene la topología y topografia en la estructura de las comunidades de plantas en los valles profundos del río de Moldava?
+¿Qué influencia tiene la topología y topografia en la estructura de las comunidades de plantas en los valles profundos del río de Moldavia?
 
 ## **Objetivo general**
 
--Evaluar la influencia de las condiciones ambientales en múltiples aspectos de la estructura de las comunidades de plantas en el valle profundo del río de Moldava.
+-Evaluar la influencia de las condiciones ambientales en múltiples aspectos de la estructura de las comunidades de plantas en los valles profundos del río de Moldavia.
 
 ## **Objetivos específicos**
 
--Evaluar las relaciones entre variables ambientales asociadas a las condiciones de habitats en los valles profundos del río de Moldava.
+-   Evaluar la relación entre las variables topográficas, topológicas y las condiciones de hábitat (índices de Hellinberg) en los valles profundos del río Moldavia.
 
--Caracterizar los tipos de comunidades de los valles profundos del río de Moldava por sus condiciones ambientales, riqueza y cobertura vegetal.
+-   Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza y cobertura vegetal.
 
--Determinar diferencias en diversidad para cada uno de los tipos de comunidades en función de especies totales, comunes y dominantes en el valle profundo del río de Moldava.
-
--Evaluar el grado de explicación que tendrían las variables ambientales sobre la variación en la composición de los tipos de comunidades en los valles profundos del río de Moldava.
+-   Evaluar la influencia de las variables ambientales en la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.
 
 ## Diseño experimental del análisis Multivariado
 
@@ -176,7 +174,7 @@ datos_env <- datos_env[,-1]
 str(datos_env)
 ```
 
-## **1.** Evaluación de las relaciones entre variariables ambientales asociadas a las condiciones de habitats en los valles profundos del río de Moldava.
+## **1.** Evaluar la relación entre las variables topográficas, topológicas y las condiciones de hábitat (índices de Hellinberg) en los valles profundos del río Moldavia.
 
 ### **Relación entre variables topográficas y topológicas**
 
@@ -338,7 +336,7 @@ include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final
 
 ```
 
-## 2. Caracterizar los tipos de comunidades de los valles profundos del río de Moldava por sus condiciones ambientales, riqueza y cobertura vegetal.
+## 2. Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza y cobertura vegetal.
 
 ```{r}
 
@@ -398,17 +396,5 @@ f6  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Reactividad))
 (f1 + f2)/(f3+f4)/(f5+f6)
 ```
 
-```{r}
-ggplot(datos_env) + 
-  geom_point(aes(x = dirección, y = datos_env$Elevación, shape = factor(datos_env$Grupos), colour = factor(datos_env$Lítico)), size = 2.5) + 
-  coord_polar(start = 2.35619 ,direction = 1) +  # Transforma el gráfico en circular
-  theme_minimal() +
-  labs(title = "Distribución de los TC en altitud y orientación",
-       x = "Orientación",
-       y = "Altitud", colour = "TC",shape ="TC") + 
-  scale_x_continuous(limits = c(-180,180), breaks = c(-45,45,135,-135), 
-                     labels = c("O","N","E","S"), minor_breaks = c(-90,0,90,180)) + # Ejes con direcciones cardinales
-  theme(legend.position = "right") +
-  scale_y_continuous(limits = c(380, 540), breaks = c(400,425,450,475,500,525,550)) + # Dejar un espacio en el centro
-theme_light()
+```{}
 ```
