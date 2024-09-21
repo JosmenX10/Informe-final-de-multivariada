@@ -2,7 +2,7 @@
 title: "Influencia de la topológia y topográfia sobre la diversidad de plantas en los Valles profundos del río de Moldavia"
 date: last-modified
 title-block-banner: "#99d8c9" 
-author: "Josué Mendoza Hewitt, Santrich Jimenez, Juan Porto Herrera & Jhonatan Diaz Camargo"
+author: "Josué Mendoza Hewitt & Jhonatan Diaz Camargo"
 format: 
   html:
     toc: true                 # Barra de menú
@@ -80,19 +80,33 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ¿Qué influencia tiene la topología y topografia en la estructura de las comunidades de plantas en los valles profundos del río de Moldavia?
 
-## **Objetivo general**
-
--Evaluar la influencia de las condiciones ambientales en múltiples aspectos de la estructura de las comunidades de plantas en los valles profundos del río de Moldavia.
-
-## **Objetivos específicos**
+## **Objetivos** 
 
 -   Evaluar la relación entre las variables topográficas, topológicas y las condiciones de hábitat (índices de Hellinberg) en los valles profundos del río Moldavia.
 
--   Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza y cobertura vegetal.
+-   Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
 
 -   Evaluar la influencia de las variables ambientales en la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.
 
-## Diseño experimental del análisis Multivariado
+## **Hipotesis** 
+
+### **1) Objetivo 1:**
+
+-   **Ho**: No existen relaciones significativas entre las variables topográficas, topológicas y las condiciones de hábitat en los valles profundos del río Moldavia.
+
+-   **Ha**: Existen relaciones significativas entre las variables topográficas, topológicas y las condiciones de hábitat en los valles profundos del río Moldavia.
+
+### **2) Objetivo 2:**
+
+-   **Ho**: No existen diferencias significativas entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
+
+-   **Ha**: Existen diferencias significativas entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
+
+### **3) Objetivo 3:**
+
+-   **Ho**: La topografía y la topología no influyen en la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.
+
+-   **Ha**: La topografía y la topología influyen en la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.
 
 ![](Base%20de%20datos%20y%20contextos/diagrama_de_flujo.svg)
 
@@ -340,9 +354,9 @@ include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final
 
 ## **2.** Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza y cobertura vegetal.
 
-###Diferencias en la altitud y orientación de los tipos de comunidades vegetales
+### Diferencias en la altitud y orientación de los tipos de comunidades vegetales
 
-En la \@fig-fig10 se observa que la vegetación tipo 1 exhibe una orientación mayoritaria hacia el noroeste, con una distribución altitudinal amplia que varía entre 425 y 525 m.s.n.m. La vegetación tipo 2, por su parte, se distribuye tanto al norte como al noroeste y suroeste, con altitudes que oscilan entre 430 y 490 m.s.n.m. En cuanto a la vegetación tipo 3, esta presenta un rango de elevación, que va de 425 a 500 m.s.n.m., con una orientación predominante hacia el suroeste y el norte. Por último, la vegetación tipo 4 tiene un rango de distribución más limitado en cuanto a su elevación, con datos que se sitúan entre 400 y 450 m.s.n.m., y una orientación un poco más homogénea.
+En la @fig-fig10 se observa que la vegetación tipo 1 exhibe una orientación mayoritaria hacia el noroeste, con una distribución altitudinal amplia que varía entre 425 y 525 m.s.n.m. La vegetación tipo 2, por su parte, se distribuye tanto al norte como al noroeste y suroeste, con altitudes que oscilan entre 430 y 490 m.s.n.m. En cuanto a la vegetación tipo 3, esta presenta un rango de elevación, que va de 425 a 500 m.s.n.m., con una orientación predominante hacia el suroeste y el norte. Por último, la vegetación tipo 4 tiene un rango de distribución más limitado en cuanto a su elevación, con datos que se sitúan entre 400 y 450 m.s.n.m., y una orientación un poco más homogénea.
 
 ```{r}
 #| label: fig-fig10 
@@ -365,7 +379,7 @@ ggplot(datos_env) +
 theme_light()
 ```
 
-###Diferencias en las condiciones ambientales,riqueza y coberturas de los tipos de comunidades vegetales
+### Diferencias en las condiciones ambientales,riqueza y coberturas de los tipos de comunidades vegetales
 
 La @fig-fig9 muestra el patrón de variación de algunas variables topológicas y topográficas entre los diferentes tipos de ensamblajes vegetales evaluados. Se observa que los mayores valores de luz y temperatura se registraron en la vegetación tipo 1, seguido por el tipo 2, mientras que los menores valores correspondieron a la vegetación tipo 3. Sin embargo, las muescas de las cajas para la luz y la temperatura se solapan entre los tipos de vegetación 1, 2 y 4, lo que sugiere que la posibilidad de no diferencias entre estos grupos. En contraste, las muescas de la vegetación tipo 1 no se solapan con las de los demás tipos, lo que podría insinuar diferencias ente estos tipos de ensamblajes.En cuanto a la continentalidad, se observa un patrón decreciente desde la vegetación tipo 1 hasta el tipo 4, siendo el ensamblaje tipo 1 el que presenta los valores más altos. Las vegetaciones tipo 3 y 4 muestran valores menores; y mostrando solapamiento en sus muescas; sin embargo, en la vegetación tipo 4 se identifica un valor atípico mayor, que podría estar sesgando los resultados.
 
@@ -505,7 +519,7 @@ corrplot(c,method = "ellipse", order ="original",tl.col = "black",addCoef.col= T
 
 En la @fig-fig15 se observa la relación entre la cobertura de ***Abies alba*** y el índice de luz, mostrando una correlación negativa. A medida que disminuyen los valores de luz, se registran mayores coberturas de la especie, mientras que con un aumento en la luz, la presencia de la especie disminuye, sugiriendo una tendencia logarítmica. Además, se destaca que los menores valores de luz, y por lo tanto de cobertura de la especie, se presentan en el ensamblaje tipo 3.
 
-```{r}
+```{r, message=FALSE,warning=FALSE}
 #| label: fig-fig15 
 #| fig-cap: "Diagrama de dispersión de la relación entre la cobertura de la especie Abies alba con respecto a la variable de Luz." 
 ggplot(datos_g,aes(x = Luz, y = Abiealb1)) + 
