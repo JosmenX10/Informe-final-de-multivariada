@@ -1,0 +1,1 @@
+{"frames":[{"func":"hist(iris_data$Petalo.Longitud, main = paste(\"Histograma de la longitud del pétalo\"), \n    col = \"orange\", ylab = \"Frecuencia\", xlab = \"Longitud del Pétalo\")","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error en iris_data$Petalo.Longitud: \n  $ operator is invalid for atomic vectors\n"}

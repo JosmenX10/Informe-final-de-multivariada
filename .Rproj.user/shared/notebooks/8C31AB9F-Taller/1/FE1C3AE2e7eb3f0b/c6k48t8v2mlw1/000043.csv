@@ -1,0 +1,3 @@
+"0",""
+"0","hist(iris$Petalo.Ancho, main = paste(""Histograma de ancho del pétalo""), col = ""lightgreen"",ylab = ""Frecuencia"", "
+"0","                                xlab = ""Ancho del pétalo"")"

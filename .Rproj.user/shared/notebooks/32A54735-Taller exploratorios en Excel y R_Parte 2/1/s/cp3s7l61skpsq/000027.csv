@@ -1,0 +1,7 @@
+"0","#| label: fig-fig10"
+"0","#| fig-cap: Distribución de los datos de variables morfométricas de los Lirios. "
+"0",""
+"0","par(mfrow = c(2,2))"
+"0",""
+"0","hist(iris_data$Petalo.Longitud, main = paste(""Histograma de la longitud del pétalo""), col = ""orange"",ylab = ""Frecuencia"", xlab = ""Longitud del Pétalo"""
+"0","     )"

@@ -1,3 +1,0 @@
-"0",""
-"0","hist(Datos$vel, main = ""Histograma de vel. de corriente (m/s)"", col = ""red"", ylab = ""Frecuencia"", "
-"0","                                xlab = ""velocidad de corriente (m/s)"")"

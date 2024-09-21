@@ -1,8 +1,0 @@
-"0","#| label: fig-fig4"
-"0","#| fig-cap: Correlograma - Indices de correlación de Spearman entre las variables explicativas con las variables fisico-químicas. Las elipses azules respresentan las relaciones lineales positivas y la rojas relaciones lineales negativas."
-"0",""
-"0","c <- cor(y=Datos[,c(3:11,13:17,21)], x =Datos[,c(12,18:20)],method = ""spearman"")"
-"0",""
-"0","corrplot(c, method =""ellipse"", order = ""original"","
-"0","              , tl.pos = ""lt"",tl.col = ""black"""
-"0","               ,tl.cex = 0.9,number.cex = 0.45, addCoef.col = ""black"")"

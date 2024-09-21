@@ -1,0 +1,55 @@
+"0","#| label: fig-fig11 "
+"0","#| fig-cap: ""Diagrama de cajas y bigotes con muescas que permite observar la variación de las variables topológicas y topográficas en los cuatro tipos de vegetación evaluados. A) Comparación del índice de luz entre los distintos tipos de vegetación. B) Comparación del índice de temperatura entre los distintos tipos de vegetación. C) Comparación de la continentalidad entre los distintos tipos de vegetación. D) Comparación del índice de nutrientes entre los distintos tipos de vegetación. E) Comparación del índice de humedad entre los distintos tipos de vegetación. F) Comparación del índice de reactividad entre los distintos tipos de vegetación."""
+"0",""
+"0","f1 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Luz)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Luz"", tag = ""A)"")"
+"0",""
+"0","f2 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Nutrientes)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Nutrientes"", tag = ""B)"")"
+"0",""
+"0","f3 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Temperatura)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Temperatura"", tag = ""c)"")"
+"0",""
+"0","f4 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Humedad)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Humedad"", tag = ""D)"") "
+"0",""
+"0","f5  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Continentalidad)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Continentalidad"", tag = ""E)"")"
+"0",""
+"0","f6  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Reactividad)) + "
+"0","  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + "
+"0","  guides(fill = ""none"") + "
+"0","  labs( x = ""Tipos de comunidades"", y = ""Reactividad"", tag = ""F)"")"
+"0",""
+"0",""
+"0",""
+"0",""
+"0","(f1 + f2)/(f3+f4)/(f5+f6)"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"

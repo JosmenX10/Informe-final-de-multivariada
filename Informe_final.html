@@ -121,7 +121,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">16 de septiembre de 2024</p>
+        <p class="date">20 de septiembre de 2024</p>
       </div>
     </div>
     
@@ -157,7 +157,8 @@ div.csl-indent {
   <li><a href="#relación-entre-variables-topográficas-y-topológicas" id="toc-relación-entre-variables-topográficas-y-topológicas" class="nav-link" data-scroll-target="#relación-entre-variables-topográficas-y-topológicas"><strong>Relación entre variables topográficas y topológicas</strong></a></li>
   <li><a href="#evaluación-de-la-relación-entre-las-variables-topográficas-y-topológicas-con-la-condiciones-de-luz-temperatura-continentalidad-humedad-reactividad-y-nutrientes." id="toc-evaluación-de-la-relación-entre-las-variables-topográficas-y-topológicas-con-la-condiciones-de-luz-temperatura-continentalidad-humedad-reactividad-y-nutrientes." class="nav-link" data-scroll-target="#evaluación-de-la-relación-entre-las-variables-topográficas-y-topológicas-con-la-condiciones-de-luz-temperatura-continentalidad-humedad-reactividad-y-nutrientes."><strong>-Evaluación de la relación entre las variables topográficas y topológicas con la condiciones de luz, temperatura, continentalidad, humedad, reactividad y nutrientes.</strong></a></li>
   </ul></li>
-  <li><a href="#determinar-las-diferencias-entre-los-tipos-de-comunidades-vegetales-de-los-valles-profundos-del-río-moldavia-en-función-de-sus-condiciones-ambientales-riqueza-y-cobertura-vegetal." id="toc-determinar-las-diferencias-entre-los-tipos-de-comunidades-vegetales-de-los-valles-profundos-del-río-moldavia-en-función-de-sus-condiciones-ambientales-riqueza-y-cobertura-vegetal." class="nav-link" data-scroll-target="#determinar-las-diferencias-entre-los-tipos-de-comunidades-vegetales-de-los-valles-profundos-del-río-moldavia-en-función-de-sus-condiciones-ambientales-riqueza-y-cobertura-vegetal.">2. Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza y cobertura vegetal.</a></li>
+  <li><a href="#determinar-las-diferencias-entre-los-tipos-de-comunidades-vegetales-de-los-valles-profundos-del-río-moldavia-en-función-de-sus-condiciones-ambientales-riqueza-y-cobertura-vegetal." id="toc-determinar-las-diferencias-entre-los-tipos-de-comunidades-vegetales-de-los-valles-profundos-del-río-moldavia-en-función-de-sus-condiciones-ambientales-riqueza-y-cobertura-vegetal." class="nav-link" data-scroll-target="#determinar-las-diferencias-entre-los-tipos-de-comunidades-vegetales-de-los-valles-profundos-del-río-moldavia-en-función-de-sus-condiciones-ambientales-riqueza-y-cobertura-vegetal."><strong>2.</strong> Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza y cobertura vegetal.</a></li>
+  <li><a href="#evaluar-la-influencia-de-las-variables-ambientales-sobre-la-variación-de-la-composición-de-las-comunidades-vegetales-en-los-valles-profundos-del-río-moldavia." id="toc-evaluar-la-influencia-de-las-variables-ambientales-sobre-la-variación-de-la-composición-de-las-comunidades-vegetales-en-los-valles-profundos-del-río-moldavia." class="nav-link" data-scroll-target="#evaluar-la-influencia-de-las-variables-ambientales-sobre-la-variación-de-la-composición-de-las-comunidades-vegetales-en-los-valles-profundos-del-río-moldavia.">3. Evaluar la influencia de las variables ambientales sobre la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.</a></li>
   </ul>
 </nav>
 </div>
@@ -252,12 +253,14 @@ div.csl-indent {
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>datos_env <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Asus</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">Analisis multivariado</span><span class="sc">\\</span><span class="st">Informe-final-de-multivariada</span><span class="sc">\\</span><span class="st">Base de datos y contextos</span><span class="sc">\\</span><span class="st">vltava.xlsx"</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sheet =</span> <span class="st">"Vltava-env data"</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Asus</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">Analisis multivariado</span><span class="sc">\\</span><span class="st">Informe-final-de-multivariada</span><span class="sc">\\</span><span class="st">Base de datos y contextos</span><span class="sc">\\</span><span class="st">vltava.xlsx"</span>,</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                   <span class="at">sheet =</span> <span class="st">"Vltava-species"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape) </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>datos_env <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Asus</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">Analisis multivariado</span><span class="sc">\\</span><span class="st">Informe-final-de-multivariada</span><span class="sc">\\</span><span class="st">Base de datos y contextos</span><span class="sc">\\</span><span class="st">vltava.xlsx"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                       <span class="at">sheet =</span> <span class="st">"Vltava-env data"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">Asus</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">Analisis multivariado</span><span class="sc">\\</span><span class="st">Informe-final-de-multivariada</span><span class="sc">\\</span><span class="st">Base de datos y contextos</span><span class="sc">\\</span><span class="st">vltava.xlsx"</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>                   <span class="at">sheet =</span> <span class="st">"Vltava-species"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -591,7 +594,9 @@ Figura&nbsp;9: Diagrama de cajas y bigotes para comparar los indices de Hellinbe
 </section>
 </section>
 <section id="determinar-las-diferencias-entre-los-tipos-de-comunidades-vegetales-de-los-valles-profundos-del-río-moldavia-en-función-de-sus-condiciones-ambientales-riqueza-y-cobertura-vegetal." class="level2">
-<h2 class="anchored" data-anchor-id="determinar-las-diferencias-entre-los-tipos-de-comunidades-vegetales-de-los-valles-profundos-del-río-moldavia-en-función-de-sus-condiciones-ambientales-riqueza-y-cobertura-vegetal.">2. Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza y cobertura vegetal.</h2>
+<h2 class="anchored" data-anchor-id="determinar-las-diferencias-entre-los-tipos-de-comunidades-vegetales-de-los-valles-profundos-del-río-moldavia-en-función-de-sus-condiciones-ambientales-riqueza-y-cobertura-vegetal."><strong>2.</strong> Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza y cobertura vegetal.</h2>
+<p>###Diferencias en la altitud y orientación de los tipos de comunidades vegetales</p>
+<p>En la @fig-fig10 se observa que la vegetación tipo 1 exhibe una orientación mayoritaria hacia el noroeste, con una distribución altitudinal amplia que varía entre 425 y 525 m.s.n.m. La vegetación tipo 2, por su parte, se distribuye tanto al norte como al noroeste y suroeste, con altitudes que oscilan entre 430 y 490 m.s.n.m. En cuanto a la vegetación tipo 3, esta presenta un rango de elevación, que va de 425 a 500 m.s.n.m., con una orientación predominante hacia el suroeste y el norte. Por último, la vegetación tipo 4 tiene un rango de distribución más limitado en cuanto a su elevación, con datos que se sitúan entre 400 y 450 m.s.n.m., y una orientación un poco más homogénea.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
@@ -622,149 +627,272 @@ Use of `datos_env$Grupos` is discouraged.
 ℹ Use `Grupos` instead.</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Informe_final_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-fig10" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig10-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10: Distribución de los tipos de emsamblajes vegetales en relación con la orientación y la altitud. El círculo central representa el fondo del valle, el margen exterior representa el borde superior del valle y la dirección desde el centro representa la dirección hacia la que se orientan las laderas. Los tipos de puntos corresponden a los tipos de vegetación.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>###Diferencias en las condiciones ambientales,riqueza y coberturas de los tipos de comunidades vegetales</p>
+<p>La <a href="#fig-fig9" class="quarto-xref">Figura&nbsp;9</a> muestra el patrón de variación de algunas variables topológicas y topográficas entre los diferentes tipos de ensamblajes vegetales evaluados. Se observa que los mayores valores de luz y temperatura se registraron en la vegetación tipo 1, seguido por el tipo 2, mientras que los menores valores correspondieron a la vegetación tipo 3. Sin embargo, las muescas de las cajas para la luz y la temperatura se solapan entre los tipos de vegetación 1, 2 y 4, lo que sugiere que la posibilidad de no diferencias entre estos grupos. En contraste, las muescas de la vegetación tipo 1 no se solapan con las de los demás tipos, lo que podría insinuar diferencias ente estos tipos de ensamblajes.En cuanto a la continentalidad, se observa un patrón decreciente desde la vegetación tipo 1 hasta el tipo 4, siendo el ensamblaje tipo 1 el que presenta los valores más altos. Las vegetaciones tipo 3 y 4 muestran valores menores; y mostrando solapamiento en sus muescas; sin embargo, en la vegetación tipo 4 se identifica un valor atípico mayor, que podría estar sesgando los resultados.</p>
+<p>A pesar del patrón decreciente de la continentalidad en los ensamblajes vegetales, en sentido 1→ 4, existe un solapamiento de las muescas entre los tipos de (1 y 2), (2, 3 y 4), (3 y 4) lo que podría sugerir falta de diferenciación en la continentalidad entre estos grupos, y un posible anidamiento en esta variable.Los valores más altos de nutrientes se registraron en las vegetaciones tipo 4 y 3, respectivamente, sin aparentes diferencias entre estos dos grupos, aunque en el tipo 4 los datos presentaron menor dispersión. Por otro lado, las muescas de las vegetaciones tipo 1 y 2 no se superponen con las del grupo 3 ni con las del grupo 4, lo que podría inferir posibles diferencias en la cantidad de nutrientes entre estos tipos. Sin embargo, no se encontraron posibles diferencias entre los grupos 1 y 2 debido al solapamiento de sus muescas.</p>
+<p>Respecto a la humedad, se identificaron valores más altos en la vegetación tipo 4, los cuales sugieren ser diferentes en comparación con los demás tipos, dado que sus intervalos de confianza (muescas) no se solapan. Por su parte, aunque las vegetaciones tipo 1 y 2, así como los tipos 2 y 3 presentaron medianas diferentes, sus intervalos de confianza se superponen; por lo tanto, no se sugieren diferencias entre estos pares de grupos. Sin embargo, sí se sugiere diferencias entre los grupos 1 y 3.Finalmente, con relación a la reactividad, los mayores valores se observaron en la vegetación tipo 4. No obstante, las muescas de este grupo se solapan con las de las vegetaciones tipo 1 y 3, por lo que posiblemente se podría considerar la no existencia de diferencia entre estos. En contraste, la vegetación tipo 2 presentó los menores valores de reactividad y sugiere una posible diferencia con respecto a los demás tipos debido a que sus intervalos de confianza no se solapan con ninguna otra caja del gráfico.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos),<span class="at">y=</span> datos_env<span class="sc">$</span>Luz)) <span class="sc">+</span> </span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Luz"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Luz"</span>, <span class="at">tag =</span> <span class="st">"A)"</span>)</span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos),<span class="at">y=</span> datos_env<span class="sc">$</span>Nutrientes)) <span class="sc">+</span> </span>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Nutrientes"</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Nutrientes"</span>, <span class="at">tag =</span> <span class="st">"B)"</span>)</span>
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>f3 <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos),<span class="at">y=</span> datos_env<span class="sc">$</span>Temperatura)) <span class="sc">+</span> </span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Temperatura"</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Temperatura"</span>, <span class="at">tag =</span> <span class="st">"c)"</span>)</span>
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>f4 <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos),<span class="at">y=</span> datos_env<span class="sc">$</span>Humedad)) <span class="sc">+</span> </span>
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
 <span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Humedad"</span>)</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Humedad"</span>, <span class="at">tag =</span> <span class="st">"D)"</span>) </span>
 <span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>f5  <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos),<span class="at">y=</span> datos_env<span class="sc">$</span>Continentalidad)) <span class="sc">+</span> </span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Continentalidad"</span>)</span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>f6  <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos),<span class="at">y=</span> datos_env<span class="sc">$</span>Reactividad)) <span class="sc">+</span> </span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
-<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Reactividad"</span>)</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>f5  <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos),<span class="at">y=</span> datos_env<span class="sc">$</span>Continentalidad)) <span class="sc">+</span> </span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Continentalidad"</span>, <span class="at">tag =</span> <span class="st">"E)"</span>)</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>f6  <span class="ot">=</span> <span class="fu">ggplot</span>(datos_env,<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos),<span class="at">y=</span> datos_env<span class="sc">$</span>Reactividad)) <span class="sc">+</span> </span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> <span class="fu">factor</span>(datos_env<span class="sc">$</span>Grupos)), <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x =</span> <span class="st">"Tipos de comunidades"</span>, <span class="at">y =</span> <span class="st">"Reactividad"</span>, <span class="at">tag =</span> <span class="st">"F)"</span>)</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>(f1 <span class="sc">+</span> f2)<span class="sc">/</span>(f3<span class="sc">+</span>f4)<span class="sc">/</span>(f5<span class="sc">+</span>f6)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>(f1 <span class="sc">+</span> f2)<span class="sc">/</span>(f3<span class="sc">+</span>f4)<span class="sc">/</span>(f5<span class="sc">+</span>f6)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.
-Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Luz` is discouraged.
-ℹ Use `Luz` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Notch went outside hinges
-ℹ Do you want `notch = FALSE`?</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Nutrientes` is discouraged.
-ℹ Use `Nutrientes` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Notch went outside hinges
-ℹ Do you want `notch = FALSE`?</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Temperatura` is discouraged.
-ℹ Use `Temperatura` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Notch went outside hinges
-ℹ Do you want `notch = FALSE`?</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Humedad` is discouraged.
-ℹ Use `Humedad` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Notch went outside hinges
-ℹ Do you want `notch = FALSE`?
-Notch went outside hinges
-ℹ Do you want `notch = FALSE`?</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Continentalidad` is discouraged.
-ℹ Use `Continentalidad` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.
-Use of `datos_env$Grupos` is discouraged.
-ℹ Use `Grupos` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Use of `datos_env$Reactividad` is discouraged.
-ℹ Use `Reactividad` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Notch went outside hinges
-ℹ Do you want `notch = FALSE`?</code></pre>
-</div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Informe_final_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-fig11" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig11-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;11: Diagrama de cajas y bigotes con muescas que permite observar la variación de las variables topológicas y topográficas en los cuatro tipos de vegetación evaluados. A) Comparación del índice de luz entre los distintos tipos de vegetación. B) Comparación del índice de temperatura entre los distintos tipos de vegetación. C) Comparación de la continentalidad entre los distintos tipos de vegetación. D) Comparación del índice de nutrientes entre los distintos tipos de vegetación. E) Comparación del índice de humedad entre los distintos tipos de vegetación. F) Comparación del índice de reactividad entre los distintos tipos de vegetación.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<pre><code></code></pre>
+<p>###Selección de las 15 especies más abundantes</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Seleccionamos las 15 especies más abundantes </span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>Suma  <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">colSums</span>(datos_bio))</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>Suma <span class="ot">&lt;-</span> Suma <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Suma<span class="sc">$</span>colSums.datos_bio.))</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>fifteen_Species <span class="ot">&lt;-</span> <span class="fu">row.names</span>(Suma)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>fifteen_Species <span class="ot">&lt;-</span> fifteen_Species[<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>]</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>fifteen_Species</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Tilicor1" "Coryave4" "Querpea1" "Abiealb1" "Fagusyl1" "Sambnig4"
+ [7] "Acerpse1" "Dryofil6" "Galemon6" "Lunared6" "Alnuglu1" "Acerpla1"
+[13] "Calaaru6" "Impapar6" "Tilicor4"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>datos_bio1 <span class="ot">&lt;-</span> datos_bio[,fifteen_Species]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Transformamos los valores a m^2 de cobertura</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>datos_bio1 <span class="ot">&lt;-</span> datos_bio1 <span class="sc">*</span> <span class="dv">150</span><span class="sc">/</span><span class="dv">100</span> <span class="co">#Area de cada parcela sobre el 100%</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>datos_bio1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(datos_bio1)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>datos_g <span class="ot">&lt;-</span> <span class="fu">cbind</span>(datos_bio1,datos_env) <span class="co">#unimos con las variables ambientales</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>datos_g1 <span class="ot">&lt;-</span> datos_g</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>datos_g1<span class="sc">$</span>Esqueletico <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos_g<span class="sc">$</span>Esqueletico, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Esqueletico"</span>,<span class="st">"No esqueletico"</span>))</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>datos_g1<span class="sc">$</span>Lítico <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos_g<span class="sc">$</span>Lítico, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Lítico"</span>,<span class="st">"No Lítico"</span>))</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>datos_g1<span class="sc">$</span>Fluvisoles <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos_g<span class="sc">$</span>Fluvisoles, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Fluvisoles"</span>,<span class="st">"No fluvisoles"</span>))</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>datos_g1<span class="sc">$</span>Cambisoles <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos_g<span class="sc">$</span>Cambisoles, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>),<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Cambisoles"</span>,<span class="st">"No cambisoles"</span>))</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>datos_g1<span class="sc">$</span>Grupos <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos_g<span class="sc">$</span>Grupos, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>datos_resum <span class="ot">&lt;-</span> <span class="fu">melt</span>(datos_g1[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>,<span class="dv">39</span>)])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Using Grupos as id variables</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>datos_resum <span class="ot">&lt;-</span> datos_resum <span class="sc">%&gt;%</span>        <span class="co"># Base de datos resumida</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Grupos,variable)  <span class="sc">%&gt;%</span>          <span class="co"># Factor o variable agrupadora</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">datos.sum =</span> <span class="fu">sum</span>(value))   <span class="co"># Error estándar de cada grupo </span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'Grupos'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+</div>
+<p>###Comparación del area de cobertura contribuida por las 15 especies más representativas en la totalidad de las parcelas</p>
+<p>La <a href="#fig-fig12" class="quarto-xref">Figura&nbsp;12</a> ilustra el área de cobertura que ocupa cada especie y cómo varía esta entre los diferentes tipos de ensamblajes. Se observa que las especies que más contribuyen a la cobertura (m²), en orden de importancia, son Tilicor1, Coryave4, Querpea1, Abiealb1, Fagusyl1 y Sambrig4. La contribución de cobertura de Tilicor1 se distribuyó de manera similar en los tipos de ensamblaje 1, 2 y 4, mientras que fue menor en el tipo 3. Para Coryave4, los tipos de vegetación que más aportaron a la cobertura fueron los tipos 3 y 4, con contribuciones similares. En el caso de Querpea1, la mayor contribución provino del tipo de vegetación 2, seguida por el tipo 1. En cuanto a Abiealb1, la mayor contribución se registró en la vegetación tipo 3, y se notó que el tipo 4 no aportó nada a esta especie. Por último, para las especies Fagusyl1 y Sambrig4, la mayor contribución también se observó en la vegetación tipo 3.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ggplot</span>(datos_resum, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(variable, <span class="sc">-</span>datos.sum) , <span class="at">y=</span>datos.sum, <span class="at">fill =</span> Grupos)) <span class="sc">+</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">position=</span> <span class="st">"stack"</span>) <span class="sc">+</span><span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x=</span> <span class="st">""</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="st">"Cobertura total"</span><span class="sc">~</span>(m<span class="sc">^</span><span class="dv">2</span>))) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig12" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig12-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;12: Áreas de cobertura total de las especies más representativas en general y por cada tipo de ensamblaje en los valles profundos del río de Moldavia.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluar-la-influencia-de-las-variables-ambientales-sobre-la-variación-de-la-composición-de-las-comunidades-vegetales-en-los-valles-profundos-del-río-moldavia." class="level2">
+<h2 class="anchored" data-anchor-id="evaluar-la-influencia-de-las-variables-ambientales-sobre-la-variación-de-la-composición-de-las-comunidades-vegetales-en-los-valles-profundos-del-río-moldavia.">3. Evaluar la influencia de las variables ambientales sobre la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.</h2>
+<p>Mediante un correlograma se pueden observar de forma general las relaciones entre variables topográficas y biologicas, observando la fuerza de la relación y su sentido. En la <a href="#fig-fig13" class="quarto-xref">Figura&nbsp;13</a> se puede observar que en general las correlaciones entre parámetros topográficos y biologicas fueron débiles, siendo aproximadamente la mitad de ellas positivas y negativas, dentro de estas relaciones, destaca de forma moderada la relación entre la luz y Abieal1. Por otro lado, dentro de las relaciones débiles de forma negativa, las menos débiles, o sea, las que presentaron valores mayores en ese rango, se dieron entre la luz con Dryofil6, Lunared6 y Galemon6. La temperatura con Abieal1, Dryofil6 y Lunared6. Mientras que, de manera positiva débil destacó la relación entre los nutrientes con Querpea1, Sambrig4, Galemon6, Lunared6, Alnuglu1 e Impapar6. Reactividad con Galemon6 y reactividad con Alnuglu1.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="at">y =</span> datos_bio1, <span class="at">x =</span> ellin , <span class="at">method =</span> <span class="st">"spearman"</span>) <span class="co">#correlación entre topográficas.</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(m,<span class="at">method =</span> <span class="st">"ellipse"</span>, <span class="at">order =</span><span class="st">"original"</span>,<span class="at">tl.col =</span> <span class="st">"black"</span>,<span class="at">addCoef.col=</span> T, <span class="at">cl.pos =</span> T,<span class="at">pch.cex =</span> <span class="fl">0.5</span>, <span class="at">pch.col =</span><span class="st">"black"</span>,<span class="at">tl.cex =</span> <span class="fl">1.0</span>, <span class="at">number.cex =</span> <span class="fl">0.9</span>, <span class="at">cl.cex =</span> <span class="fl">0.8</span>,<span class="at">addgrid.col =</span> <span class="st">"#f5f5f5"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig13" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig13-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;13: Correlograma de las relaciones entre las especies y las condiciones de hábitat en los Valles profundos de Moldavia, usando el índice de correlación de Spearman: Las elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>En la <a href="#fig-fig14" class="quarto-xref">Figura&nbsp;14</a> se observan la relación entre las variables topográficas y las especies en los valles profundos de Moldavia, utilizando el método de Spearman. Se puede analizar que la gran mayoría de las relaciones que se presentaron fueron débiles, siendo que, dentro de estas, las negativas fueron más frecuentes. Dentro de las relaciones débiles positivas destacan la orientación hacia el sur-suroeste con Abielb1, Lunared6 y Dryofil6. La capacidad de carga caloríca en la orientación sur-suroeste con Abielb1, Dryofil6 y Lunared6. En cuanto a las relaciones débiles positivas, destaca la elevación y Fasugy1, Mientras que la única relación fuerte positiva se presento entre los fluvisoles y Alnuglu1.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">cor</span>(<span class="at">y =</span> datos_bio1, <span class="at">x =</span> topo , <span class="at">method =</span> <span class="st">"spearman"</span>) <span class="co">#correlación entre topográfica.</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(c,<span class="at">method =</span> <span class="st">"ellipse"</span>, <span class="at">order =</span><span class="st">"original"</span>,<span class="at">tl.col =</span> <span class="st">"black"</span>,<span class="at">addCoef.col=</span> T, <span class="at">cl.pos =</span> T,<span class="at">pch.cex =</span> <span class="fl">0.5</span>, <span class="at">pch.col =</span><span class="st">"black"</span>,<span class="at">tl.cex =</span> <span class="fl">1.0</span>, <span class="at">number.cex =</span> <span class="fl">0.5</span>, <span class="at">cl.cex =</span> <span class="fl">0.8</span>,<span class="at">addgrid.col =</span> <span class="st">"#f5f5f5"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-fig14" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig14-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;14: Correlograma de las relaciones entre las especies y las variables topográficas de los Valles profundos de Moldavia, usando el índice de correlación de Spearman: Las elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>En la <a href="#fig-fig15" class="quarto-xref">Figura&nbsp;15</a> se observa la relación entre la cobertura de <strong><em>Abies alba</em></strong> y el índice de luz, mostrando una correlación negativa. A medida que disminuyen los valores de luz, se registran mayores coberturas de la especie, mientras que con un aumento en la luz, la presencia de la especie disminuye, sugiriendo una tendencia logarítmica. Además, se destaca que los menores valores de luz, y por lo tanto de cobertura de la especie, se presentan en el ensamblaje tipo 3.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_g,<span class="fu">aes</span>(<span class="at">x =</span> Luz, <span class="at">y =</span> Abiealb1)) <span class="sc">+</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>,<span class="at">se =</span> F, <span class="at">span =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>,<span class="at">se =</span> F, <span class="at">col =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">factor</span>(Grupos))) <span class="sc">+</span> </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> </span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"1"</span> <span class="ot">=</span> <span class="st">"#d73027"</span>,<span class="st">"2"</span><span class="ot">=</span><span class="st">"blue"</span>,<span class="st">"3"</span><span class="ot">=</span><span class="st">"#1a9850"</span>, <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"#c51b8a"</span>)) <span class="sc">+</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">75</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 24 rows containing missing values or values outside the scale range
+(`geom_smooth()`).
+Removed 24 rows containing missing values or values outside the scale range
+(`geom_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Luz"</span>, <span class="at">y =</span> <span class="st">"Ancho del pétalo"</span>) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$x
+[1] "Luz"
+
+$y
+[1] "Ancho del pétalo"
+
+attr(,"class")
+[1] "labels"</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-fig15" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fig15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Informe_final_files/figure-html/fig-fig15-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;15: Diagrama de dispersión de la relación entre la cobertura de la especie Abies alba con respecto a la variable de Luz.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 </section>
 

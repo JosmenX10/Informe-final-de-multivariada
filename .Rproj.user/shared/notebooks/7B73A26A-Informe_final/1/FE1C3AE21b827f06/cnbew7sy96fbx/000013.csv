@@ -1,0 +1,6 @@
+"0","#Seleccionamos las 10 especies más abundantes "
+"0",""
+"0","Suma  <- colSums(datos_bio)"
+"0",""
+"0"," O <- data.frame(order(Suma, decreasing = T))"
+"0",""

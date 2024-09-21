@@ -1,0 +1,3 @@
+"0",""
+"0","hist(iris$Sepalo.Longitud, main = paste(""Histograma de longitud del Sépalo""), col = ""blue"",ylab = ""Frecuencia"", "
+"0","                                xlab = ""Longitud del Sepalo"")"

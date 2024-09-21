@@ -1,0 +1,4 @@
+"0",""
+"0","hist(iris_data$Sepal.Ancho, main = paste(""Histograma de ancho del sepalo""), col = ""lightgreen"",ylab = ""Frecuencia"", "
+"0","                                xlab = ""Ancho del sepalo"")"
+"0",""

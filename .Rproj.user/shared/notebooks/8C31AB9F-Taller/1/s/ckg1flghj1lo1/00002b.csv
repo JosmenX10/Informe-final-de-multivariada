@@ -1,3 +1,0 @@
-"0",""
-"0","hist(Datos$`var-caudal`, main = paste(""Histograma de var.de caudales"",""(%)""), col = ""lightgreen"",ylab = ""Frecuencia"", "
-"0","                                xlab = ""Variablidad de caudal (%)"")"

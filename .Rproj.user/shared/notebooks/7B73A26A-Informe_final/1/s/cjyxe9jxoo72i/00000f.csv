@@ -1,0 +1,28 @@
+"0","#| label: fig-fig15 "
+"0","#| fig-cap: ""Diagrama de dispersión de la relación entre la cobertura de la especie Abies alba con respecto a la variable de Luz."" "
+"0","ggplot(datos_g,aes(x = Luz, y = Abiealb1)) + "
+"0","  geom_smooth(method = ""loess"",se = F, span = 1) +"
+"0","  geom_smooth(method = ""lm"",se = F, col = ""red"") +"
+"0","  geom_point(aes(colour = factor(Grupos))) + "
+"0","  theme_classic() + "
+"0","  scale_color_manual(values = c(""1"" = ""#d73027"",""2""=""blue"",""3""=""#1a9850"", ""4"" = ""#c51b8a"")) +"
+"0","  scale_y_continuous(limits = c(0,75))"
+"1","[38;5;232m`geom_smooth()` using formula = 'y ~ x'[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mRemoved 3 rows containing non-finite outside the scale range (`stat_smooth()`).[39m
+"
+"1","[38;5;232m`geom_smooth()` using formula = 'y ~ x'[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mRemoved 3 rows containing non-finite outside the scale range (`stat_smooth()`).[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mRemoved 24 rows containing missing values or values outside the scale range (`geom_smooth()`).[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mRemoved 24 rows containing missing values or values outside the scale range (`geom_smooth()`).[39m
+"
+"2","Aviso:"
+"2"," [38;5;232mRemoved 3 rows containing missing values or values outside the scale range (`geom_point()`).[39m
+"

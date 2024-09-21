@@ -1,0 +1,5 @@
+"0","#| label: tbl-tbl1"
+"0","#| tbl-cap: Datos morformétricos de especies de Lirios."
+"0","head(datos) %>% "
+"0","  kbl(caption =  """", booktabs = F, longtable = T) %>% "
+"0","  kable_classic(full_width = F, html_font = ""cambria"")"

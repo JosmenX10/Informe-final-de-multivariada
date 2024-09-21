@@ -1,7 +1,0 @@
-"0","#| label: fig-fig1"
-"0","#| fig-cap: Distribución de las variables explicativas en la cuencas de la sabana de bogotá. "
-"0",""
-"0","par(mfrow = c(2,2))"
-"0",""
-"0","hist(Datos$altitud, main = paste(""Histograma de las altitudes"", ""(M.S.N.M)""), col = ""orange"",ylab = ""Frecuencia"", xlab = ""Altitud (M.S.N.M)"""
-"0","     )"

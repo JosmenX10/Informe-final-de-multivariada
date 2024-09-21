@@ -1,0 +1,11 @@
+"0","ggplot(datos, aes(x = datos$Species, y = PW)) + "
+"0","  geom_boxplot(aes(fill = Species),notch = TRUE) + "
+"0","  scale_fill_manual(values = c('#fc8d59','#ffffbf','#99d594')) +"
+"0","  theme_bw()+ guides(fill = ""none"")+labs( x = ""Especies"", y = ""Ancho del pétalo"")"
+"2","Aviso:"
+"2"," [38;5;232mUse of `datos$Species` is discouraged.
+[36mℹ[38;5;232m Use `Species` instead.[39m
+"
+"1","[38;5;232mNotch went outside hinges
+[36mℹ[38;5;232m Do you want `notch = FALSE`?[39m
+"

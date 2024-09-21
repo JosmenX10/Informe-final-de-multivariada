@@ -1,0 +1,114 @@
+"0","library(psych)"
+"0","library(readxl)"
+"0","library(ellipse)"
+"2","
+Adjuntando el paquete: ‘ellipse’
+
+"
+"2","The following object is masked from ‘package:graphics’:
+
+    pairs
+
+"
+"0","library(corrplot)"
+"2","corrplot 0.92 loaded
+"
+"0","library(Hmisc)"
+"2","Registered S3 methods overwritten by 'htmltools':
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio
+"
+"2","Registered S3 method overwritten by 'htmlwidgets':
+  method           from         
+  print.htmlwidget tools:rstudio
+"
+"2","Registered S3 method overwritten by 'rmarkdown':
+  method         from
+  print.paged_df     
+"
+"2","Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+"
+"2","
+Adjuntando el paquete: ‘Hmisc’
+
+"
+"2","The following object is masked from ‘package:psych’:
+
+    describe
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    format.pval, units
+
+"
+"0","library(ggplot2)"
+"2","
+Adjuntando el paquete: ‘ggplot2’
+
+"
+"2","The following objects are masked from ‘package:psych’:
+
+    %+%, alpha
+
+"
+"0","library(ggplot2)"
+"0","library(readxl)"
+"0","library(corrplot)"
+"0","library(knitr)"
+"0","library(gridExtra)"
+"0","library(ggplot2)"
+"0","library(gridExtra)"
+"0","library(grid)"
+"0","library(patchwork)"
+"0","library(kableExtra)"
+"0","library(tidyverse)"
+"1","── [1mAttaching core tidyverse packages[22m ────────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
+[32m✔[39m [34mdplyr    [39m 1.1.4     [32m✔[39m [34mreadr    [39m 2.1.5
+[32m✔[39m [34mforcats  [39m 1.0.0     [32m✔[39m [34mstringr  [39m 1.5.1
+[32m✔[39m [34mlubridate[39m 1.9.3     [32m✔[39m [34mtibble   [39m 3.2.1
+[32m✔[39m [34mpurrr    [39m 1.0.2     [32m✔[39m [34mtidyr    [39m 1.3.1
+"
+"1","── [1mConflicts[22m ──────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+[31m✖[39m [34mggplot2[39m::[32m%+%()[39m      masks [34mpsych[39m::%+%()
+[31m✖[39m [34mggplot2[39m::[32malpha()[39m    masks [34mpsych[39m::alpha()
+[31m✖[39m [34mdplyr[39m::[32mcombine()[39m    masks [34mgridExtra[39m::combine()
+[31m✖[39m [34mdplyr[39m::[32mfilter()[39m     masks [34mstats[39m::filter()
+[31m✖[39m [34mdplyr[39m::[32mgroup_rows()[39m masks [34mkableExtra[39m::group_rows()
+[31m✖[39m [34mdplyr[39m::[32mlag()[39m        masks [34mstats[39m::lag()
+[31m✖[39m [34mdplyr[39m::[32msrc()[39m        masks [34mHmisc[39m::src()
+[31m✖[39m [34mdplyr[39m::[32msummarize()[39m  masks [34mHmisc[39m::summarize()
+[36mℹ[39m Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors
+"
+"0","library(reshape) "
+"2","
+Adjuntando el paquete: ‘reshape’
+
+"
+"2","The following object is masked from ‘package:lubridate’:
+
+    stamp
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    rename
+
+"
+"2","The following objects are masked from ‘package:tidyr’:
+
+    expand, smiths
+
+"
+"0","datos_env <- read_xlsx(""C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Base de datos y contextos\\vltava.xlsx"","
+"0","                       sheet = ""Vltava-env data"")"
+"0",""
+"0","datos <- read_xlsx(""C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Base de datos y contextos\\vltava.xlsx"","
+"0","                   sheet = ""Vltava-species"")"
+"1","[38;5;232mNew names:
+[36m•[38;5;232m `` -> `...1`[39m
+"

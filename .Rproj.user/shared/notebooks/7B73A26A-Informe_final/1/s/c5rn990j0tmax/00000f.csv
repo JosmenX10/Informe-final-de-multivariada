@@ -1,0 +1,8 @@
+"0","datos_resum <- melt(datos_g1[,c(1:15,39)])"
+"2","Using Grupos as id variables
+"
+"0","datos_resum <- datos_resum %>%        # Base de datos resumida"
+"0","  group_by(Grupos,variable)  %>%          # Factor o variable agrupadora"
+"0","  summarise(datos.sum = sum(value))   # Error estándar de cada grupo "
+"1","[38;5;232m`summarise()` has grouped output by 'Grupos'. You can override using the `.groups` argument.[39m
+"

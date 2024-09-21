@@ -1,3 +1,0 @@
-"0",""
-"0","hist(Datos$caudal, main = paste(""Histograma de los caudales"",""(L/s)""), col = ""blue"",ylab = ""Frecuencia"", "
-"0","                                xlab = ""Caudal (L/s)"")"

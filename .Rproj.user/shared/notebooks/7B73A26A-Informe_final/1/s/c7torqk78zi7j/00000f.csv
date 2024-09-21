@@ -1,0 +1,6 @@
+"0","#| label: fig-fig12 "
+"0","#| fig-cap: ""Áreas de cobertura total de las especies más representativas en general y por cada tipo de ensamblaje en los valles profundos del río de Moldavia."""
+"0"," ggplot(datos_resum, aes(x=reorder(variable, -datos.sum) , y=datos.sum, fill = Grupos)) + "
+"0","     geom_bar(stat=""identity"", "
+"0","              position= ""stack"") +theme_classic() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + labs(x= """", y = expression(""Cobertura total""~(m^2))) "
+"0",""
