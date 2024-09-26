@@ -1,0 +1,8 @@
+$x
+[1] "Luz"
+
+$y
+[1] "Ancho del pétalo"
+
+attr(,"class")
+[1] "labels"

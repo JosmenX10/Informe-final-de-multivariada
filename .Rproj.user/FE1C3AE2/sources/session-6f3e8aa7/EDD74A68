@@ -3,9 +3,9 @@
     "path": "C:/Users/Asus/Desktop/Analisis multivariado/Informe-final-de-multivariada/Informe_final.qmd",
     "project_path": "Informe_final.qmd",
     "type": "quarto_markdown",
-    "hash": "2822462745",
+    "hash": "0",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1726845079243.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -22,11 +22,11 @@
         "docOutlineSize": "66"
     },
     "folds": "",
-    "lastKnownWriteTime": 1726894390,
+    "lastKnownWriteTime": 1726899036,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1726894848188,
+    "last_content_update": 1726899036987,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -11,9 +11,9 @@ library(cluster)
 library(pvclust)
 library(RColorBrewer)
 
-datos_env <- read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-final-de-multivariada/main/Base%20de%20datos%20y%20contextos/vltava_env.csv,sep"= ";")
+datos_env <- read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-final-de-multivariada/main/Base%20de%20datos%20y%20contextos/vltava_env.csv",sep = ";")
 
-datos_bio <- read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-final-de-multivariada/main/Base%20de%20datos%20y%20contextos/datos_bio.csv", sep =",")
+datos_bio <- read.delim("https://raw.githubusercontent.com/JosmenX10/Informe-final-de-multivariada/main/Base%20de%20datos%20y%20contextos/datos_bio.csv", sep =";")
 
 datos_bio <- datos_bio[,-1]
 

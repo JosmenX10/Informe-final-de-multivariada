@@ -24,7 +24,7 @@ Por esta razón, para el presente trabajo de caso se dispone de una base de dato
 
 Las técnicas multivariadas aplicadas en este caso permitieron revelar información importante para el entendimiento de la interacción ambiente-vegetación en el macizo de bohemia, por lo que es un indispensable entender los fundamentos de estos métodos de manera practica y teórica, para comprender su plausibilidad ante otros casos de estudio.
 
-## Contextualización de base de datos
+## **Contextualización de base de datos**
 
 ### **Variables biológicas**
 
@@ -80,15 +80,15 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ¿Qué influencia tiene la topología y topografia en la estructura de las comunidades de plantas en los valles profundos del río de Moldavia?
 
-## **Objetivos** 
+## **Objetivos**
 
 -   Evaluar la relación entre las variables topográficas, topológicas y las condiciones de hábitat (índices de Hellinberg) en los valles profundos del río Moldavia.
 
 -   Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
 
--   Evaluar la influencia de las variables ambientales en la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.
+-   Evaluar la influencia de las variables ambientales en la variación de la composición de las comunidades de plantas en los valles profundos del río Moldavia.
 
-## **Hipotesis** 
+## **Hipotesis**
 
 ### **1) Objetivo 1:**
 
@@ -104,13 +104,13 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ### **3) Objetivo 3:**
 
--   **Ho**: La topografía y la topología no influyen en la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.
+-   **Ho**: La topografía y la topología no influyen en la variación de la composición de los comunidades vegetales en los valles profundos del río Moldavia.
 
 -   **Ha**: La topografía y la topología influyen en la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.
 
 ![](Base%20de%20datos%20y%20contextos/diagrama_de_flujo.svg)
 
-## Organización de la base de datos
+## Preparación de los datos
 
 ### Cargue de librerias y bases de datos
 
@@ -120,7 +120,6 @@ library(readxl)
 library(ellipse)
 library(corrplot)
 library(Hmisc)
-library(ggplot2)
 library(ggplot2)
 library(readxl)
 library(corrplot)
@@ -192,9 +191,9 @@ str(datos_env)
 
 ## **1.** Evaluar la relación entre las variables topográficas, topológicas y las condiciones de hábitat (índices de Hellinberg) en los valles profundos del río Moldavia.
 
-### **Relación entre variables topográficas y topológicas**
+### **-Relación entre variables topográficas y topológicas**
 
-A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación y el nivel de significancia de estas relaciones. Por ejemplo, la @fig-fig1 refleja la estrecha relación positiva entre las variables de orientación sureste y la orientación sur-sureste al tener un 83% de correlación entre sus datos con el mayor nivel de significancia(p-value\<0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 79% de los datos, esto se entiende ya que el cambio en la orientación sureste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-sureste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 62% . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia. A continuación se realizará una exploración visual de las relaciones con el mayor nivel de significancia y con un grado de correlación mayor al 60%.
+A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación con el indice de Spearman y el nivel de significancia de estas relaciones. Por ejemplo, la @fig-fig1 refleja la estrecha relación positiva entre las variables de orientación sureste y la orientación sur-sureste con un valor de 0.83 de correlación entre sus datos con el mayor nivel de significancia(p-value\<0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 0.79 de los datos, esto se entiende ya que el cambio en la orientación sureste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-sureste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 0.62 . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia. A continuación se realizará una exploración visual de las relaciones con el mayor nivel de significancia y con un grado de correlación mayor al 60%.
 
 ```{r, warning=FALSE,message=FALSE}
 #| label: fig-fig1 
@@ -226,8 +225,7 @@ corrplot(topocor,method = "ellipse",type ="lower",diag = FALSE,
         
 ```
 
-Dado a que los indices de carga calorifica son derivadas de la pendiente y la orientación estos presentan una estrecha relación lineal positiva, x\
-En la @fig-fig2 (C) se confirma la relación lineal postiva entre la orientación sureste y la orientación sur-sureste, tener estas dos variables en cuenta para los analisis podría generar ruido y disminuir la posibilidad de una correcta interpretación. Cabe resaltar que al medir los valores de orientación medido en una magnitud escalar, aumentando el valor de manera positiva a medida que la orientación de las parcelas se acercan a la orientación sureste puede generar que dos parcelas con dos direcciones diferentes tengan el mismo valor al situarse a la misma cantidad de grados desviados del noroeste, pero en la orientación sur-sureste estas tendran valores diferentes @fig-fig3, razon por la que en el grafico se observa que cada valor en el eje x tendría dos valores en eje y, generando dos lineas de puntos en las partes de arriba y abajo de la linea de tendencia. La @fig-fig2 (D) evidencia una estrecha relación entre las vairables de carga calorifica en valores cercanos a 0, pero a medida que aumenta la carga calorifica del sureste parece haber valores más desviados de la linea de tendencia suavizada. Los datos que muestran cierta diferencia a los patrones generales podrían ser debido a mediciones erradas de las orientaciones o situaciones particulares de algunas parcelas.
+Dado que los índices de carga calorífica son derivados de la pendiente y la orientación, presentan una estrecha relación lineal positiva. En la \@fig-fig2 (A) se confirma esta relación entre las orientaciones sureste y sur-sureste. Al medir los valores de orientación en una magnitud escalar, que aumenta a medida que la orientación de las parcelas se aproxima a estas direcciones, puede ocurrir que dos parcelas con orientaciones diferentes tengan el mismo valor en una de las variables, al estar desviadas en la misma cantidad de grados respecto al noroeste. Sin embargo, en la orientación sur-sureste, los valores serían distintos, como se observa en la \@fig-fig3. Por esta razón, en el gráfico se aprecia que cada valor en el eje x puede corresponder a dos valores en el eje y, lo que genera dos líneas de puntos en las partes superior e inferior de la línea de tendencia. La \@fig-fig2 (B) muestra una estrecha relación entre las variables de carga calorífica para valores cercanos a 0, pero a medida que la carga calorífica del sureste aumenta, se observan valores más alejados de la línea de tendencia suavizada. Los datos que se desvían de los patrones generales podrían deberse a mediciones erróneas de las orientaciones o a situaciones particulares de algunas parcelas.
 
 ```{r, message=FALSE,warning=FALSE}
 #| label: fig-fig2 
@@ -294,7 +292,7 @@ g4
 
 La condición de suelo Lítico también es dependiente del tipo de relieve, siendo que en las parcelas de relieve convexo son más frecuentes que los suelos no liticos, y en las parcelas con relieve neutro ya los suelos líticos son menos frecuente, y en los relieves concavos las parcelas con suelos no líticos son mucho más frecuentes que los líticos. Por lo tanto, los relieves convexos pueden favorecer el asentamiento de suelos líticos antes que de suelos no líticos, mientras que en los concavos pasa lo contrario.
 
-```{r}
+```{r, warning=FALSE,message=FALSE}
 #| label: fig-fig6 
 #| fig-cap: "histograma para comparar las frecuencias de las parcelas con distintos tipos de superficie según el eje a favor de la pendiente y si presenta o no el tipo de suelo lítico."
 
@@ -319,7 +317,7 @@ barplot(frecuencia,
         border = "black", cex.names = 0.7,width = 2.5, names.arg = je, space = 1)
 ```
 
-### **-Evaluación de la relación entre las variables topográficas y topológicas con la condiciones de luz, temperatura, continentalidad, humedad, reactividad y nutrientes.**
+### **-Relación entre variables topográficas y topológicas con las condiciones de habitat (indices de Hellinberg).**
 
 En el correlograma presentado en la @fig-fig7 observamos los grados de correlación entre las variables topográficas y topológicas con las variables ambientales medidas de manera indirecta con el promedio de indices de hellinberg en cada parcela, entonces habrían seis indices, una por cada variable representandose numericamente en las mismas escalas. De las seis variables cinco se relacionan de manera significativa con las variables de orientación y carga calorifica de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes se relacionan negativamente, estas relaciones se ven más detalladas en los diagramas de dispersión de la @fig-fig8 (A-D). Por lo tanto la orientación y la capacidad calorifica de la parcela pueden ser determinantes para la variación en las condiciones de habitats entre las parcelas.
 
@@ -335,7 +333,7 @@ corrplot(ellin_topocor,method = "ellipse",
 
 Entonces si se toma a los indices de hellinberg como medidas indirectas de las condiciones de habitat y vemos como estás se relacionan con las variables topográficas y topologias, podriamos determinar dos grupos de variables, de las cuales uno se conforma por la luz ,temperatura y continentalidad mientras el otro se conforma por la humedad, reactividad y nutrientes, de modo que si un grupo se relaciona positivamente con una de las variables topológicas y topográficas positiva o negativamente, el otro podría relacionarse de manera contraria o no relacionarse. Caso en los que una variable se relaciona con uno de estos dos grupos pero no con el otro estaría la inclinación de la pendiente de las parcelas y el pH de las muestras de suelo, pues la inclinación de la pendiente se relaciona negativamente con la humedad, reactividad y nutrientes, pero no mostraría ningún tipo de correlación con la luz, temperatura y continentalidad (@fig-fig8 **(F)** y @fig-fig7) . Por otro lado, el pH diluido de muestras de suelo también se relacionan significativamente con el mismo grupo de variables pero de manera positiva, y tampoco tienen un grado de correlación considerable con la luz, temperatura y continentalidad (@fig-fig8 **(E)** y @fig-fig7).
 
-```{r}
+```{r, warning=FALSE,message=FALSE}
 #| label: fig-fig8 
 #| fig-cap: "Diagrama de dispersión de las variables topográficas y topolagicas contra los indices de Hellinberg.A) Relación entre continentalidad, temperatura y luz con la orientación sur-sureste. B) Relación entre humedad, reactividad y nutrientes con la orientación sur-sureste, C)Relación entre continentalidad, temperatura y luz con la capacidad calorifica sur-sureste. D)Relación entre humedad, reactividad y nutrientes con la capacidad calorifica sur-sureste, E)Relación entre humedad, reactividad y nutrientes con el pH diluido de las muestras de suelo. F)Relación entre humedad, reactividad y nutrientes con la pendiente de la parcela."
 
@@ -344,7 +342,7 @@ include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final
 
 El tipo de relieve también tiene una influencia significativa sobre la humedad, reactividad y nutrientes, aunque las correlaciones solo son considerables para la humedad y nutrientes, esta relación queda mejor evidenciada en la @fig-fig9(A-B), donde se observa una clara tendencia en la que los valores de humedad y nutrientes se distribuyen en valores más altos, seguidos por el relive neutro, y el relieve convexo que mantiene una distribución en valores más bajos. También se observa que los suelos con condiciones de fluvisoles tendian a tener datos concentrados en valores de humedad más altos que los que no tenian condiciones de fluvisoles. @fig-fig9(C).
 
-```{r}
+```{r, warning=FALSE,message=FALSE}
 #| label: fig-fig9 
 #| fig-cap: "Diagrama de cajas y bigotes para comparar los indices de Hellinberg en distintas condiciones topográficas.A)Comparación del indice de humedad entre distintos tipos de superficie.B)Comparación del indice de nutrientes entre distintos tipos de superficie.C)Comparación del indice de humedad entre suelos líticos y no líticos."
 
@@ -352,13 +350,13 @@ include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final
 
 ```
 
-## **2.** Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza y cobertura vegetal.
+## **2.** Determinar las diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
 
-### Diferencias en la altitud y orientación de los tipos de comunidades vegetales
+### **-Diferencias en la altitud y orientación de las parcelas de acuerdo a los tipos de comunidades vegetales**
 
 En la @fig-fig10 se observa que la vegetación tipo 1 exhibe una orientación mayoritaria hacia el noroeste, con una distribución altitudinal amplia que varía entre 425 y 525 m.s.n.m. La vegetación tipo 2, por su parte, se distribuye tanto al norte como al noroeste y suroeste, con altitudes que oscilan entre 430 y 490 m.s.n.m. En cuanto a la vegetación tipo 3, esta presenta un rango de elevación, que va de 425 a 500 m.s.n.m., con una orientación predominante hacia el suroeste y el norte. Por último, la vegetación tipo 4 tiene un rango de distribución más limitado en cuanto a su elevación, con datos que se sitúan entre 400 y 450 m.s.n.m., y una orientación un poco más homogénea.
 
-```{r}
+```{r, warning=FALSE,message=FALSE}
 #| label: fig-fig10 
 #| fig-cap: "Distribución de los tipos de emsamblajes vegetales en relación con la orientación y la altitud. El círculo central representa el fondo del valle, el margen exterior representa el borde superior del valle y la dirección desde el centro representa la dirección hacia la que se orientan las laderas. Los tipos de puntos corresponden a los tipos de vegetación."
 
@@ -379,11 +377,11 @@ ggplot(datos_env) +
 theme_light()
 ```
 
-### Diferencias en las condiciones ambientales,riqueza y coberturas de los tipos de comunidades vegetales
+### **-Diferencias en las condiciones ambientales,riqueza y coberturas de los tipos de comunidades vegetales**
 
-La @fig-fig9 muestra el patrón de variación de algunas variables topológicas y topográficas entre los diferentes tipos de ensamblajes vegetales evaluados. Se observa que los mayores valores de luz y temperatura se registraron en la vegetación tipo 1, seguido por el tipo 2, mientras que los menores valores correspondieron a la vegetación tipo 3. Sin embargo, las muescas de las cajas para la luz y la temperatura se solapan entre los tipos de vegetación 1, 2 y 4, lo que sugiere que la posibilidad de no diferencias entre estos grupos. En contraste, las muescas de la vegetación tipo 1 no se solapan con las de los demás tipos, lo que podría insinuar diferencias ente estos tipos de ensamblajes.En cuanto a la continentalidad, se observa un patrón decreciente desde la vegetación tipo 1 hasta el tipo 4, siendo el ensamblaje tipo 1 el que presenta los valores más altos. Las vegetaciones tipo 3 y 4 muestran valores menores; y mostrando solapamiento en sus muescas; sin embargo, en la vegetación tipo 4 se identifica un valor atípico mayor, que podría estar sesgando los resultados.
+La @fig-fig9 muestra el patrón de variación de algunas variables topológicas y topográficas entre los diferentes tipos de comunidades vegetales evaluados. Se observa que los mayores valores de luz y temperatura se registraron en la vegetación tipo 1, seguido por el tipo 2, mientras que los menores valores correspondieron a la vegetación tipo 3. Sin embargo, las muescas de las cajas para la luz y la temperatura se solapan entre los tipos de vegetación 1, 2 y 4, lo que sugiere que la posibilidad de no diferencias entre estos grupos. En contraste, las muescas de la vegetación tipo 1 no se solapan con las de los demás tipos, lo que podría insinuar diferencias ente estos tipos de comunidades.En cuanto a la continentalidad, se observa un patrón decreciente desde la vegetación tipo 1 hasta el tipo 4, siendo el ensamblaje tipo 1 el que presenta los valores más altos. Las vegetaciones tipo 3 y 4 muestran valores menores; y mostrando solapamiento en sus muescas; sin embargo, en la vegetación tipo 4 se identifica un valor atípico mayor, que podría estar sesgando los resultados.
 
-A pesar del patrón decreciente de la continentalidad en los ensamblajes vegetales, en sentido 1→ 4, existe un solapamiento de las muescas entre los tipos de (1 y 2), (2, 3 y 4), (3 y 4) lo que podría sugerir falta de diferenciación en la continentalidad entre estos grupos, y un posible anidamiento en esta variable.Los valores más altos de nutrientes se registraron en las vegetaciones tipo 4 y 3, respectivamente, sin aparentes diferencias entre estos dos grupos, aunque en el tipo 4 los datos presentaron menor dispersión. Por otro lado, las muescas de las vegetaciones tipo 1 y 2 no se superponen con las del grupo 3 ni con las del grupo 4, lo que podría inferir posibles diferencias en la cantidad de nutrientes entre estos tipos. Sin embargo, no se encontraron posibles diferencias entre los grupos 1 y 2 debido al solapamiento de sus muescas.
+A pesar del patrón decreciente de la continentalidad en los comunidades vegetales, en sentido 1→ 4, existe un solapamiento de las muescas entre los tipos de (1 y 2), (2, 3 y 4), (3 y 4) lo que podría sugerir falta de diferenciación en la continentalidad entre estos grupos, y un posible anidamiento en esta variable.Los valores más altos de nutrientes se registraron en las vegetaciones tipo 4 y 3, respectivamente, sin aparentes diferencias entre estos dos grupos, aunque en el tipo 4 los datos presentaron menor dispersión. Por otro lado, las muescas de las vegetaciones tipo 1 y 2 no se superponen con las del grupo 3 ni con las del grupo 4, lo que podría inferir posibles diferencias en la cantidad de nutrientes entre estos tipos. Sin embargo, no se encontraron posibles diferencias entre los grupos 1 y 2 debido al solapamiento de sus muescas.
 
 Respecto a la humedad, se identificaron valores más altos en la vegetación tipo 4, los cuales sugieren ser diferentes en comparación con los demás tipos, dado que sus intervalos de confianza (muescas) no se solapan. Por su parte, aunque las vegetaciones tipo 1 y 2, así como los tipos 2 y 3 presentaron medianas diferentes, sus intervalos de confianza se superponen; por lo tanto, no se sugieren diferencias entre estos pares de grupos. Sin embargo, sí se sugiere diferencias entre los grupos 1 y 3.Finalmente, con relación a la reactividad, los mayores valores se observaron en la vegetación tipo 4. No obstante, las muescas de este grupo se solapan con las de las vegetaciones tipo 1 y 3, por lo que posiblemente se podría considerar la no existencia de diferencia entre estos. En contraste, la vegetación tipo 2 presentó los menores valores de reactividad y sugiere una posible diferencia con respecto a los demás tipos debido a que sus intervalos de confianza no se solapan con ninguna otra caja del gráfico.
 
@@ -427,9 +425,13 @@ f6  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Reactividad))
 (f1 + f2)/(f3+f4)/(f5+f6)
 ```
 
-###Selección de las 15 especies más abundantes
+### **-Selección de las 15 especies más abundantes**
 
-```{r}
+Se convierten los porcentajes de cobertura de cada especie a valores en metros cuadrados (\$m\^2\$) para, posteriormente, seleccionar las 15 especies con mayor cobertura. Luego, se determina cuánto contribuye en cobertura cada una de estas especies en los diferentes tipos de comunidades de plantas.
+
+-   **Conversión del porcentaje de cobertura a área de cobertura:**
+
+```{r, message=FALSE,warning=FALSE}
 #Seleccionamos las 15 especies más abundantes 
 
 Suma  <- data.frame(colSums(datos_bio))
@@ -439,9 +441,6 @@ Suma <- Suma %>% arrange(desc(Suma$colSums.datos_bio.))
 fifteen_Species <- row.names(Suma)
 
 fifteen_Species <- fifteen_Species[1:15]
-
-
-fifteen_Species
 
 datos_bio1 <- datos_bio[,fifteen_Species]
 
@@ -453,6 +452,8 @@ datos_bio1 <- data.frame(datos_bio1)
 
 datos_g <- cbind(datos_bio1,datos_env) #unimos con las variables ambientales
 ```
+
+-   **Transformamos las condiciones de suelo de variables dicotómicas y tricotómicas a variables categóricas.**
 
 ```{r}
 datos_g1 <- datos_g
@@ -467,34 +468,46 @@ datos_g1$Cambisoles <- factor(datos_g$Cambisoles, levels = c(1,0),labels = c("Ca
 
 datos_g1$Grupos <- factor(datos_g$Grupos, levels = c(1,2,3,4))
 
-
-
 ```
 
-```{r}
+-   **1**
+
+```{r, message=FALSE,warning=FALSE}
+#| label: tbl-tbl1
+#| tbl-cap: "Área de cobertura en metros cuadrados $m^2$ para cada especie en general."
+
 datos_resum <- melt(datos_g1[,c(1:15,39)])
 
-
-datos_resum <- datos_resum %>%        # Base de datos resumida
+datos_resum1 <- datos_resum %>%        # Base de datos resumida
   group_by(Grupos,variable)  %>%          # Factor o variable agrupadora
-  summarise(datos.sum = sum(value))   # Error estándar de cada grupo 
+  summarise(datos.sum = sum(value))   # Error estándar de cada grupo
+
+datos_resum2 <- datos_resum %>%        # Base de datos resumida
+  group_by(variable)  %>%          # Factor o variable agrupadora
+  summarise(datos.sum = sum(value))  # Error estándar de cada grupo
+
+colnames(datos_resum2) <- c("Especies", "Area de cobertura m^2")
+
+datos_resum2 %>% 
+  kbl(caption =  "", booktabs = F, longtable = T) %>% 
+  kable_classic(full_width = F, html_font = "cambria")
 
 ```
 
-###Comparación del area de cobertura contribuida por las 15 especies más representativas en la totalidad de las parcelas
+### **-Comparación del area de cobertura contribuida por las 15 especies más representativas en la totalidad de las parcelas**
 
-La @fig-fig12 ilustra el área de cobertura que ocupa cada especie y cómo varía esta entre los diferentes tipos de ensamblajes. Se observa que las especies que más contribuyen a la cobertura (m²), en orden de importancia, son Tilicor1, Coryave4, Querpea1, Abiealb1, Fagusyl1 y Sambrig4. La contribución de cobertura de Tilicor1 se distribuyó de manera similar en los tipos de ensamblaje 1, 2 y 4, mientras que fue menor en el tipo 3. Para Coryave4, los tipos de vegetación que más aportaron a la cobertura fueron los tipos 3 y 4, con contribuciones similares. En el caso de Querpea1, la mayor contribución provino del tipo de vegetación 2, seguida por el tipo 1. En cuanto a Abiealb1, la mayor contribución se registró en la vegetación tipo 3, y se notó que el tipo 4 no aportó nada a esta especie. Por último, para las especies Fagusyl1 y Sambrig4, la mayor contribución también se observó en la vegetación tipo 3.
+La @fig-fig12 ilustra el área de cobertura que ocupa cada especie y cómo varía esta entre los diferentes tipos de comunidades. Se observa que las especies que más contribuyen a la cobertura (m²), en orden de importancia, son Tilicor1, Coryave4, Querpea1, Abiealb1, Fagusyl1 y Sambrig4. La contribución de cobertura de Tilicor1 se distribuyó de manera similar en los tipos de ensamblaje 1, 2 y 4, mientras que fue menor en el tipo 3. Para Coryave4, los tipos de vegetación que más aportaron a la cobertura fueron los tipos 3 y 4, con contribuciones similares. En el caso de Querpea1, la mayor contribución provino del tipo de vegetación 2, seguida por el tipo 1. En cuanto a Abiealb1, la mayor contribución se registró en la vegetación tipo 3, y se notó que el tipo 4 no aportó nada a esta especie. Por último, para las especies Fagusyl1 y Sambrig4, la mayor contribución también se observó en la vegetación tipo 3.
 
 ```{r}
 #| label: fig-fig12 
 #| fig-cap: "Áreas de cobertura total de las especies más representativas en general y por cada tipo de ensamblaje en los valles profundos del río de Moldavia."
- ggplot(datos_resum, aes(x=reorder(variable, -datos.sum) , y=datos.sum, fill = Grupos)) + 
+ ggplot(datos_resum1, aes(x=reorder(variable, -datos.sum) , y=datos.sum, fill = Grupos)) + 
      geom_bar(stat="identity", 
               position= "stack") +theme_classic() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + labs(x= "", y = expression("Cobertura total"~(m^2))) 
 
 ```
 
-## 3. Evaluar la influencia de las variables ambientales sobre la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.
+## **3.** Evaluar la influencia de las variables ambientales sobre la variación de la composición de las comunidades vegetales en los valles profundos del río Moldavia.
 
 Mediante un correlograma se pueden observar de forma general las relaciones entre variables topográficas y biologicas, observando la fuerza de la relación y su sentido. En la @fig-fig13 se puede observar que en general las correlaciones entre parámetros topográficos y biologicas fueron débiles, siendo aproximadamente la mitad de ellas positivas y negativas, dentro de estas relaciones, destaca de forma moderada la relación entre la luz y Abieal1. Por otro lado, dentro de las relaciones débiles de forma negativa, las menos débiles, o sea, las que presentaron valores mayores en ese rango, se dieron entre la luz con Dryofil6, Lunared6 y Galemon6. La temperatura con Abieal1, Dryofil6 y Lunared6. Mientras que, de manera positiva débil destacó la relación entre los nutrientes con Querpea1, Sambrig4, Galemon6, Lunared6, Alnuglu1 e Impapar6. Reactividad con Galemon6 y reactividad con Alnuglu1.
 
@@ -522,12 +535,16 @@ En la @fig-fig15 se observa la relación entre la cobertura de ***Abies alba*** 
 ```{r, message=FALSE,warning=FALSE}
 #| label: fig-fig15 
 #| fig-cap: "Diagrama de dispersión de la relación entre la cobertura de la especie Abies alba con respecto a la variable de Luz." 
-ggplot(datos_g,aes(x = Luz, y = Abiealb1)) + 
+
+f1 <- ggplot(datos_g,aes(x = Luz, y = Abiealb1)) + 
   geom_smooth(method = "loess",se = F, span = 1) +
   geom_smooth(method = "lm",se = F, col = "red") +
   geom_point(aes(colour = factor(Grupos))) + 
   theme_classic() + 
   scale_color_manual(values = c("1" = "#d73027","2"="blue","3"="#1a9850", "4" = "#c51b8a")) +
-  scale_y_continuous(limits = c(0,75))
-    labs(x = "Luz", y = "Ancho del pétalo") 
+  scale_y_continuous(limits = c(0,75)) +
+    labs(x = "Luz", y = "Porcentaje de cobertura de Abies alba")
+
+f1
+  
 ```
