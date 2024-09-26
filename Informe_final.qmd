@@ -98,9 +98,9 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ### **2) Objetivo 2:**
 
--   **Ho**: No existen diferencias significativas entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
+-   **Ho**: No existen diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
 
--   **Ha**: Existen diferencias significativas entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
+-   **Ha**: Existen diferencias entre los tipos de comunidades vegetales de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
 
 ### **3) Objetivo 3:**
 
