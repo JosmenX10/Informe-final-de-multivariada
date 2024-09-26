@@ -470,7 +470,7 @@ datos_g1$Grupos <- factor(datos_g$Grupos, levels = c(1,2,3,4))
 
 ```
 
--   **1**
+-   **Determinamos la cantidad de cobertura por especie, tanto de forma general como para cada tipo de comunidad.**
 
 ```{r, message=FALSE,warning=FALSE}
 #| label: tbl-tbl1
