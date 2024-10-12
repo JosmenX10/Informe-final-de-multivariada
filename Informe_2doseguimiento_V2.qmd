@@ -196,7 +196,7 @@ datos_env <- datos_env[,-1]
 
 ### **-Relación entre variables topográficas y topológicas**
 
-A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación con el indice de Spearman y el nivel de significancia de estas relaciones. Por ejemplo, la @fig-fig1 refleja la estrecha relación positiva entre las variables de orientación sureste y la orientación sur-sureste con un valor de 0.83 de correlación entre sus datos con el mayor nivel de significancia(p-value\<0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 0.79 de los datos, esto se entiende ya que el cambio en la orientación sureste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-sureste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 0.62 . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia. A continuación se realizará una exploración visual de las relaciones con el mayor nivel de significancia y con un grado de correlación mayor al 60%.
+A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación con el indice de Spearman y el nivel de significancia de estas relaciones. Por ejemplo, la @fig-fig1 refleja la estrecha relación positiva entre las variables de orientación sureste y la orientación sur-sureste con un valor de 0.83 de correlación entre sus datos con el mayor nivel de significancia(p-value\<0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 0.79 de los datos, esto se entiende ya que el cambio en la orientación sureste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-sureste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 0.62 . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia.
 
 ```{r, warning=FALSE,message=FALSE,fig.height=4,fig.width=5}
 #| label: fig-fig1 
@@ -228,81 +228,12 @@ corrplot(topocor,method = "ellipse",type ="lower",diag = FALSE,
         
 ```
 
-Dado que los índices de carga calorífica son derivados de la pendiente y la orientación, presentan una estrecha relación lineal positiva. En la @fig-fig2(A) se confirma esta relación entre las orientaciones sureste y sur-sureste. Al medir los valores de orientación en una magnitud escalar, que aumenta a medida que la orientación de las parcelas se aproxima a estas direcciones, puede ocurrir que dos parcelas con orientaciones diferentes tengan el mismo valor en una de las variables, al estar desviadas en la misma cantidad de grados respecto al noroeste. Sin embargo, en la orientación sur-sureste, los valores serían distintos, como se observa en la @fig-fig2(C). Por esta razón, en el gráfico se aprecia que cada valor en el eje x puede corresponder a dos valores en el eje y, lo que genera dos líneas de puntos en las partes superior e inferior de la línea de tendencia. La @fig-fig2(B) muestra una estrecha relación entre las variables de carga calorífica para valores cercanos a 0, pero a medida que la carga calorífica del sureste aumenta, se observan valores más alejados de la línea de tendencia suavizada. Los datos que se desvían de los patrones generales podrían deberse a mediciones erróneas de las orientaciones o a situaciones particulares de algunas parcelas.
-
-```{r, message=FALSE,warning=FALSE, fig.width=3, fig.height=4}
-#| label: fig-fig2 
-#| fig-cap: Relación de las variables de orientación y capacidad calorífica. A) Relación entre orientación Sur con la orientación Sur-Sureste. B) Relación entre el indice de capacidad calorífica. C)Diagrama explicativo de las mediciones de orientación.
-
-
-g1 = ggplot(datos_env, aes(x = Orientación.SE , y = Orientación.S.SE)) + 
-  geom_smooth(aes(x = Orientación.SE, y = Orientación.S.SE), se = F, span = 1, col = "blue") +
-     geom_smooth(aes(x = Orientación.SE, y = Orientación.S.SE), se = F, span = 1, col = "green", method = "glm") +
-  geom_point(col = "orange") + labs(x = "Orientación Sureste",y= "Orientación S-SE" , tag = "A)") + 
-  theme_classic() 
-
-
-g2 = ggplot(datos_env, aes(x = CCSE , y = CCS.SE)) + 
-  geom_smooth(aes(x = CCSE, y = CCS.SE), se = F, span = 1, col = "blue") +
-  geom_smooth(aes(x = CCSE, y = CCS.SE), se = F, col = "green", method = "glm") +
-  geom_point(col = "orange") + labs(x = "Indice de CC sureste", y = "Indice de CC S-SE", tag = "B)") +
-  theme_classic()
-
-ggsave("grafico.dispersion.svg",g1/g2, device = "svg", path = "C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Graficos\\Explicaciones")
-
-include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Graficos\\Explicaciones\\grafico.dispersion2.svg")
-
-```
-
-A partir de la @fig-fig3**(A)** se evidencia un claro patron de los tipos de superficies o relieves a favor de la pendiente, a medida que cambia la altitud, pues se observan más parcelas con relieve concavo en altitudes bajas que en altitudes altas, así mismo los relieves neutros son más comunes en altitudes intermedias y los relieves convexos más comunes en altitudes mayores, aunque el leve solapamiento de las muescas dan la posibilidad de que no hubiera diferencias significativas en la altitud de los relieves neutros y convexos.
-
-```{r,warning=FALSE,message=FALSE, fig.width=7,fig.height=4}
-#| label: fig-fig3 
-#| fig-cap: "A) Comparación de las altitudes entre distintos tipos de superficie en las parcelas según el eje a favor de la pendiente. B) Comparación de las altitudes para las parcelas en suelos líticos y no líticos. C) Comparación de las altitudes para las parcelas en suelos líticos y no líticos."
-
-g3 = ggplot(datos_env,aes(x=factor(Superficie.PD),y=Elevación)) + 
-  geom_boxplot(aes(y= Elevación, fill = factor(Superficie.PD)), notch = TRUE) + theme_classic() + 
-  guides(fill = "none") +   scale_x_discrete(labels = c("1" = "Convexo", "0" = "Neutro", "-1" = "Concavo")) + 
-  labs( x = "Tipos de relieve a lo largo de la pendiente", y = "Elevación (M.S.N.M)", tag = "a)")
-
-g4 = ggplot(datos_env,aes(x=factor(Lítico),y=Elevación)) + 
-  geom_boxplot(aes(y= Elevación, fill = factor(Lítico)), notch = TRUE) + theme_classic() + 
-  guides(fill = "none") +   scale_x_discrete(labels = c("1" = "Lítico", "0" = "No Litico")) + labs(x = "Condición del lítica del suelo", tag = "b)",y = "Elevación (M.S.N.M)")
-
-Sup.pd <- factor(datos_env$Superficie.PD, levels = c(1, 0, -1), labels = c("Convexo", "Neutro", "Cóncavo"))
-
-Pendiente.pd <- factor(datos_env$Lítico, levels = c(1, 0), labels = c("Lítico", "No Lítico"))
-
-factores <- paste(Sup.pd,Pendiente.pd, sep ="-")
-
-je <- c("Cóncavo-No Lítico", "Cóncavo-Lítico","Neutro-No Lítico","Neutro-Lítico","Convexo-No Lítico" , "Convexo-Lítico")
-
-datos_env$factores <- factor(factores, levels = je)
-
-frecuencia_factores <- as.data.frame(table(datos_env$factores))
-
-frecuencia <- frecuencia_factores$Freq
-
-par(mfrow = c(2,1))
-
-
-
-g5 <- ggplot(frecuencia_factores) + geom_bar(aes(x = frecuencia_factores$Var1, y = frecuencia_factores$Freq, fill = frecuencia_factores$Var1), stat = "identity") + scale_fill_manual(values = rep(c("blue","orange"),3)) + guides(fill = "none") + theme_classic() + labs(x = "Tipos de suelo", y= "Frecuencia")
-
-(g3 + g4)/g5 
-
-```
-
-También es posible observar cierto grado de diferencia en el tipo de suelo lítico y no lítico en diferentes altitudes, aunque podría no haber diferencias significativas en la @fig-fig3**(B)** se puede observar que en los diagramas de cajas bigotes la condición litica mantiene datos más concentrados a valores de mayor altitud que los no liticos.
-
-La condición de suelo Lítico también es dependiente del tipo de relieve, siendo que en las parcelas de relieve convexo son más frecuentes que los suelos no liticos, y en las parcelas con relieve neutro ya los suelos líticos son menos frecuente, y en los relieves concavos las parcelas con suelos no líticos son mucho más frecuentes que los líticos. Por lo tanto, los relieves convexos pueden favorecer el asentamiento de suelos líticos antes que de suelos no líticos, mientras que en los concavos pasa lo contrario(@fig-fig3**(C)**).
-
-### **-Relación entre variables topográficas y topológicas con las condiciones de habitat (indices de Hellinberg).**
+### **-Relación entre variables topográficas y topológicas con los indices de Hellinberg.**
 
 En el correlograma presentado en la @fig-fig7 observamos los grados de correlación entre las variables topográficas y topológicas con las variables ambientales medidas de manera indirecta con el promedio de indices de hellinberg en cada parcela, entonces habrían seis indices, una por cada variable representandose numericamente en las mismas escalas. De las seis variables cinco se relacionan de manera significativa con las variables de orientación y carga calorifica de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes se relacionan negativamente, estas relaciones se ven más detalladas en los diagramas de dispersión de la @fig-fig8 (A-D). Por lo tanto la orientación y la capacidad calorifica de la parcela pueden ser determinantes para la variación en las condiciones de habitats entre las parcelas.
 
 ```{r,warning=FALSE,message=FALSE, fig.width=7,fig.height=3}
-#| label: fig-fig7 
+#| label: fig-fig2 
 #| fig-cap: "Resumen de las relaciones de las variables topológicas y topográficas con los indices de Hellinberg usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos(* = 0.05, ** = 0.01, 0.001 = ***)."
 #| 
 corrplot(ellin_topocor,method = "ellipse",
@@ -311,23 +242,160 @@ corrplot(ellin_topocor,method = "ellipse",
          ,tl.cex = 1.0, number.cex = 0.9,addgrid.col = "#f5f5f5")
 ```
 
-Entonces si se toma a los indices de hellinberg como medidas indirectas de las condiciones de habitat y vemos como estás se relacionan con las variables topográficas y topologias, podriamos determinar dos grupos de variables, de las cuales uno se conforma por la luz ,temperatura y continentalidad mientras el otro se conforma por la humedad, reactividad y nutrientes, de modo que si un grupo se relaciona positivamente con una de las variables topológicas y topográficas positiva o negativamente, el otro podría relacionarse de manera contraria o no relacionarse. Caso en los que una variable se relaciona con uno de estos dos grupos pero no con el otro estaría la inclinación de la pendiente de las parcelas y el pH de las muestras de suelo, pues la inclinación de la pendiente se relaciona negativamente con la humedad, reactividad y nutrientes, pero no mostraría ningún tipo de correlación con la luz, temperatura y continentalidad (@fig-fig8 **(F)** y @fig-fig7) . Por otro lado, el pH diluido de muestras de suelo también se relacionan significativamente con el mismo grupo de variables pero de manera positiva, y tampoco tienen un grado de correlación considerable con la luz, temperatura y continentalidad (@fig-fig8 **(E)** y @fig-fig7).
+### -Variación ambiental entre las parcelas según los tipos de suelo en los valles profundos del río de Moldavia
 
-```{r,warning=FALSE,message=FALSE, fig.width=3,fig.height=5}
-#| label: fig-fig8 
-#| fig-cap: "Relación de variables topográficas y topolagicas contra los indices de Hellinberg.A) Relación entre continentalidad, temperatura y luz con la orientación sur-sureste. B) Relación entre humedad, reactividad y nutrientes con la orientación sur-sureste, C)Relación entre continentalidad, temperatura y luz con la capacidad calorifica sur-sureste. D)Relación entre humedad, reactividad y nutrientes con la capacidad calorifica sur-sureste, E)Relación entre humedad, reactividad y nutrientes con el pH diluido de las muestras de suelo. F)Relación entre humedad, reactividad y nutrientes con la pendiente de la parcela."
+```{r,warning=FALSE,message=FALSE}
+#| label: fig-fig3
+#| fig-cap: Contribución de cada variable a la variación reflejada en el primer componente principal.
 
-include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Graficos\\Excel\\Ellenberg vs ambientales.svg")
+#PCA
+#ambiental <- datos_env[,c(2,3,5,7:11,17:21)]
+ambiental <- datos_env[,c(2,3,5,7:11,17:22)]
+
+factores <- read_excel("Base de datos y contextos/vltava.xlsx", 
+                                 sheet = "Condiciones de suelo")
+
+
+
+pca2 <- prcomp(scale(ambiental[,c(-15)]))
+
+#pca <- prcomp(datos_bio1)
+
+coord.amb2 <- as.data.frame(pca2$rotation[,1:2])    # Dos primeros ejes
+coord.amb2$amb <- rownames(coord.amb2)         # Insertar columna con nombres de las especies
+
+fviz_contrib(pca2,choice="var",axes=1) 
 ```
 
-El tipo de relieve también tiene una influencia significativa sobre la humedad, reactividad y nutrientes, aunque las correlaciones solo son considerables para la humedad y nutrientes, esta relación queda mejor evidenciada en la @fig-fig9(A-B), donde se observa una clara tendencia en la que los valores de humedad y nutrientes se distribuyen en valores más altos, seguidos por el relive neutro, y el relieve convexo que mantiene una distribución en valores más bajos. También se observa que los suelos con condiciones de fluvisoles tendian a tener datos concentrados en valores de humedad más altos que los que no tenian condiciones de fluvisoles. @fig-fig9(C).
+A partir del análisis por componentes, se extrae las variables que más contribuyeron en la variación para el primer eje como muestra la @fig-fig3, evidenciando que la variable que más contribuye es el indice de Nutrientes, seguido por el humedad y luz. Y los que menos contribuyen son PH, el tipo de superficie en hisohipsas y la elevación.
 
-```{r,warning=FALSE,message=FALSE, fig.width=3,fig.height=3}
-#| label: fig-fig9 
-#| fig-cap: "Comparación los indices de Hellinberg en distintas condiciones topográficas.A)Comparación del indice de humedad entre distintos tipos de superficie.B)Comparación del indice de nutrientes entre distintos tipos de superficie.C)Comparación del indice de humedad entre suelos líticos y no líticos."
+```{r}
+#-----------------------------------------------------------------------------------------#
+ambiental$factores <- factores[,4]
+#Fluvisoles
+Factor <- na.omit(cbind(ambiental,ambiental$factores))$FLUVISOL
 
-include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Graficos\\Excel\\Boxplot_ Ellenberg vs ambientales.svg")
+coord.sit2 <- as.data.frame(pca2$x[,1:2])     # Coordenadas de los sitios
+coord.sit2$sitio <- rownames(coord.sit2)      # Crear una columna con nombres de los sitios
+coord.sit2$grp <-  factor(Factor)               # Adicionar columna de grupos por Epoca
 
+g.pc1 <- ggplot() +
+  # Sitios
+  geom_point(data = coord.sit2,aes(PC1,PC2,colour=grp),size=4)+
+  scale_shape_manual(values = c(21:25)) +
+  
+  # Taxones  *valores de cero para caracteres de las flechas (arrow)
+  geom_segment(data = coord.amb2,aes(x = 0, y = 0, xend = PC1*9, yend = PC2*9), 
+               arrow = arrow(angle=22.5,length = unit(0.25,"cm"),
+                             type = "closed"),linetype=1, size=0.6,colour = "red") +
+  geom_text_repel(data = coord.amb2,aes(PC1*9,PC2*9,label=amb),colour = "red", max.overlaps =  getOption("ggrepel.max.overlaps", default = 12)) +
+  
+  geom_mark_ellipse(data=coord.sit2,aes(x=PC1,y=PC2,group=grp,
+                                        colour=grp),alpha= 1, size = 1)  +
+  
+  geom_hline(yintercept=0,linetype=3,size=1) + 
+  geom_vline(xintercept=0,linetype=3,size=1) +
+  labs(color = "Cond. Suelo", shape = "Cond. Suelo", fill = "Cond. Suelo", 
+       x = paste0("PC1 (",round(summary(pca2)$importance[2,1]*100,digits = 1),"%)"), y = paste0("PC2 (",round((summary(pca2)$importance[2,2]*100),digits = 1),"%)") ) + 
+  theme_classic() + scale_colour_manual(values = c("#91cf60","grey"))
+
+#-----------------------------------------------------------------------------------------#
+#Cambisoles
+ambiental$factores <- factores[,3]
+Factor <- cbind(ambiental,ambiental$factores)$CAMBISOL
+
+coord.sit2 <- as.data.frame(pca2$x[,1:2])     # Coordenadas de los sitios
+coord.sit2$sitio <- rownames(coord.sit2)      # Crear una columna con nombres de los sitios
+coord.sit2$grp <-  factor(Factor)               # Adicionar columna de grupos por Epoca
+
+
+
+
+g.pc2 <- ggplot() +
+  # Sitios
+  geom_point(data = coord.sit2,aes(PC1,PC2,colour=grp),size=4)+
+  scale_shape_manual(values = c(21:25)) +
+  
+  # Taxones  *valores de cero para caracteres de las flechas (arrow)
+  geom_segment(data = coord.amb2,aes(x = 0, y = 0, xend = PC1*9, yend = PC2*9), 
+               arrow = arrow(angle=22.5,length = unit(0.25,"cm"),
+                             type = "closed"),linetype=1, size=0.6,colour = "red") +
+  geom_text_repel(data = coord.amb2,aes(PC1*9,PC2*9,label=amb),colour = "red", max.overlaps =  getOption("ggrepel.max.overlaps", default = 12)) +
+  
+  geom_mark_ellipse(data=coord.sit2,aes(x=PC1,y=PC2,group=grp,
+                                        colour=grp),alpha= 1, size = 1)  +
+  
+  geom_hline(yintercept=0,linetype=3,size=1) + 
+  geom_vline(xintercept=0,linetype=3,size=1) +
+  labs(color = "Cond. Suelo", shape = "Cond. Suelo", fill = "Cond. Suelo", 
+       x = paste0("PC1 (",round(summary(pca2)$importance[2,1]*100,digits = 1),"%)"), y = paste0("PC2 (",round((summary(pca2)$importance[2,2]*100),digits = 1),"%)") ) + 
+  theme_classic() + scale_colour_manual(values = c("#99d594","grey"))
+
+#------------------------------------------------------------------------------------------#
+#Liticos
+ambiental$factores <- factores[,1]
+Factor <- cbind(ambiental,ambiental$factores)$LITHIC
+
+coord.sit2 <- as.data.frame(pca2$x[,1:2])     # Coordenadas de los sitios
+coord.sit2$sitio <- rownames(coord.sit2)      # Crear una columna con nombres de los sitios
+coord.sit2$grp <-  factor(Factor)               # Adicionar columna de grupos por Epoca
+
+
+
+g.pc3 <- ggplot() +
+  # Sitios
+  geom_point(data = coord.sit2,aes(PC1,PC2,colour=grp),size=4)+
+  scale_shape_manual(values = c(21:25)) +
+  
+  # Taxones  *valores de cero para caracteres de las flechas (arrow)
+  geom_segment(data = coord.amb2,aes(x = 0, y = 0, xend = PC1*9, yend = PC2*9), 
+               arrow = arrow(angle=22.5,length = unit(0.25,"cm"),
+                             type = "closed"),linetype=1, size=0.6,colour = "red") +
+  geom_text_repel(data = coord.amb2,aes(PC1*9,PC2*9,label=amb),colour = "red", max.overlaps =  getOption("ggrepel.max.overlaps", default = 12)) +
+  
+  geom_mark_ellipse(data=coord.sit2,aes(x=PC1,y=PC2,group=grp,
+                                        colour=grp),alpha= 1, size = 1)  +
+  
+  geom_hline(yintercept=0,linetype=3,size=1) + 
+  geom_vline(xintercept=0,linetype=3,size=1) +
+  labs(color = "Cond. Suelo", shape = "Cond. Suelo", fill = "Cond. Suelo", 
+       x = paste0("PC1 (",round(summary(pca2)$importance[2,1]*100,digits = 1),"%)"), y = paste0("PC2 (",round((summary(pca2)$importance[2,2]*100),digits = 1),"%)") ) + 
+  theme_classic() + scale_colour_manual(values = c("#d7191c","grey"))
+
+#-------------------------------------------------------------------------------------
+
+#Liticos
+ambiental$factores <- factores[,2]
+Factor <- cbind(ambiental,ambiental$factores)$SKELETIC
+
+coord.sit2 <- as.data.frame(pca2$x[,1:2])     # Coordenadas de los sitios
+coord.sit2$sitio <- rownames(coord.sit2)      # Crear una columna con nombres de los sitios
+coord.sit2$grp <-  factor(Factor)               # Adicionar columna de grupos por Epoca
+                             # vista resumida de las coordenadas de sitios
+
+
+
+g.pc4 <- ggplot() +
+  # Sitios
+  geom_point(data = coord.sit2,aes(PC1,PC2,colour=grp),size=4)+
+  scale_shape_manual(values = c(21:25)) +
+  
+  # Taxones  *valores de cero para caracteres de las flechas (arrow)
+  geom_segment(data = coord.amb2,aes(x = 0, y = 0, xend = PC1*9, yend = PC2*9), 
+               arrow = arrow(angle=22.5,length = unit(0.25,"cm"),
+                             type = "closed"),linetype=1, size=0.6,colour = "red") +
+  geom_text_repel(data = coord.amb2,aes(PC1*9,PC2*9,label=amb),colour = "red", max.overlaps =  getOption("ggrepel.max.overlaps", default = 12)) +
+  
+  geom_mark_ellipse(data=coord.sit2,aes(x=PC1,y=PC2,group=grp,
+                                        colour=grp),alpha= 1, size = 1)  +
+  
+  geom_hline(yintercept=0,linetype=3,size=1) + 
+  geom_vline(xintercept=0,linetype=3,size=1) +
+  labs(color = "Cond. Suelo", shape = "Cond. Suelo", fill = "Cond. Suelo", 
+       x = paste0("PC1 (",round(summary(pca2)$importance[2,1]*100,digits = 1),"%)"), y = paste0("PC2 (",round((summary(pca2)$importance[2,2]*100),digits = 1),"%)") ) + 
+  theme_classic() + scale_colour_manual(values = c("#fdae61","grey"))
+
+(g.pc1 + g.pc2)/(g.pc3 + g.pc4)
 ```
 
 ## **2.** Determinar diferencias en las condiciones ambientales de las parcelas de acuerdo a los tipos de vegetación en los valles profundos del río Moldavia
