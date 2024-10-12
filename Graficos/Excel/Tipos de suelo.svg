@@ -1,0 +1,2245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="597mm"
+   height="200mm"
+   viewBox="0 0 597 200"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="Tipos de suelo.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="Tipos de suelo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.15679812"
+     inkscape:cx="1128.8401"
+     inkscape:cy="481.51087"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       id="clip0">
+      <rect
+         x="994"
+         y="598"
+         width="465"
+         height="16"
+         id="rect1" />
+    </clipPath>
+    <clipPath
+       id="clip1">
+      <rect
+         x="966"
+         y="366"
+         width="30"
+         height="333"
+         id="rect2" />
+    </clipPath>
+    <clipPath
+       id="clip0-8">
+      <rect
+         x="1524"
+         y="475"
+         width="30"
+         height="334"
+         id="rect1-5" />
+    </clipPath>
+    <clipPath
+       id="clip0-6">
+      <rect
+         x="1524"
+         y="461"
+         width="30"
+         height="363"
+         id="rect1-7" />
+    </clipPath>
+    <clipPath
+       id="clip0-2">
+      <rect
+         x="1524"
+         y="461"
+         width="30"
+         height="363"
+         id="rect1-1" />
+    </clipPath>
+    <clipPath
+       id="clip0-62">
+      <rect
+         x="1524"
+         y="461"
+         width="30"
+         height="363"
+         id="rect1-9" />
+    </clipPath>
+    <clipPath
+       id="clip0-0">
+      <rect
+         x="1274"
+         y="6"
+         width="480"
+         height="186"
+         id="rect1-79" />
+    </clipPath>
+    <clipPath
+       id="clip0-84">
+      <rect
+         x="1276"
+         y="422"
+         width="480"
+         height="186"
+         id="rect1-8" />
+    </clipPath>
+    <clipPath
+       id="clip0-66">
+      <rect
+         x="1270"
+         y="214"
+         width="480"
+         height="186"
+         id="rect1-71" />
+    </clipPath>
+    <clipPath
+       id="clip0-3">
+      <rect
+         x="1278"
+         y="629"
+         width="480"
+         height="187"
+         id="rect1-51" />
+    </clipPath>
+    <clipPath
+       id="clip0-22">
+      <rect
+         x="965"
+         y="389"
+         width="30"
+         height="333"
+         id="rect1-52" />
+    </clipPath>
+    <clipPath
+       id="clip0-4">
+      <rect
+         x="1514"
+         y="616"
+         width="30"
+         height="363"
+         id="rect1-0" />
+    </clipPath>
+    <clipPath
+       id="clip0-45">
+      <rect
+         x="1278"
+         y="629"
+         width="480"
+         height="187"
+         id="rect1-6" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       clip-path="url(#clip0-0)"
+       transform="matrix(0.42665416,0,0,0.42665416,-541.42895,4.7725303)"
+       id="g23">
+      <rect
+         x="1274"
+         y="6"
+         width="480"
+         height="186"
+         fill="#ffffff"
+         id="rect2-4" />
+      <g
+         id="g2">
+        <path
+           d="m 1370,152 h 30 v 9 h -30 z m 134,-32 h 30 v 41 h -30 z m 134,-42 h 30 v 83 h -30 z"
+           fill="#9bbb59"
+           id="path2" />
+      </g>
+      <g
+         id="g3">
+        <path
+           d="m 1408,59 h 30 v 102 h -30 z m 134,32 h 30 v 70 h -30 z m 135,42 h 30 v 28 h -30 z"
+           fill="#d9d9d9"
+           id="path3-2" />
+      </g>
+      <g
+         id="g4">
+        <path
+           d="M 0,0 1.04987e-4,111"
+           stroke="#000000"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           fill-rule="evenodd"
+           transform="matrix(1,0,0,-1,1336.5,160.5)"
+           id="path4-5" />
+      </g>
+      <g
+         id="g5">
+        <path
+           d="m 1332.5,160.5 h 4 m -4,-22 h 4 m -4,-22 h 4 m -4,-21.9999 h 4 m -4,-22 h 4 m -4,-23 h 4"
+           stroke="#000000"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           id="path5-3" />
+      </g>
+      <g
+         id="g6">
+        <path
+           d="m 1336.5,160.5 h 403"
+           stroke="#d9d9d9"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           fill-rule="evenodd"
+           id="path6-5" />
+      </g>
+      <g
+         id="g7">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1367.81,142)"
+           id="text6">8.33%</text>
+      </g>
+      <g
+         id="g8">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1498.82,111)"
+           id="text7">36.84%</text>
+      </g>
+      <g
+         id="g9">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1633.22,68)"
+           id="text8">75.00%</text>
+      </g>
+      <g
+         id="g10">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1295.2,164)"
+           id="text9">0.00%</text>
+      </g>
+      <g
+         id="g11">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1289.12,142)"
+           id="text10">20.00%</text>
+      </g>
+      <g
+         id="g12">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1289.12,119)"
+           id="text11">40.00%</text>
+      </g>
+      <g
+         id="g13">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1289.12,97)"
+           id="text12">60.00%</text>
+      </g>
+      <g
+         id="g14">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1289.12,75)"
+           id="text13">80.00%</text>
+      </g>
+      <g
+         id="g15">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1283.04,53)"
+           id="text14">100.00%</text>
+      </g>
+      <g
+         id="g16">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1375.94,181)"
+           id="text15">Concava</text>
+      </g>
+      <g
+         id="g17">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1517.01,181)"
+           id="text16">Neutra</text>
+      </g>
+      <g
+         id="g18">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1644.73,181)"
+           id="text17">Convexa</text>
+      </g>
+      <g
+         id="g19">
+        <rect
+           x="1463"
+           y="22"
+           width="6"
+           height="6"
+           fill="#9bbb59"
+           id="rect18" />
+      </g>
+      <g
+         id="g20">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1471.76,28)"
+           id="text19">Lítico</text>
+      </g>
+      <g
+         id="g21">
+        <rect
+           x="1514"
+           y="22"
+           width="6"
+           height="6"
+           fill="#d9d9d9"
+           id="rect20" />
+      </g>
+      <g
+         id="g22">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1522.72,28)"
+           id="text21">No lítico</text>
+      </g>
+    </g>
+    <g
+       clip-path="url(#clip0-84)"
+       transform="matrix(0.39796329,0,0,0.39796329,-313.84188,-156.83299)"
+       id="g23-5">
+      <rect
+         x="1276"
+         y="422"
+         width="480"
+         height="186"
+         fill="#ffffff"
+         id="rect2-8" />
+      <g
+         id="g2-6">
+        <path
+           d="m 1371,512 h 30 v 64 h -30 z m 135,-19 h 30 v 83 h -30 z m 134,-14 h 30 v 97 h -30 z"
+           fill="#00b050"
+           id="path2-4" />
+      </g>
+      <g
+         id="g3-5">
+        <path
+           d="m 1409,530 h 31 v 46 h -31 z m 135,19 h 30 v 27 h -30 z m 134,14 h 30 v 13 h -30 z"
+           fill="#d9d9d9"
+           id="path3-3" />
+      </g>
+      <g
+         id="g4-9">
+        <path
+           d="M 0,0 1.04987e-4,111"
+           stroke="#000000"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           fill-rule="evenodd"
+           transform="matrix(1,0,0,-1,1338.5,576.5)"
+           id="path4-2" />
+      </g>
+      <g
+         id="g5-7">
+        <path
+           d="m 1334.5,576.5 h 4 m -4,-22 h 4 m -4,-22 h 4 m -4,-23 h 4 m -4,-22 h 4 m -4,-22 h 4"
+           stroke="#000000"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           id="path5-7" />
+      </g>
+      <g
+         id="g6-6">
+        <path
+           d="m 1338.5,576.5 h 403"
+           stroke="#d9d9d9"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           fill-rule="evenodd"
+           id="path6-97" />
+      </g>
+      <g
+         id="g7-1">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="14px"
+           transform="translate(1365.05,502)"
+           id="text6-4">58.33%</text>
+      </g>
+      <g
+         id="g8-5">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="14px"
+           transform="translate(1499.45,483)"
+           id="text7-8">75.44%</text>
+      </g>
+      <g
+         id="g9-3">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="14px"
+           transform="translate(1633.84,469)"
+           id="text8-4">87.50%</text>
+      </g>
+      <g
+         id="g10-2">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1296.83,579)"
+           id="text9-5">0.00%</text>
+      </g>
+      <g
+         id="g11-4">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1290.75,557)"
+           id="text10-0">20.00%</text>
+      </g>
+      <g
+         id="g12-7">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1290.75,535)"
+           id="text11-5">40.00%</text>
+      </g>
+      <g
+         id="g13-9">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1290.75,513)"
+           id="text12-5">60.00%</text>
+      </g>
+      <g
+         id="g14-2">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1290.75,491)"
+           id="text13-0">80.00%</text>
+      </g>
+      <g
+         id="g15-2">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1284.67,468)"
+           id="text14-3">100.00%</text>
+      </g>
+      <g
+         id="g16-5">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1377.56,597)"
+           id="text15-2">Concava</text>
+      </g>
+      <g
+         id="g17-9">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1518.63,597)"
+           id="text16-0">Neutra</text>
+      </g>
+      <g
+         id="g18-1">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1646.35,597)"
+           id="text17-9">Convexa</text>
+      </g>
+      <g
+         id="g19-3">
+        <rect
+           x="1426"
+           y="437"
+           width="6"
+           height="6"
+           fill="#00b050"
+           id="rect18-8" />
+      </g>
+      <g
+         id="g20-7">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1434.6,444)"
+           id="text19-8">Cambisoles</text>
+      </g>
+      <g
+         id="g21-4">
+        <rect
+           x="1517"
+           y="437"
+           width="6"
+           height="6"
+           fill="#d9d9d9"
+           id="rect20-3" />
+      </g>
+      <g
+         id="g22-1">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1525.76,444)"
+           id="text21-2">No cambisoles</text>
+      </g>
+    </g>
+    <g
+       clip-path="url(#clip0-66)"
+       transform="matrix(0.44562878,0,0,0.44562878,-564.43881,6.7035282)"
+       id="g24">
+      <rect
+         x="1270"
+         y="214"
+         width="480"
+         height="186"
+         fill="#ffffff"
+         id="rect2-0" />
+      <g
+         id="g2-9">
+        <path
+           d="m 1365,299 h 30 v 70 h -30 z m 134,36 h 31 v 34 h -31 z"
+           fill="#d60404"
+           id="path2-8" />
+      </g>
+      <g
+         id="g3-7">
+        <path
+           d="m 1403,346 h 30 v 23 h -30 z m 135,-36 h 30 v 59 h -30 z m 134,-34 h 30 v 93 h -30 z"
+           fill="#d9d9d9"
+           id="path3-1" />
+      </g>
+      <g
+         id="g4-1">
+        <path
+           d="M 0,0 1.04987e-4,111"
+           stroke="#000000"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           fill-rule="evenodd"
+           transform="matrix(1,0,0,-1,1331.5,368.5)"
+           id="path4-1" />
+      </g>
+      <g
+         id="g5-8">
+        <path
+           d="m 1328.5,368.5 h 3 m -3,-18 h 3 m -3,-19 h 3 m -3,-18 h 3 m -3,-19 h 3 m -3,-18 h 3 m -3,-19 h 3"
+           stroke="#000000"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           id="path5-6" />
+      </g>
+      <g
+         id="g6-9">
+        <path
+           d="m 1331.5,368.5 h 404"
+           stroke="#d9d9d9"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           fill-rule="evenodd"
+           id="path6-0" />
+      </g>
+      <g
+         id="g7-5">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="14px"
+           transform="translate(1358.9,289)"
+           id="text6-8">75.00%</text>
+      </g>
+      <g
+         id="g8-8">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="14px"
+           transform="translate(1493.29,325)"
+           id="text7-1">36.84%</text>
+      </g>
+      <g
+         id="g9-1">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="14px"
+           transform="translate(1631.23,359)"
+           id="text8-2">0.00%</text>
+      </g>
+      <g
+         id="g10-8">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1290.67,372)"
+           id="text9-7">0.00%</text>
+      </g>
+      <g
+         id="g11-7">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1284.59,353)"
+           id="text10-8">20.00%</text>
+      </g>
+      <g
+         id="g12-5">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1284.59,335)"
+           id="text11-9">40.00%</text>
+      </g>
+      <g
+         id="g13-7">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1284.59,316)"
+           id="text12-1">60.00%</text>
+      </g>
+      <g
+         id="g14-5">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1284.59,298)"
+           id="text13-1">80.00%</text>
+      </g>
+      <g
+         id="g15-7">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1278.51,279)"
+           id="text14-0">100.00%</text>
+      </g>
+      <g
+         id="g16-3">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1278.51,261)"
+           id="text15-7">120.00%</text>
+      </g>
+      <g
+         id="g17-7">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1371.41,389)"
+           id="text16-4">Concava</text>
+      </g>
+      <g
+         id="g18-12">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1512.48,389)"
+           id="text17-7">Neutra</text>
+      </g>
+      <g
+         id="g19-31">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1640.2,389)"
+           id="text18">Convexa</text>
+      </g>
+      <g
+         id="g20-0">
+        <rect
+           x="1420"
+           y="229"
+           width="6"
+           height="6"
+           fill="#d60404"
+           id="rect19" />
+      </g>
+      <g
+         id="g21-0">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1428.09,236)"
+           id="text20">Esqueletico</text>
+      </g>
+      <g
+         id="g22-0">
+        <rect
+           x="1511"
+           y="229"
+           width="6"
+           height="6"
+           fill="#d9d9d9"
+           id="rect21" />
+      </g>
+      <g
+         id="g23-7">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1519.3,236)"
+           id="text22">No esqueletico</text>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.48251042,0,0,0.48251042,-81.645734,-214.25893)"
+       id="g64">
+      <rect
+         x="958.5"
+         y="449.5"
+         width="477"
+         height="198"
+         fill="#ffffff"
+         id="rect2-01" />
+      <rect
+         x="958.5"
+         y="449.5"
+         width="477"
+         height="198"
+         stroke="#ffffff"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect3" />
+      <g
+         id="g44">
+        <path
+           d="m 1136.5,591.5 h 14"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path3-9" />
+        <path
+           d="m 1143.5,576.5 v 15"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path4" />
+        <path
+           d="m 1136.5,543.5 h 14"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path5" />
+        <path
+           d="m 1143.5,543.5 v 17"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path6" />
+        <rect
+           x="1120.5"
+           y="560.5"
+           width="47"
+           height="16"
+           fill="#92d050"
+           id="rect6-4" />
+        <rect
+           x="1120.5"
+           y="560.5"
+           width="47"
+           height="16"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="rect7" />
+        <path
+           d="m 1120.5,560.5 h 47"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path7" />
+        <path
+           d="m 1120.5,576.5 h 47"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path8" />
+        <path
+           d="m 1120.5,567.5 h 47"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path9" />
+        <path
+           d="m 1139.5,573.5 8,-8"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path10" />
+        <path
+           d="m 1139.5,565.5 8,8"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path11" />
+        <path
+           d="m 1188.5,576.5 h 14"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path12" />
+        <path
+           d="m 1195.5,563.5 v 13"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path13" />
+        <path
+           d="m 1188.5,527.5 h 14"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path14" />
+        <path
+           d="m 1195.5,527.5 v 12"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path15" />
+        <rect
+           x="1172.5"
+           y="539.5"
+           width="46"
+           height="24"
+           fill="#de0000"
+           id="rect15-2" />
+        <rect
+           x="1172.5"
+           y="539.5"
+           width="46"
+           height="24"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="rect16" />
+        <path
+           d="m 1172.5,539.5 h 46"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path16" />
+        <path
+           d="m 1172.5,563.5 h 46"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path17" />
+        <path
+           d="m 1172.5,559.5 h 46"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path18" />
+        <path
+           d="m 1191.5,557.5 8,-8"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path19" />
+        <path
+           d="m 1191.5,549.5 8,8"
+           stroke="#0d0d0d"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path20" />
+        <path
+           d="m 1239.5,585.5 h 14"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path21" />
+        <path
+           d="m 1246.5,569.5 v 16"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path22" />
+        <path
+           d="m 1239.5,546.5 h 14"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path23" />
+        <path
+           d="m 1246.5,546.5 v 12"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path24" />
+        <rect
+           x="1223.5"
+           y="558.5"
+           width="47"
+           height="11"
+           fill="#00b050"
+           id="rect24-8" />
+        <rect
+           x="1223.5"
+           y="558.5"
+           width="47"
+           height="11"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="rect25" />
+        <path
+           d="m 1223.5,558.5 h 47"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path25" />
+        <path
+           d="m 1223.5,569.5 h 47"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path26" />
+        <path
+           d="m 1223.5,564.5 h 47"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path27" />
+        <circle
+           cx="1246.5"
+           cy="590.5"
+           r="2"
+           fill="#00b050"
+           id="circle27" />
+        <circle
+           cx="1246.5"
+           cy="590.5"
+           r="2"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="circle28" />
+        <circle
+           cx="1246.5"
+           cy="539.5"
+           r="2"
+           fill="#00b050"
+           id="circle29" />
+        <circle
+           cx="1246.5"
+           cy="539.5"
+           r="2"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="circle30" />
+        <circle
+           cx="1246.5"
+           cy="534.5"
+           r="2"
+           fill="#00b050"
+           id="circle31" />
+        <circle
+           cx="1246.5"
+           cy="534.5"
+           r="2"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="circle32" />
+        <circle
+           cx="1246.5"
+           cy="530.5"
+           r="2"
+           fill="#00b050"
+           id="circle33" />
+        <circle
+           cx="1246.5"
+           cy="530.5"
+           r="2"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="circle34" />
+        <path
+           d="m 1242.5,567.5 8,-8"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path34-4" />
+        <path
+           d="m 1242.5,559.5 8,8"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path35" />
+        <path
+           d="m 1291.5,548.5 h 14"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path36" />
+        <path
+           d="m 1298.5,538.5 v 10"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path37" />
+        <path
+           d="m 1291.5,522.5 h 14"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path38" />
+        <path
+           d="m 1298.5,522.5 v 7"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path39" />
+        <rect
+           x="1275.5"
+           y="529.5"
+           width="46"
+           height="9"
+           fill="#e46c0a"
+           id="rect39" />
+        <rect
+           x="1275.5"
+           y="529.5"
+           width="46"
+           height="9"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="rect40" />
+        <path
+           d="m 1275.5,529.5 h 46"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path40" />
+        <path
+           d="m 1275.5,538.5 h 46"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path41" />
+        <path
+           d="m 1275.5,533.5 h 46"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path42" />
+        <path
+           d="m 1294.5,538.5 8,-8"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path43" />
+        <path
+           d="m 1294.5,530.5 8,8"
+           stroke="#000000"
+           stroke-width="0.666667"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path44" />
+      </g>
+      <g
+         id="g45">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1189.6,637)"
+           id="text44">Tipo de suelo</text>
+      </g>
+      <path
+         d="m 1018.5,608.5 v -106"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path45" />
+      <g
+         clip-path="url(#clip0-22)"
+         id="g46">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="rotate(-90,777.173,-199.173)"
+           id="text45">Indice de</text>
+      </g>
+      <g
+         id="g47">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="rotate(-90,785.173,-206.173)"
+           id="text46">humedad</text>
+      </g>
+      <path
+         d="m 1018.5,608.5 h -3"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path47" />
+      <path
+         d="m 1018.5,587.5 h -3"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path48" />
+      <path
+         d="m 1018.5,566.5 h -3"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path49" />
+      <path
+         d="m 1018.5,545.5 h -3"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path50" />
+      <path
+         d="m 1018.5,523.5 h -3"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path51" />
+      <path
+         d="m 1018.5,502.5 h -3"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path52" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="13.3333px"
+         transform="translate(1003.43,600.265)"
+         x="0.121094"
+         y="12.7346"
+         id="text56-4">3<tspan
+   font-size="13.3333px"
+   x="0.121094"
+   y="-8.2653799"
+   id="tspan52">4</tspan><tspan
+   font-size="13.3333px"
+   x="0.121094"
+   y="-29.2654"
+   id="tspan53">5</tspan><tspan
+   font-size="13.3333px"
+   x="0.121094"
+   y="-50.2654"
+   id="tspan54">6</tspan><tspan
+   font-size="13.3333px"
+   x="0.121094"
+   y="-71.265404"
+   id="tspan55">7</tspan><tspan
+   font-size="13.3333px"
+   x="0.121094"
+   y="-92.265404"
+   id="tspan56">8</tspan></text>
+      <rect
+         x="1049"
+         y="457"
+         width="295"
+         height="32"
+         fill="#000000"
+         fill-opacity="0"
+         id="rect56-3" />
+      <rect
+         x="1060.5"
+         y="468.5"
+         width="10"
+         height="9"
+         fill="#92d050"
+         id="rect57" />
+      <rect
+         x="1060.5"
+         y="468.5"
+         width="10"
+         height="9"
+         stroke="#000000"
+         stroke-width="0.666667"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect58" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="12px"
+         transform="translate(1075.17,465.603)"
+         x="0.26953101"
+         y="11.3975"
+         id="text58">Lítico</text>
+      <rect
+         x="1111.5"
+         y="468.5"
+         width="10"
+         height="9"
+         fill="#de0000"
+         id="rect59" />
+      <rect
+         x="1111.5"
+         y="468.5"
+         width="10"
+         height="9"
+         stroke="#0d0d0d"
+         stroke-width="0.666667"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect60" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="12px"
+         transform="translate(1125.89,465.603)"
+         x="0.546875"
+         y="11.3975"
+         id="text60">Esqueletico</text>
+      <rect
+         x="1192.5"
+         y="468.5"
+         width="10"
+         height="9"
+         fill="#00b050"
+         id="rect61" />
+      <rect
+         x="1192.5"
+         y="468.5"
+         width="10"
+         height="9"
+         stroke="#000000"
+         stroke-width="0.666667"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect62" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="12px"
+         transform="translate(1207.37,465.603)"
+         x="0.78125"
+         y="11.3975"
+         id="text62">Cambisoles</text>
+      <rect
+         x="1273.5"
+         y="468.5"
+         width="10"
+         height="9"
+         fill="#e46c0a"
+         id="rect63" />
+      <rect
+         x="1273.5"
+         y="468.5"
+         width="10"
+         height="9"
+         stroke="#000000"
+         stroke-width="0.666667"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect64" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="12px"
+         transform="translate(1288.37,465.603)"
+         x="0.73339802"
+         y="11.3975"
+         id="text64">Fluvisoles</text>
+      <path
+         d="m 958,449 h 477.36 V 647.758 H 958 Z"
+         fill="#000000"
+         fill-rule="evenodd"
+         fill-opacity="0"
+         id="path64" />
+    </g>
+    <g
+       transform="matrix(0.4867448,0,0,0.4867448,-354.17838,-238.31661)"
+       id="g62">
+      <rect
+         x="1507.5"
+         y="694.5"
+         width="477"
+         height="198"
+         fill="#ffffff"
+         id="rect2-5" />
+      <rect
+         x="1507.5"
+         y="694.5"
+         width="477"
+         height="198"
+         stroke="#ffffff"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect3-7" />
+      <g
+         id="g40">
+        <path
+           d="m 1692.5,837.5 h 14"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path3" />
+        <path
+           d="m 1699.5,814.5 v 23"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path4-55" />
+        <path
+           d="m 1692.5,763.5 h 14"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path5-2" />
+        <path
+           d="m 1699.5,763.5 v 16"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path6-8" />
+        <rect
+           x="1676.5"
+           y="779.5"
+           width="46"
+           height="35"
+           fill="#92d050"
+           id="rect6" />
+        <rect
+           x="1676.5"
+           y="779.5"
+           width="46"
+           height="35"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="rect7-9" />
+        <path
+           d="m 1676.5,779.5 h 46"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path7-1" />
+        <path
+           d="m 1676.5,814.5 h 46"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path8-7" />
+        <path
+           d="m 1676.5,796.5 h 46"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path9-8" />
+        <path
+           d="m 1695.5,800.5 8,-8"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path10-0" />
+        <path
+           d="m 1695.5,792.5 8,8"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path11-3" />
+        <path
+           d="m 1743.5,791.5 h 14"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path12-8" />
+        <path
+           d="m 1750.5,779.5 v 12"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path13-9" />
+        <path
+           d="m 1743.5,756.5 h 14"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path14-7" />
+        <path
+           d="m 1750.5,756.5 v 13"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path15-2" />
+        <rect
+           x="1727.5"
+           y="769.5"
+           width="45"
+           height="10"
+           fill="#d60404"
+           id="rect15" />
+        <rect
+           x="1727.5"
+           y="769.5"
+           width="45"
+           height="10"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="rect16-3" />
+        <path
+           d="m 1727.5,769.5 h 45"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path16-0" />
+        <path
+           d="m 1727.5,779.5 h 45"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path17-1" />
+        <path
+           d="m 1727.5,777.5 h 45"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path18-0" />
+        <circle
+           cx="1750.5"
+           cy="812.5"
+           r="2"
+           fill="#d60404"
+           id="circle18" />
+        <circle
+           cx="1750.5"
+           cy="812.5"
+           r="2"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="circle19" />
+        <path
+           d="m 1746.5,780.5 8,-8"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path19-0" />
+        <path
+           d="m 1746.5,772.5 8,8"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path20-2" />
+        <path
+           d="m 1793.5,837.5 h 14"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path21-1" />
+        <path
+           d="m 1800.5,800.5 v 37"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path22-8" />
+        <path
+           d="m 1793.5,756.5 h 14"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path23-9" />
+        <path
+           d="m 1800.5,756.5 v 17"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path24-5" />
+        <rect
+           x="1777.5"
+           y="773.5"
+           width="45"
+           height="27"
+           fill="#00b050"
+           id="rect24" />
+        <rect
+           x="1777.5"
+           y="773.5"
+           width="45"
+           height="27"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="rect25-5" />
+        <path
+           d="m 1777.5,773.5 h 45"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path25-4" />
+        <path
+           d="m 1777.5,800.5 h 45"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path26-4" />
+        <path
+           d="m 1777.5,783.5 h 45"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path27-3" />
+        <path
+           d="m 1796.5,791.5 8,-8"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path28" />
+        <path
+           d="m 1796.5,783.5 8,8"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path29" />
+        <path
+           d="m 1843.5,779.5 h 14"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path30" />
+        <path
+           d="m 1850.5,771.5 v 8"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path31" />
+        <path
+           d="m 1843.5,760.5 h 14"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path32" />
+        <path
+           d="m 1850.5,760.5 v 6"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path33" />
+        <rect
+           x="1827.5"
+           y="766.5"
+           width="46"
+           height="5"
+           fill="#e46c0a"
+           id="rect33" />
+        <rect
+           x="1827.5"
+           y="766.5"
+           width="46"
+           height="5"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="rect34" />
+        <path
+           d="m 1827.5,766.5 h 46"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path34" />
+        <path
+           d="m 1827.5,771.5 h 46"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path35-8" />
+        <path
+           d="m 1827.5,769.5 h 46"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path36-5" />
+        <circle
+           cx="1850.5"
+           cy="793.5"
+           r="2"
+           fill="#e46c0a"
+           id="circle36" />
+        <circle
+           cx="1850.5"
+           cy="793.5"
+           r="2"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="circle37" />
+        <circle
+           cx="1850.5"
+           cy="756.5"
+           r="2"
+           fill="#e46c0a"
+           id="circle38" />
+        <circle
+           cx="1850.5"
+           cy="756.5"
+           r="2"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="circle39" />
+        <path
+           d="m 1846.5,774.5 8,-8"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path39-5" />
+        <path
+           d="m 1846.5,766.5 8,8"
+           stroke="#000000"
+           stroke-miterlimit="2"
+           fill="none"
+           id="path40-5" />
+      </g>
+      <g
+         id="g41">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1743.9,882)"
+           id="text40">Tipo de suelo</text>
+      </g>
+      <path
+         d="m 1578.5,853.5 v -112"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path41-6" />
+      <g
+         clip-path="url(#clip0-4)"
+         id="g42">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="rotate(-90,1172.675,-352.675)"
+           id="text41">Indice de</text>
+      </g>
+      <g
+         id="g43">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="rotate(-90,1181.675,-358.675)"
+           id="text42">nutrientes</text>
+      </g>
+      <path
+         d="m 1578.5,853.5 h -4"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path43-0" />
+      <path
+         d="m 1578.5,836.5 h -4"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path44-5" />
+      <path
+         d="m 1578.5,818.5 h -4"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path45-2" />
+      <path
+         d="m 1578.5,801.5 h -4"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path46" />
+      <path
+         d="m 1578.5,784.5 h -4"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path47-1" />
+      <path
+         d="m 1578.5,766.5 h -4"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path48-9" />
+      <path
+         d="m 1578.5,749.5 h -4"
+         stroke="#262626"
+         stroke-miterlimit="2"
+         fill="none"
+         id="path49-9" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="13.3333px"
+         transform="translate(1552.43,845.093)"
+         x="0.461588"
+         y="12.907"
+         id="text54">1.5<tspan
+   font-size="13.3333px"
+   x="0.461588"
+   y="-4.09302"
+   id="tspan49">2.5</tspan><tspan
+   font-size="13.3333px"
+   x="0.461588"
+   y="-21.093"
+   id="tspan50">3.5</tspan><tspan
+   font-size="13.3333px"
+   x="0.461588"
+   y="-39.092999"
+   id="tspan51">4.5</tspan><tspan
+   font-size="13.3333px"
+   x="0.461588"
+   y="-56.092999"
+   id="tspan52-0">5.5</tspan><tspan
+   font-size="13.3333px"
+   x="0.461588"
+   y="-73.093002"
+   id="tspan53-7">6.5</tspan><tspan
+   font-size="13.3333px"
+   x="0.461588"
+   y="-90.093002"
+   id="tspan54-0">7.5</tspan></text>
+      <rect
+         x="1598"
+         y="702"
+         width="295"
+         height="32"
+         fill="#000000"
+         fill-opacity="0"
+         id="rect54" />
+      <rect
+         x="1609.5"
+         y="713.5"
+         width="10"
+         height="9"
+         fill="#92d050"
+         id="rect55" />
+      <rect
+         x="1609.5"
+         y="713.5"
+         width="10"
+         height="9"
+         stroke="#000000"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect56" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="12px"
+         transform="translate(1624.26,710.603)"
+         x="0.26953101"
+         y="11.3975"
+         id="text56">Lítico</text>
+      <rect
+         x="1660.5"
+         y="713.5"
+         width="10"
+         height="9"
+         fill="#d60404"
+         id="rect57-1" />
+      <rect
+         x="1660.5"
+         y="713.5"
+         width="10"
+         height="9"
+         stroke="#000000"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect58-3" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="12px"
+         transform="translate(1674.98,710.603)"
+         x="0.546875"
+         y="11.3975"
+         id="text58-7">Esqueletico</text>
+      <rect
+         x="1742.5"
+         y="713.5"
+         width="9"
+         height="9"
+         fill="#00b050"
+         id="rect59-0" />
+      <rect
+         x="1742.5"
+         y="713.5"
+         width="9"
+         height="9"
+         stroke="#000000"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect60-6" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="12px"
+         transform="translate(1756.46,710.603)"
+         x="0.78125"
+         y="11.3975"
+         id="text60-5">Cambisoles</text>
+      <rect
+         x="1823.5"
+         y="713.5"
+         width="9"
+         height="9"
+         fill="#e46c0a"
+         id="rect61-3" />
+      <rect
+         x="1823.5"
+         y="713.5"
+         width="9"
+         height="9"
+         stroke="#000000"
+         stroke-miterlimit="2"
+         fill="none"
+         id="rect62-9" />
+      <text
+         font-family="Calibri, Calibri_MSFontService, sans-serif"
+         font-weight="700"
+         font-size="12px"
+         transform="translate(1837.46,710.603)"
+         x="0.73339802"
+         y="11.3975"
+         id="text62-7">Fluvisoles</text>
+      <path
+         d="m 1507,694 h 477.53 V 892.586 H 1507 Z"
+         fill="#000000"
+         fill-rule="evenodd"
+         fill-opacity="0"
+         id="path62" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:#000000;stroke-width:26.7761;stroke-opacity:0"
+       x="21.477272"
+       y="16.704546"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="stroke-width:26.776"
+         x="21.477272"
+         y="16.704546">A)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:#000000;stroke-width:26.7761;stroke-opacity:0"
+       x="17.699179"
+       y="108.91804"
+       id="text1-3"><tspan
+         sodipodi:role="line"
+         id="tspan1-8"
+         style="stroke-width:26.776"
+         x="17.699179"
+         y="108.91804">B)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:#000000;stroke-width:26.7761;stroke-opacity:0"
+       x="219.76047"
+       y="18.140377"
+       id="text1-3-3"><tspan
+         sodipodi:role="line"
+         id="tspan1-8-0"
+         style="stroke-width:26.776"
+         x="219.76047"
+         y="18.140377">C)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:#000000;stroke-width:26.7761;stroke-opacity:0"
+       x="408.71481"
+       y="15.666131"
+       id="text1-3-8"><tspan
+         sodipodi:role="line"
+         id="tspan1-8-3"
+         style="stroke-width:26.776"
+         x="408.71481"
+         y="15.666131">E)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.7611px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:#000000;stroke-width:26.7761;stroke-opacity:0"
+       x="405.73337"
+       y="111.14947"
+       id="text1-3-8-7"><tspan
+         sodipodi:role="line"
+         id="tspan1-8-3-2"
+         style="stroke-width:26.776"
+         x="405.73337"
+         y="111.14947">F)</tspan></text>
+    <g
+       clip-path="url(#clip0-45)"
+       transform="matrix(0.34910039,0,0,0.34910039,-237.13362,-103.77539)"
+       id="g24-0">
+      <rect
+         x="1278"
+         y="629"
+         width="480"
+         height="187"
+         fill="#ffffff"
+         id="rect2-7" />
+      <g
+         id="g2-4">
+        <path
+           d="m 1373,730 h 30 v 54 h -30 z m 134,51 h 30 v 3 h -30 z"
+           fill="#e46c0a"
+           id="path2-2" />
+      </g>
+      <g
+         id="g3-4">
+        <path
+           d="m 1411,746 h 30 v 38 h -30 z m 134,-51 h 30 v 89 h -30 z m 135,-3 h 30 v 92 h -30 z"
+           fill="#d9d9d9"
+           id="path3-26" />
+      </g>
+      <g
+         id="g4-0">
+        <path
+           d="M 0,0 1.04987e-4,111"
+           stroke="#000000"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           fill-rule="evenodd"
+           transform="matrix(1,0,0,-1,1339.5,784.5)"
+           id="path4-56" />
+      </g>
+      <g
+         id="g5-73">
+        <path
+           d="m 1335.5,784.5 h 4 m -4,-19 h 4 m -4,-18 h 4 m -4,-19 h 4 m -4,-18 h 4 m -4,-19 h 4 m -4,-18 h 4"
+           stroke="#000000"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           id="path5-9" />
+      </g>
+      <g
+         id="g6-7">
+        <path
+           d="m 1339.5,784.5 h 403"
+           stroke="#d9d9d9"
+           stroke-linejoin="round"
+           stroke-miterlimit="10"
+           fill="none"
+           fill-rule="evenodd"
+           id="path6-4" />
+      </g>
+      <g
+         id="g7-4">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="14px"
+           transform="translate(1366.59,720)"
+           id="text6-7">58.33%</text>
+      </g>
+      <g
+         id="g8-6">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="14px"
+           transform="translate(1504.53,771)"
+           id="text7-2">3.51%</text>
+      </g>
+      <g
+         id="g9-4">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="14px"
+           transform="translate(1638.93,774)"
+           id="text8-9">0.00%</text>
+      </g>
+      <g
+         id="g10-84">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1298.37,787)"
+           id="text9-9">0.00%</text>
+      </g>
+      <g
+         id="g11-5">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1292.29,769)"
+           id="text10-2">20.00%</text>
+      </g>
+      <g
+         id="g12-9">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1292.29,750)"
+           id="text11-1">40.00%</text>
+      </g>
+      <g
+         id="g13-1">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1292.29,732)"
+           id="text12-7">60.00%</text>
+      </g>
+      <g
+         id="g14-27">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1292.29,713)"
+           id="text13-3">80.00%</text>
+      </g>
+      <g
+         id="g15-5">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1286.21,695)"
+           id="text14-2">100.00%</text>
+      </g>
+      <g
+         id="g16-0">
+        <text
+           font-family="Calibri, Calibri_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1286.21,676)"
+           id="text15-3">120.00%</text>
+      </g>
+      <g
+         id="g17-6">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1379.1,804)"
+           id="text16-41">Concava</text>
+      </g>
+      <g
+         id="g18-6">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1520.17,804)"
+           id="text17-8">Neutra</text>
+      </g>
+      <g
+         id="g19-0">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="13px"
+           transform="translate(1647.89,804)"
+           id="text18-1">Convexa</text>
+      </g>
+      <g
+         id="g20-9">
+        <rect
+           x="1438"
+           y="645"
+           width="6"
+           height="6"
+           fill="#e46c0a"
+           id="rect19-3" />
+      </g>
+      <g
+         id="g21-8">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1446.1,652)"
+           id="text20-9">Fluvisoles</text>
+      </g>
+      <g
+         id="g22-15">
+        <rect
+           x="1519"
+           y="645"
+           width="6"
+           height="6"
+           fill="#d9d9d9"
+           id="rect21-6" />
+      </g>
+      <g
+         id="g23-8">
+        <text
+           font-family="Arial, Arial_MSFontService, sans-serif"
+           font-weight="700"
+           font-size="12px"
+           transform="translate(1527.35,652)"
+           id="text22-6">No fluvisoles</text>
+      </g>
+    </g>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:7.7611px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;stroke:#000000;stroke-width:26.7761;stroke-opacity:0"
+     x="219.1741"
+     y="114.84814"
+     id="text1-3-9"><tspan
+       sodipodi:role="line"
+       id="tspan1-8-7"
+       style="fill:#000000;stroke-width:26.776"
+       x="219.1741"
+       y="114.84814">D)</tspan></text>
+</svg>
