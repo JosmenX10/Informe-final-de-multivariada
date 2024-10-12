@@ -20,7 +20,7 @@ csl: apa.csl
 
 Las técnicas multivariadas han sido ampliamente utilizadas en la biología y ecología, permitiendo la caracterización o clasificación de las comunidades biológicas considerando la variación en la estructura comunitaria entre las unidades de muestreo, a la vez que se puede evaluar la influencia de gradientes ambientales sobre esta variación. Esto es posible gracias a que estos análisis permiten dilucidar patrones que brindan información sobre la relación de múltiples elementos inherentes a estos sistemas naturales, facilitando la interpretación de generalidades y especificidades de estas relaciones [@Borcard2011NumericalEW; @book; @Javier]. Además, la aplicación de estas técnicas multivariadas por medio de algoritmos computacionales han facilitado que estos se vuelvan cada vez más sofisticados en sus calculos, permitiendo que existan métodos cada vez más eficaces según las bases de datos y objetivos de estudio [@AYOUBHANNAA201348; @LI2022104806].
 
-Por esta razón, para el presente trabajo de caso se dispone de una base de datos de acceso público para la aplicación de estas técnicas multivariadas, la cual consiste en un estudio de los ensamblajes en valles profundos del río de Moldavia en República Checa, donde se tomaron valores de cobertura de cada especie de planta en las unidades de muestreo o parcelas, a la vez que se midieron variables topográficas, topológicas y medidas indirectas de los niveles de nutrientes, continentalidad, humedad, temperatura y reactividad en las parcelas [@ellenberg1974; @ellenberg1979]. Este estudio se realizó con el objetivo de probar las predicciones del “fenómeno fluvial” por métodos cuantitativos, el cual mencionaba una serie de observaciones sobre los patrones de vegetación en estos ecosistemas [@blazkova1964 @turk1994], entre ellos, se destaca la observación de que la distribución y riqueza de los ensamblajes no es aleatoria. Al ser los patrones de vegetación dependientes del ambiente es posible que estas puedan presentar una influencia similar entre dos o más ecosistemas independientes, tal cual como @article encontró en los valles del Río de Moldavia y el Río de Dyje.
+Por esta razón, para el presente trabajo de caso se dispone de una base de datos de acceso público para la aplicación de estas técnicas multivariadas, la cual consiste en un estudio de los vegetación en valles profundos del río de Moldavia en República Checa, donde se tomaron valores de cobertura de cada especie de planta en las unidades de muestreo o parcelas, a la vez que se midieron variables topográficas, topológicas y medidas indirectas de los niveles de nutrientes, continentalidad, humedad, temperatura y reactividad en las parcelas [@ellenberg1974; @ellenberg1979]. Este estudio se realizó con el objetivo de probar las predicciones del “fenómeno fluvial” por métodos cuantitativos, el cual mencionaba una serie de observaciones sobre los patrones de vegetación en estos ecosistemas [@blazkova1964 @turk1994], entre ellos, se destaca la observación de que la distribución y riqueza de los vegetación no es aleatoria. Al ser los patrones de vegetación dependientes del ambiente es posible que estas puedan presentar una influencia similar entre dos o más ecosistemas independientes, tal cual como @article encontró en los valles del Río de Moldavia y el Río de Dyje.
 
 Las técnicas multivariadas aplicadas en este caso permitieron revelar información importante para el entendimiento de la interacción ambiente-vegetación en el macizo de bohemia, por lo que es un indispensable entender los fundamentos de estos métodos de manera practica y teórica, para comprender su plausibilidad ante otros casos de estudio.
 
@@ -78,15 +78,15 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ## **Pregunta de análisis**
 
-¿Qué influencia tiene la topología y topografia en la composición de los ensamblajes de plantas en los valles profundos del río de Moldavia?
+¿Cual es el efecto de la topología y topografía sobre la composición de los ensamblajes de vegetación de plantas en los valles profundos del río de Moldavia?
 
 ## **Objetivos**
 
--   Determinar la relación entre variables topográficas, topológicas y las condiciones de hábitat (índices de Hellinberg) en los valles profundos del río Moldavia.
+-   Evaluar la relación entre las variables ambientales en los valles profundos del río Moldavia.
 
--   Determinar las diferencias entre los tipos de ensamblajes de plantas en los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
+-   Determinar diferencias en las condiciones de habitats entres los tipos de vegetación de plantas en los valles profundos del río Moldavia.
 
--   Evaluar la influencia de las variables ambientales en la variación de la composición de los ensamblajes de plantas en los valles profundos del río Moldavia.
+-   Evaluar el efecto de las condiciones ambientales sobre la diversidad de plantas en los valles profundos del río Moldavia.
 
 ## **Hipotesis**
 
@@ -98,15 +98,15 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ### **2) Objetivo 2:**
 
--   **Ho**: No existen diferencias entre los tipos de ensamblajes de plantas de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
+-   **Ho**: No existen diferencias entre los tipos de vegetación de plantas de los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
 
--   **Ha**: Existen diferencias entre los tipos de ensamblajes de plantas en los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
+-   **Ha**: Existen diferencias entre los tipos de vegetación de plantas en los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
 
 ### **3) Objetivo 3:**
 
--   **Ho**: La topografía y la topología no influyen en la variación de la composición de los ensamblajes de plantas en los valles profundos del río Moldavia.
+-   **Ho**: La topografía y la topología no influyen en la variación de la composición de los vegetación de plantas en los valles profundos del río Moldavia.
 
--   **Ha**: La topografía y la topología influyen en la variación de la composición de los ensamblajes de plantas en los valles profundos del río Moldavia.
+-   **Ha**: La topografía y la topología influyen en la variación de la composición de los vegetación de plantas en los valles profundos del río Moldavia.
 
 ![](Base%20de%20datos%20y%20contextos/diagrama_de_flujo.svg)
 
@@ -192,7 +192,7 @@ datos_env <- datos_env[,-1]
 
 A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación con el indice de Spearman y el nivel de significancia de estas relaciones. Por ejemplo, la @fig-fig1 refleja la estrecha relación positiva entre las variables de orientación sureste y la orientación sur-sureste con un valor de 0.83 de correlación entre sus datos con el mayor nivel de significancia(p-value\<0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 0.79 de los datos, esto se entiende ya que el cambio en la orientación sureste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-sureste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 0.62 . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia. A continuación se realizará una exploración visual de las relaciones con el mayor nivel de significancia y con un grado de correlación mayor al 60%.
 
-```{r, warning=FALSE,message=FALSE}
+```{r, warning=FALSE,message=FALSE,fig.height=4,fig.width=5}
 #| label: fig-fig1 
 #| fig-cap: "Resumen de las relaciones de las variables topológicas y topográficas usando el indice de correlación de Spearman: Los elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas. El nivel de significancia se representa por medio de asteriscos (* = 0.05, ** = 0.01, 0.001 = ***)."
 
@@ -224,7 +224,7 @@ corrplot(topocor,method = "ellipse",type ="lower",diag = FALSE,
 
 Dado que los índices de carga calorífica son derivados de la pendiente y la orientación, presentan una estrecha relación lineal positiva. En la \@fig-fig2 (A) se confirma esta relación entre las orientaciones sureste y sur-sureste. Al medir los valores de orientación en una magnitud escalar, que aumenta a medida que la orientación de las parcelas se aproxima a estas direcciones, puede ocurrir que dos parcelas con orientaciones diferentes tengan el mismo valor en una de las variables, al estar desviadas en la misma cantidad de grados respecto al noroeste. Sin embargo, en la orientación sur-sureste, los valores serían distintos, como se observa en la \@fig-fig3. Por esta razón, en el gráfico se aprecia que cada valor en el eje x puede corresponder a dos valores en el eje y, lo que genera dos líneas de puntos en las partes superior e inferior de la línea de tendencia. La \@fig-fig2 (B) muestra una estrecha relación entre las variables de carga calorífica para valores cercanos a 0, pero a medida que la carga calorífica del sureste aumenta, se observan valores más alejados de la línea de tendencia suavizada. Los datos que se desvían de los patrones generales podrían deberse a mediciones erróneas de las orientaciones o a situaciones particulares de algunas parcelas.
 
-```{r, message=FALSE,warning=FALSE}
+```{r, message=FALSE,warning=FALSE, fig.ncol=2}
 #| label: fig-fig2 
 #| fig-cap: Relación de las variables de orientación y capacidad calorífica. A) Relación entre orientación Sur con la orientación Sur-Sureste. B)Relación entre el indice de capacidad calorífica.
 
@@ -243,8 +243,9 @@ g2 = ggplot(datos_env, aes(x = CCSE , y = CCS.SE)) +
   theme_classic()
 
 
-
 g1/g2
+
+include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final-de-multivariada\\Graficos\\Explicaciones\\Orientación.png") 
 
 
 ```
@@ -347,11 +348,11 @@ include_graphics("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-final
 
 ```
 
-## **2.** Determinar las diferencias entre los tipos de ensamblajes de plantas en los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
+## **2.** Determinar las diferencias entre los tipos de vegetación de plantas en los valles profundos del río Moldavia en función de sus condiciones ambientales, riqueza, cobertura vegetal y composición.
 
-### **-Diferencias en la altitud y orientación de las parcelas de acuerdo a los tipos de ensamblajes de plantas**
+### **-Diferencias en la altitud y orientación de las parcelas de acuerdo a los tipos de vegetación de plantas**
 
-En la @fig-fig10 se observa que los ensamblajes tipo 1 exhibe una orientación mayoritaria hacia el noroeste, con una distribución altitudinal amplia que varía entre 425 y 525 m.s.n.m. los ensamblajes tipo 2, por su parte, se distribuye tanto al norte como al noroeste y suroeste, con altitudes que oscilan entre 430 y 490 m.s.n.m. En cuanto a los ensamblajes tipo 3, esta presenta un rango de elevación, que va de 425 a 500 m.s.n.m., con una orientación predominante hacia el suroeste y el norte. Por último, los ensamblajes tipo 4 tiene un rango de distribución más limitado en cuanto a su elevación, con datos que se sitúan entre 400 y 450 m.s.n.m., y una orientación un poco más homogénea.
+En la @fig-fig10 se observa que los vegetación tipo 1 exhibe una orientación mayoritaria hacia el noroeste, con una distribución altitudinal amplia que varía entre 425 y 525 m.s.n.m. los vegetación tipo 2, por su parte, se distribuye tanto al norte como al noroeste y suroeste, con altitudes que oscilan entre 430 y 490 m.s.n.m. En cuanto a los vegetación tipo 3, esta presenta un rango de elevación, que va de 425 a 500 m.s.n.m., con una orientación predominante hacia el suroeste y el norte. Por último, los vegetación tipo 4 tiene un rango de distribución más limitado en cuanto a su elevación, con datos que se sitúan entre 400 y 450 m.s.n.m., y una orientación un poco más homogénea.
 
 ```{r, warning=FALSE,message=FALSE}
 #| label: fig-fig10 
@@ -374,47 +375,47 @@ ggplot(datos_env) +
 theme_light()
 ```
 
-### **-Diferencias en las condiciones ambientales,riqueza y coberturas entre los tipos de ensamblajes de plantas**
+### **-Diferencias en las condiciones ambientales,riqueza y coberturas entre los tipos de vegetación de plantas**
 
-La @fig-fig9 muestra el patrón de variación de algunas variables topológicas y topográficas entre los diferentes tipos de ensamblajes evaluados. Se observa que los mayores valores de luz y temperatura se registraron en el ensamblaje tipo 1, seguido por el tipo 2, mientras que los menores valores correspondieron a el tipo 3. Sin embargo, las muescas de las cajas para la luz y la temperatura se solapan entre los tipos de vegetación 1, 2 y 4, lo que sugiere que la posibilidad de no diferencias entre estos grupos. En contraste, las muescas del ensamblaje tipo 1 no se solapan con las de los demás tipos, lo que podría insinuar diferencias ente estos tipos de ensamblajes.En cuanto a la continentalidad, se observa un patrón decreciente desde el ensamblaje tipo 1 hasta el tipo 4, siendo el ensamblaje tipo 1 el que presenta los valores más altos. Los ensamblajes tipo 3 y 4 muestran valores menores; y mostrando solapamiento en sus muescas; sin embargo, en el ensamblaje tipo 4 se identifica un valor atípico mayor, que podría estar sesgando los resultados.
+La @fig-fig9 muestra el patrón de variación de algunas variables topológicas y topográficas entre los diferentes tipos de vegetación evaluados. Se observa que los mayores valores de luz y temperatura se registraron en el ensamblaje tipo 1, seguido por el tipo 2, mientras que los menores valores correspondieron a el tipo 3. Sin embargo, las muescas de las cajas para la luz y la temperatura se solapan entre los tipos de vegetación 1, 2 y 4, lo que sugiere que la posibilidad de no diferencias entre estos grupos. En contraste, las muescas del ensamblaje tipo 1 no se solapan con las de los demás tipos, lo que podría insinuar diferencias ente estos tipos de vegetación.En cuanto a la continentalidad, se observa un patrón decreciente desde el ensamblaje tipo 1 hasta el tipo 4, siendo el ensamblaje tipo 1 el que presenta los valores más altos. Los vegetación tipo 3 y 4 muestran valores menores; y mostrando solapamiento en sus muescas; sin embargo, en el ensamblaje tipo 4 se identifica un valor atípico mayor, que podría estar sesgando los resultados.
 
-A pesar del patrón decreciente de la continentalidad en los los ensamblajes de plantas vegetales, en sentido 1→ 4, existe un solapamiento de las muescas entre los tipos de (1 y 2), (2, 3 y 4), (3 y 4) lo que podría sugerir falta de diferenciación en la continentalidad entre estos grupos, y un posible anidamiento en esta variable.Los valores más altos de nutrientes se registraron en las vegetaciones tipo 4 y 3, respectivamente, sin aparentes diferencias entre estos dos grupos, aunque en el tipo 4 los datos presentaron menor dispersión. Por otro lado, las muescas de las vegetaciones tipo 1 y 2 no se superponen con las del grupo 3 ni con las del grupo 4, lo que podría inferir posibles diferencias en la cantidad de nutrientes entre estos tipos. Sin embargo, no se encontraron posibles diferencias entre los grupos 1 y 2 debido al solapamiento de sus muescas.
+A pesar del patrón decreciente de la continentalidad en los los vegetación de plantas vegetales, en sentido 1→ 4, existe un solapamiento de las muescas entre los tipos de (1 y 2), (2, 3 y 4), (3 y 4) lo que podría sugerir falta de diferenciación en la continentalidad entre estos grupos, y un posible anidamiento en esta variable.Los valores más altos de nutrientes se registraron en las vegetaciones tipo 4 y 3, respectivamente, sin aparentes diferencias entre estos dos grupos, aunque en el tipo 4 los datos presentaron menor dispersión. Por otro lado, las muescas de las vegetaciones tipo 1 y 2 no se superponen con las del grupo 3 ni con las del grupo 4, lo que podría inferir posibles diferencias en la cantidad de nutrientes entre estos tipos. Sin embargo, no se encontraron posibles diferencias entre los grupos 1 y 2 debido al solapamiento de sus muescas.
 
-Respecto a la humedad, se identificaron valores más altos en los ensamblajes tipo 4, los cuales sugieren ser diferentes en comparación con los demás tipos, dado que sus intervalos de confianza (muescas) no se solapan. Por su parte, aunque las vegetaciones tipo 1 y 2, así como los tipos 2 y 3 presentaron medianas diferentes, sus intervalos de confianza se superponen; por lo tanto, no se sugieren diferencias entre estos pares de grupos. Sin embargo, sí se sugiere diferencias entre los grupos 1 y 3.Finalmente, con relación a la reactividad, los mayores valores se observaron en los ensamblajes tipo 4. No obstante, las muescas de este grupo se solapan con las de las vegetaciones tipo 1 y 3, por lo que posiblemente se podría considerar la no existencia de diferencia entre estos. En contraste, los ensamblajes tipo 2 presentó los menores valores de reactividad y sugiere una posible diferencia con respecto a los demás tipos debido a que sus intervalos de confianza no se solapan con ninguna otra caja del gráfico.
+Respecto a la humedad, se identificaron valores más altos en los vegetación tipo 4, los cuales sugieren ser diferentes en comparación con los demás tipos, dado que sus intervalos de confianza (muescas) no se solapan. Por su parte, aunque las vegetaciones tipo 1 y 2, así como los tipos 2 y 3 presentaron medianas diferentes, sus intervalos de confianza se superponen; por lo tanto, no se sugieren diferencias entre estos pares de grupos. Sin embargo, sí se sugiere diferencias entre los grupos 1 y 3.Finalmente, con relación a la reactividad, los mayores valores se observaron en los vegetación tipo 4. No obstante, las muescas de este grupo se solapan con las de las vegetaciones tipo 1 y 3, por lo que posiblemente se podría considerar la no existencia de diferencia entre estos. En contraste, los vegetación tipo 2 presentó los menores valores de reactividad y sugiere una posible diferencia con respecto a los demás tipos debido a que sus intervalos de confianza no se solapan con ninguna otra caja del gráfico.
 
 ```{r,warning=FALSE,message=FALSE}
 #| label: fig-fig11 
-#| fig-cap: "Variación de las variables topológicas y topográficas en los cuatro tipos de vegetación evaluados. A) Comparación del índice de luz entre los distintos tipos ensamblajes. B) Comparación del índice de temperatura entre los distintos tipos de vegetación. C) Comparación de la continentalidad entre los distintos tipos de ensamblajes. D) Comparación del índice de nutrientes entre los distintos tipos de vegetación. E) Comparación del índice de humedad entre los distintos tipos de vegetación. F) Comparación del índice de reactividad entre los distintos tipos de vegetación."
+#| fig-cap: "Variación de las variables topológicas y topográficas en los cuatro tipos de vegetación evaluados. A) Comparación del índice de luz entre los distintos tipos vegetación. B) Comparación del índice de temperatura entre los distintos tipos de vegetación. C) Comparación de la continentalidad entre los distintos tipos de vegetación. D) Comparación del índice de nutrientes entre los distintos tipos de vegetación. E) Comparación del índice de humedad entre los distintos tipos de vegetación. F) Comparación del índice de reactividad entre los distintos tipos de vegetación."
 
 f1 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Luz)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
   guides(fill = "none") + 
-  labs( x = "Tipos de ensamblajes", y = "Luz", tag = "A)")
+  labs( x = "Tipos de vegetación", y = "Luz", tag = "A)")
 
 f2 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Nutrientes)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
   guides(fill = "none") + 
-  labs( x = "Tipos de ensamblajes", y = "Nutrientes", tag = "B)")
+  labs( x = "Tipos de vegetación", y = "Nutrientes", tag = "B)")
 
 f3 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Temperatura)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
   guides(fill = "none") + 
-  labs( x = "Tipos de ensamblajes", y = "Temperatura", tag = "c)")
+  labs( x = "Tipos de vegetación", y = "Temperatura", tag = "c)")
 
 f4 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Humedad)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
   guides(fill = "none") + 
-  labs( x = "Tipos de ensamblajes", y = "Humedad", tag = "D)") 
+  labs( x = "Tipos de vegetación", y = "Humedad", tag = "D)") 
 
 f5  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Continentalidad)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
   guides(fill = "none") + 
-  labs( x = "Tipos de ensamblajes", y = "Continentalidad", tag = "E)")
+  labs( x = "Tipos de vegetación", y = "Continentalidad", tag = "E)")
 
 f6  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Reactividad)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
   guides(fill = "none") + 
-  labs( x = "Tipos de ensamblajes", y = "Reactividad", tag = "F)")
+  labs( x = "Tipos de vegetación", y = "Reactividad", tag = "F)")
 
 
 
@@ -424,7 +425,7 @@ f6  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Reactividad))
 
 ### **-Selección de las 15 especies más abundantes**
 
-Se convierten los porcentajes de cobertura de cada especie a valores en metros cuadrados (\$m\^2\$) para, posteriormente, seleccionar las 15 especies con mayor cobertura. Luego, se determina cuánto contribuye en cobertura cada una de estas especies en los diferentes tipos de ensamblajes de plantas.
+Se convierten los porcentajes de cobertura de cada especie a valores en metros cuadrados (\$m\^2\$) para, posteriormente, seleccionar las 15 especies con mayor cobertura. Luego, se determina cuánto contribuye en cobertura cada una de estas especies en los diferentes tipos de vegetación de plantas.
 
 -   **Conversión del porcentaje de cobertura a área de cobertura:**
 
@@ -493,7 +494,7 @@ datos_resum2 %>%
 
 ### **-Comparación del area de cobertura contribuida por las 15 especies más representativas en la totalidad de las parcelas**
 
-La @fig-fig12 ilustra el área de cobertura que ocupa cada especie y cómo varía esta entre los diferentes tipos de ensamblajes. Se observa que las especies que más contribuyen a la cobertura (m²), en orden de importancia, son Tilicor1, Coryave4, Querpea1, Abiealb1, Fagusyl1 y Sambrig4. La contribución de cobertura de Tilicor1 se distribuyó de manera similar en los tipos de ensamblaje 1, 2 y 4, mientras que fue menor en el tipo 3. Para Coryave4, los tipos de vegetación que más aportaron a la cobertura fueron los tipos 3 y 4, con contribuciones similares. En el caso de Querpea1, la mayor contribución provino del tipo de vegetación 2, seguida por el tipo 1. En cuanto a Abiealb1, la mayor contribución se registró en los ensamblajes tipo 3, y se notó que el tipo 4 no aportó nada a esta especie. Por último, para las especies Fagusyl1 y Sambrig4, la mayor contribución también se observó en los ensamblajes tipo 3.
+La @fig-fig12 ilustra el área de cobertura que ocupa cada especie y cómo varía esta entre los diferentes tipos de vegetación. Se observa que las especies que más contribuyen a la cobertura (m²), en orden de importancia, son Tilicor1, Coryave4, Querpea1, Abiealb1, Fagusyl1 y Sambrig4. La contribución de cobertura de Tilicor1 se distribuyó de manera similar en los tipos de ensamblaje 1, 2 y 4, mientras que fue menor en el tipo 3. Para Coryave4, los tipos de vegetación que más aportaron a la cobertura fueron los tipos 3 y 4, con contribuciones similares. En el caso de Querpea1, la mayor contribución provino del tipo de vegetación 2, seguida por el tipo 1. En cuanto a Abiealb1, la mayor contribución se registró en los vegetación tipo 3, y se notó que el tipo 4 no aportó nada a esta especie. Por último, para las especies Fagusyl1 y Sambrig4, la mayor contribución también se observó en los vegetación tipo 3.
 
 ```{r}
 #| label: fig-fig12 
@@ -504,7 +505,7 @@ La @fig-fig12 ilustra el área de cobertura que ocupa cada especie y cómo varí
 
 ```
 
-## **3.** Evaluar la influencia de las variables ambientales sobre la variación de la composición de los ensamblajes de plantas en los valles profundos del río Moldavia.
+## **3.** Evaluar la influencia de las variables ambientales sobre la variación de la composición de los vegetación de plantas en los valles profundos del río Moldavia.
 
 Mediante un correlograma se pueden observar de forma general las relaciones entre variables topográficas y biologicas, observando la fuerza de la relación y su sentido. En la @fig-fig13 se puede observar que en general las correlaciones entre parámetros topográficos y biologicas fueron débiles, siendo aproximadamente la mitad de ellas positivas y negativas, dentro de estas relaciones, destaca de forma moderada la relación entre la luz y Abieal1. Por otro lado, dentro de las relaciones débiles de forma negativa, las menos débiles, o sea, las que presentaron valores mayores en ese rango, se dieron entre la luz con Dryofil6, Lunared6 y Galemon6. La temperatura con Abieal1, Dryofil6 y Lunared6. Mientras que, de manera positiva débil destacó la relación entre los nutrientes con Querpea1, Sambrig4, Galemon6, Lunared6, Alnuglu1 e Impapar6. Reactividad con Galemon6 y reactividad con Alnuglu1.
 

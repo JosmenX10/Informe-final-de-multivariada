@@ -15,7 +15,7 @@ library(vegan)
 library(indicspecies)
 library(tidyverse)
 
-datos_sp_pa <- decostand (datos_sp, method = 'pa') #Transformamos a datos de presencia ausencia
+datos_sp_pa <- decostand(datos_sp, method = 'pa') #Transformamos a datos de presencia ausencia
 
 phi <- multipatt(datos_sp_pa, cluster = datos_env$Grupos, fun = 'r.g') #aplicamos la funcion para calcula la fidelidad de las especies
 
