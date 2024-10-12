@@ -233,8 +233,8 @@ div.csl-indent {
 <section id="objetivos" class="level2">
 <h2 class="anchored" data-anchor-id="objetivos"><strong>Objetivos</strong></h2>
 <ul>
-<li><p>Evaluar la relación entre las variables ambientales evaluadas en los valles profundos del río Moldavia.</p></li>
-<li><p>Determinar diferencias en las condiciones ambientales de los tipos de vegetación presentes en los valles profundos del río Moldavia.</p></li>
+<li><p>Evaluar la relación entre las variables ambientales evaluadas en los valles profundos del rió de Moldavia.</p></li>
+<li><p>Determinar diferencias entre los tipos de vegetación en función de las condiciones ambientales evaluadas en los valles profundos del río de Moldavia.</p></li>
 <li><p>Evaluar el efecto de las condiciones ambientales sobre la composición y riqueza de plantas en los valles profundos del río Moldavia.</p></li>
 </ul>
 </section>
@@ -243,8 +243,8 @@ div.csl-indent {
 <section id="objetivo-1" class="level3">
 <h3 class="anchored" data-anchor-id="objetivo-1"><strong>1) Objetivo 1:</strong></h3>
 <ul>
-<li><p><strong>Ho</strong>: No existen relaciones entre las variables ambientales evaluadas en los valles profundos del río Moldavia.</p></li>
-<li><p><strong>Ha</strong>: Existen relaciones entre las variables ambientales evaluadas en los valles profundos del río Moldavia.</p></li>
+<li><p><strong>Ho</strong>: No existe relacion entre las variables ambientales evaluadas en los valles profundos del río Moldavia.</p></li>
+<li><p><strong>Ha</strong>: Existe por lo menos una relacion entre las variables ambientales evaluadas en los valles profundos del río Moldavia.</p></li>
 </ul>
 </section>
 <section id="objetivo-2" class="level3">
@@ -1020,12 +1020,12 @@ Figura&nbsp;11: Relación entre la cobertura de la especie Abies alba con respec
 <span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Ambiental . significativo </span></span>
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> coord.amb.sig,<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">xend =</span> NMDS1<span class="sc">*</span><span class="dv">3</span>, <span class="at">yend =</span> NMDS2<span class="sc">*</span><span class="dv">3</span>), </span>
 <span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">angle=</span><span class="fl">22.5</span>,<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>),</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">"closed"</span>),<span class="at">linetype=</span><span class="dv">1</span>, <span class="at">size=</span><span class="fl">0.3</span>,<span class="at">colour =</span> <span class="st">"blue"</span>)<span class="sc">+</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">"closed"</span>),<span class="at">linetype=</span><span class="dv">1</span>, <span class="at">size=</span><span class="fl">0.5</span>,<span class="at">colour =</span> <span class="st">"blue"</span>)<span class="sc">+</span></span>
 <span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data =</span> coord.amb.sig,<span class="fu">aes</span>(NMDS1<span class="sc">*</span><span class="dv">3</span>,NMDS2<span class="sc">*</span><span class="dv">3</span>,<span class="at">label=</span><span class="fu">row.names</span>(coord.amb.sig)),<span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Ambiental . no significativo </span></span>
 <span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> coord.amb.nsig,<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">xend =</span> NMDS1<span class="sc">*</span><span class="dv">3</span>, <span class="at">yend =</span> NMDS2<span class="sc">*</span><span class="dv">3</span>), </span>
 <span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>               <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">angle=</span><span class="fl">22.5</span>,<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.25</span>,<span class="st">"cm"</span>),</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">"closed"</span>),<span class="at">linetype=</span><span class="dv">1</span>, <span class="at">size=</span><span class="fl">0.3</span>,<span class="at">colour =</span> <span class="st">"#3f007d"</span>)<span class="sc">+</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>                             <span class="at">type =</span> <span class="st">"closed"</span>),<span class="at">linetype=</span><span class="dv">1</span>, <span class="at">size=</span><span class="fl">0.5</span>,<span class="at">colour =</span> <span class="st">"#3f007d"</span>)<span class="sc">+</span></span>
 <span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data =</span> coord.amb.nsig,<span class="fu">aes</span>(NMDS1<span class="sc">*</span><span class="dv">3</span>,NMDS2<span class="sc">*</span><span class="dv">3</span>,<span class="at">label=</span><span class="fu">row.names</span>(coord.amb.nsig)),<span class="at">colour =</span> <span class="st">"#3f007d"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Tipos de vegetación"</span>, <span class="at">shape =</span> <span class="st">"Tipos de vegetación"</span>, <span class="at">fill =</span> <span class="st">"Tipos de vegetación"</span>, <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">"Stress = "</span>,<span class="fu">round</span>(spe.mds<span class="sc">$</span>stress,<span class="dv">3</span>)<span class="sc">*</span><span class="dv">100</span>,<span class="st">"%"</span>)) <span class="sc">+</span></span>
 <span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>  </span>

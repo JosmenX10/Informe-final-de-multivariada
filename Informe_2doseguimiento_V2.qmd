@@ -82,9 +82,9 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ## **Objetivos**
 
--   Evaluar la relación entre las variables ambientales evaluadas en los valles profundos del río Moldavia.
+-   Evaluar la relación entre las variables ambientales evaluadas en los valles profundos del rió de Moldavia.
 
--   Determinar diferencias en las condiciones ambientales de los tipos de vegetación presentes en los valles profundos del río Moldavia.
+-   Determinar diferencias entre los tipos de vegetación en función de las condiciones ambientales evaluadas en los valles profundos del río de Moldavia.
 
 -   Evaluar el efecto de las condiciones ambientales sobre la composición y riqueza de plantas en los valles profundos del río Moldavia.
 
@@ -92,9 +92,9 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ### **1) Objetivo 1:**
 
--   **Ho**: No existen relaciones entre las variables ambientales evaluadas en los valles profundos del río Moldavia.
+-   **Ho**: No existe relacion entre las variables ambientales evaluadas en los valles profundos del río Moldavia.
 
--   **Ha**: Existen relaciones entre las variables ambientales evaluadas en los valles profundos del río Moldavia.
+-   **Ha**: Existe por lo menos una relacion entre las variables ambientales evaluadas en los valles profundos del río Moldavia.
 
 ### **2) Objetivo 2:**
 
@@ -693,12 +693,12 @@ geom_mark_ellipse(data=coord.sit, aes(x=NMDS1,y=NMDS2,group=grp,
    # Ambiental . significativo 
   geom_segment(data = coord.amb.sig,aes(x = 0, y = 0, xend = NMDS1*3, yend = NMDS2*3), 
                arrow = arrow(angle=22.5,length = unit(0.25,"cm"),
-                             type = "closed"),linetype=1, size=0.3,colour = "blue")+
+                             type = "closed"),linetype=1, size=0.5,colour = "blue")+
   geom_text_repel(data = coord.amb.sig,aes(NMDS1*3,NMDS2*3,label=row.names(coord.amb.sig)),colour = "blue", size = 3) +
    # Ambiental . no significativo 
   geom_segment(data = coord.amb.nsig,aes(x = 0, y = 0, xend = NMDS1*3, yend = NMDS2*3), 
                arrow = arrow(angle=22.5,length = unit(0.25,"cm"),
-                             type = "closed"),linetype=1, size=0.3,colour = "#3f007d")+
+                             type = "closed"),linetype=1, size=0.5,colour = "#3f007d")+
   geom_text_repel(data = coord.amb.nsig,aes(NMDS1*3,NMDS2*3,label=row.names(coord.amb.nsig)),colour = "#3f007d", size = 3) +
 labs(color = "Tipos de vegetación", shape = "Tipos de vegetación", fill = "Tipos de vegetación", subtitle = paste0("Stress = ",round(spe.mds$stress,3)*100,"%")) +
   
