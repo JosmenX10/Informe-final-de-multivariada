@@ -108,7 +108,11 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 -   **Ha**: Existe un efecto de las condiciones ambientales sobre la composición y riqueza de plantas en los valles profundos del río Moldavia.
 
-![](Base%20de%20datos%20y%20contextos/diagrama_de_flujo.svg){width="454"}
+------------------------------------------------------------------------
+
+## **Diseño experimental**
+
+![](Base%20de%20datos%20y%20contextos/diagrama_de_flujo.svg){width="582" height="383"}
 
 ## Preparación de los datos
 
@@ -258,7 +262,7 @@ factores <- read_excel("Base de datos y contextos/vltava.xlsx",
 
 **Paso 2:** Se realiza una normalización y escalamiento con la función `scale` y se aplica la función `prcomp` para generar los componentes principales.
 
-```{r,warning=FALSE,message=FALSE, fig.width= 5,fig.height=4}
+```{r,warning=FALSE,message=FALSE, fig.width= 6,fig.height=3}
 #| label: fig-fig3
 #| fig-cap: Contribución de cada variable a la variación reflejada en el primer componente principal.
 
@@ -269,10 +273,10 @@ pca2 <- prcomp(scale(ambiental))
 coord.amb2 <- as.data.frame(pca2$rotation[,1:2])    # Dos primeros ejes
 coord.amb2$amb <- rownames(coord.amb2)         # Insertar columna con nombres de las especies
 
-fviz_contrib(pca2,choice="var",axes=1) 
+fviz_contrib(pca2,choice="var",axes=1) + labs(title = "Contribución de las variables al Componente Principal 1", y = "Contribución (%)")
 ```
 
-A partir del análisis por componentes, se extrae las variables que más contribuyeron en la variación para el primer eje como muestra la @fig-fig3 , evidenciando que la variable que más contribuye es el indice de Nutrientes, seguido por el humedad y luz. Y los que menos contribuyen son PH, el tipo de superficie en hisohipsas y la elevación.
+A partir del análisis por componentes, se extrae las variables que más contribuyeron en la variación para el primer eje como muestra la @fig-fig3 , evidenciando que la variable que más contribuye es el indice de Nutrientes, seguido por el humedad y luz. Y los que menos contribuyen son el PH, el tipo de superficie en hisohipsas y la elevación.
 
 **Paso 3.** Se agregan los factores de agrupación y se grafica a partir de los dos primeros componentes principales.
 
@@ -407,7 +411,13 @@ g.pc4 <- ggplot() +
 (g.pc1 + g.pc2)/(g.pc3 + g.pc4)
 ```
 
-La @fig-fig4 nos presenta los resultados del análisis por componentes principales, en la que variación se da en función de tres conjuntos de variables, siendo uno conformado por la orientación sur-sureste, la temperatura, la continentalidad , la carga calorifica y la luz, los cuales tienen direcciones casi ortogonales con el resto de variables. Otro conjunto estaría conformado por la pendiente, la superficie en pendiente, la superficie en isohipsas y la elevación, en dirección contraria a este conjunto por lo que presuntamente tendrían una relación negativa con estas variables se encuentra el tercer grupo de variables, conformado por la humedad, reactividad , nutrientes del suelo, el pH, la temperatura y la continentalidad del clima. En cuanto a los factores de agrupación se podría interpretar que los suelos con condición de fluvisol, esqueleticos y liticos tendrían cierta asociación de variables ambientales con su incidencia, sin embargo se requieren análisis exploratorios confirmatorios ya que el porcentaje de variación acumulado entre los dos componentes principales podría no ser suficiente para una correcta interpretación.
+La @fig-fig4 nos presenta los resultados del análisis por componentes principales, en el que la variación se da en función de tres conjuntos de variables. Uno de ellos está conformado por la orientación sur-sureste, la temperatura, la continentalidad, la carga calorífica y la luz, los cuales tienen direcciones casi ortogonales respecto al resto de las variables. Otro conjunto está compuesto por la pendiente, la superficie en pendiente, la superficie en isohipsas y la elevación, en dirección contraria al primer grupo. Por lo tanto, es probable que estas variables tengan una relación negativa con el tercer conjunto, que incluye la humedad, la reactividad, los nutrientes del suelo, el pH, la temperatura y la continentalidad del clima.
+
+En cuanto a los factores de agrupación, se podría interpretar que los suelos con condición de fluvisol, esqueléticos y líticos están más asociados a un grupo de variables, mientras que los cambisoles muestran una asociación menos estrecha con un grupo particular, lo que genera una elipse bastante amplia a lo largo de los ejes. No obstante, se requieren análisis exploratorios confirmatorios, ya que el porcentaje de variación acumulado entre los dos componentes principales podría no ser suficiente para una interpretación correcta (51.7%).
+
+En el caso de los fluvisoles, estos son suelos con altos valores de humedad, nutrientes, reactividad, profundidad y pH. El tipo de suelo esquelético evidencia la misma tendencia, pero con una concentración de datos hacia valores más intermedios en estas variables, lo que genera una elipse más amplia hacia el centro de los ejes. Es importante destacar que la relación positiva con estas variables refleja a su vez una relación negativa con las variables que se representan con vectores con sentido contrario a estas, como la elevación, la pendiente y el tipo de superficie o relieve. Esta última corresponde a una variable tricotómica, donde el valor -1 indica un tipo de relieve cóncavo. De manera que los suelos fluvisoles y esqueléticos tienen mayor incidencia en relieves cóncavos, disminuyendo a medida que el relieve se vuelve más convexo (@fig-fig5 B y E).
+
+Estas características le otorgan a los sitios la capacidad de ser sumideros, acumulando humedad, nutrientes y sedimentos, lo que favorece una mayor profundidad del suelo, como evidencian los resultados del PCA (@fig-fig4) y los gráficos exploratorios de la @fig-fig5 (E y F). Por otro lado, los suelos líticos y cambisoles tienden a aumentar su incidencia a medida que incrementa la altitud y la pendiente, manteniéndose en relieves neutros o convexos (@fig-fig5 A y C). Esto sugiere que son sitios con menor acumulación y más susceptibles a la escorrentía.
 
 ```{r}
 #| label: fig-fig5
@@ -705,7 +715,7 @@ labs(color = "Tipos de vegetación", shape = "Tipos de vegetación", fill = "Tip
 
 Los resultados del análisis de Escalamiento No Métrico Multidimensional (NMDS) en la @fig-fig16 , permite visualizar la influencia de variables ambientales sobre la composición de taxones de plantas en las parcelas del río Moldavia. Las elipses que rodean los puntos en el gráfico agrupan las parcelas según los cuatro tipos de vegetación identificados en el estudio. Cada flecha o vector representa una variable ambiental que podría influir en la composición de especies, donde las flechas azules corresponden a variables significativas, y las moradas representan aquellas que no alcanzaron significancia estadística, según el ajuste de vectores realizado con la función `envfit`. Los nombres en texto rojo son los taxones de plantas presentes en las parcelas estudiadas.
 
-El análisis NMDS revela la existencia de dos gradientes ambientales principales que influyen en la composición de las comunidades vegetales, y por lo tanto, en los diferentes tipos de vegetación. El primer gradiente está asociado positivamente con las parcelas que presentan suelos fluvisoles, correspondientes al **tipo de vegetación 4**. Este tipo de vegetación se caracteriza por encontrarse en áreas con superficies cóncavas y condiciones ambientales favorables, tales como altos niveles de pH, mayor profundidad del suelo, mayor humedad, reactividad química, y un alto contenido de nutrientes. Estas parcelas también exhiben una mayor cobertura vegetal y riqueza de especies en comparación con los otros tipos de vegetación presentes en el área de estudio.
+El análisis NMDS revela la existencia de dos gradientes ambientales principales que influyen en la composición de las comunidades vegetales, y por lo tanto, en los diferentes tipos de vegetación. El primer gradiente está asociado positivamente con las parcelas que presentan suelos fluvisoles, correspondientes al **tipo de vegetación 4**. Este tipo de vegetación se caracteriza por encontrarse en áreas con superficies cóncavas y condiciones ambientales favorables, niveles de pH menos acidos, mayor profundidad del suelo, mayor humedad, reactividad química, y un alto contenido de nutrientes. Estas parcelas también exhiben una mayor cobertura vegetal y riqueza de especies en comparación con los otros tipos de vegetación presentes en el área de estudio.
 
 Por otro lado, el **tipo de vegetación 2** muestra una relación inversa con estas condiciones. Estas parcelas están ubicadas en suelos líticos, que son menos profundos y se encuentran en áreas de superficies convexas, generalmente a mayor elevación y en pendientes más inclinadas. Esto sugiere que este tipo de vegetación está adaptado a ambientes más extremos o menos favorables en cuanto a la disponibilidad de recursos, en contraste con el tipo de vegetación 4.
 
