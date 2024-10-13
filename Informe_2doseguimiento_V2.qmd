@@ -686,7 +686,7 @@ spe.mds <- metaMDS(log1p(datos_bio), distance = "bray", trace = FALSE)
 
 ```
 
--   **Paso 2:** Se determinan las coordenadas de los sitos en los ejes **NMDS1** y **NMDS2**.
+-   **Paso 2:** Se determinan las coordenadas de los sitios en los ejes **NMDS1** y **NMDS2**.
 
 ```{r}
 coord.sit <- as.data.frame(scores(spe.mds$points))     # Coordenadas de los sitios
