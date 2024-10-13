@@ -1,11 +1,11 @@
 ---
-title: "Efecto de las condiciones ambientales sobre la diversidad de plantas en los Valles profundos del río de Moldavia"
+title: "Efecto ambiental sobre la diversidad de plantas en los Valles profundos del río de Moldavia"
 date: last-modified
 title-block-banner: "#99d8c9" 
 author: "Josué Mendoza Hewitt & Jhonatan Diaz Camargo"
 format: 
   html:
-    toc: true                 # Barra de menú
+    toc: True                 # Barra de menú
     toc-title: Menú flotante  # Nombre de la barra de menú flotante
     code-tools: false         # Códigos descargables (activar con true)
     code-fold: true
@@ -82,7 +82,7 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ## **Objetivos**
 
--   Evaluar la relación entre las variables ambientales evaluadas en los valles profundos del rió de Moldavia.
+-   Determinar la relación entre las variables ambientales evaluadas en los valles profundos del rió de Moldavia.
 
 -   Determinar diferencias entre los tipos de vegetación en función de las condiciones ambientales evaluadas en los valles profundos del río de Moldavia.
 
@@ -172,15 +172,15 @@ En la matriz de datos ambientales simplemente se debe organizar las variables y 
 
 ```{r}
 # Preparamos la base de datos ambientales 
-colnames(datos_env) = c("Parcela","Transecto","Elevación","Pendiente","Orientación.SE",
-                        "Orientación.S.SE", "CCSE","CCS.SE","Superficie.PD","Superficie.ISO",
+colnames(datos_env) = c("Parcela","Transecto","Elevación","Pendiente","Orientación.SO",
+                        "Orientación.S.SO", "CCSO","CCS.SO","Superficie.PD","Superficie.ISO",
                         "Lítico","Esqueletico","Cambisoles","Fluvisoles","P.del suelo","pH",
                         "Cobertura veg.","Luz","Temperatura","Continentalidad","Humedad",
                         "Reactividad","Nutrientes","Riqueza sp","Grupos")
 
 
-datos1 <- datos_env[,c("Parcela","Transecto","Elevación","Pendiente","Orientación.SE",
-                       "Orientación.S.SE", "CCSE","CCS.SE","Superficie.PD","Superficie.ISO","P.del suelo","pH")]
+datos1 <- datos_env[,c("Parcela","Transecto","Elevación","Pendiente","Orientación.SO",
+                       "Orientación.S.SO", "CCSO","CCS.SO","Superficie.PD","Superficie.ISO","P.del suelo","pH")]
 
 datos2 <- datos_env[,c("Lítico","Esqueletico","Cambisoles","Fluvisoles", "Cobertura veg.","Luz","Temperatura","Continentalidad","Humedad",
                        "Reactividad","Nutrientes","Riqueza sp","Grupos")]
@@ -196,11 +196,11 @@ datos_env <- datos_env[,-1]
 
 ```
 
-## **1.** Evaluar la relación entre las variables ambientales en los valles profundos del río Moldavia
+## **1. Determinar la relación entre las variables ambientales evaluadas en los valles profundos del rió de Moldavia**
 
 ### **-Relación entre variables topográficas y topológicas**
 
-A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación con el indice de Spearman y el nivel de significancia de estas relaciones. Por ejemplo, la @fig-fig1 refleja la estrecha relación positiva entre las variables de orientación sureste y la orientación sur-sureste con un valor de 0.83 de correlación entre sus datos con el mayor nivel de significancia(p-value\<0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 0.79 de los datos, esto se entiende ya que el cambio en la orientación sureste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-sureste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 0.62 . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia.
+A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación con el indice de Spearman y el nivel de significancia de estas relaciones. Por ejemplo, la @fig-fig1 refleja la estrecha relación positiva entre las variables de orientación suroeste y la orientación sur-suroeste con un valor de 0.83 de correlación entre sus datos con el mayor nivel de significancia(p-value\<0.001), así mismo pasaría con los indices de capacidad calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 0.79 de los datos, esto se entiende ya que el cambio en la orientación suroeste entre las parcelas también deberia ser acompoñada por cambios en la orientación sur-suroeste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 0.62 . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia.
 
 ```{r, warning=FALSE,message=FALSE,fig.height=4,fig.width=5}
 #| label: fig-fig1 
@@ -221,9 +221,9 @@ topocor <- cor(topo, method = "spearman") #correlación entre topográficas.
 pval_topo <- corr.test(topo, adjust="none",method = "spearman")$p #p-value de correlaciones entre topográficas.
 
 
-ellin_topocor <- cor(y = topo, x = ellin, method = "spearman") #correlación entre topográficas.
+ellin_topocor <- cor(y = scale(topo), x = scale(ellin), method = "spearman") #correlación entre topográficas.
 
-pval_ellin<- corr.test(y= topo, x= ellin, adjust="none",method = "spearman")$p #p-value de correlaciones entre topográficas.
+pval_ellin<- corr.test(y= scale(topo), x= scale(ellin), adjust="none",method = "spearman")$p #p-value de correlaciones entre topográficas.
 
 corrplot(topocor,method = "ellipse",type ="lower",diag = FALSE,
          tl.pos = "ld",order ="original",tl.col = "black",addCoef.col= NULL, cl.pos = T, sig.level = c(0.001,0.01,0.05),
@@ -234,7 +234,7 @@ corrplot(topocor,method = "ellipse",type ="lower",diag = FALSE,
 
 ### **-Relación entre variables topográficas y topológicas con los indices de Hellinberg.**
 
-En el correlograma presentado en la @fig-fig2 observamos los grados de correlación entre las variables topográficas y topológicas con las variables ambientales medidas de manera indirecta con el promedio de indices de hellinberg en cada parcela. Los seis indices se relacionan significativamente con la profundidad del suelo , la luz, la temperatura y la continentalidad se relacionan negativamente, mientras que la humedad, reactividad y nutrientes positivamente, pero sin alcanzar un indice de correlación siquiera moderado. Cinco de los indices se relacionan de manera significativa con las variables de orientación y carga calorifica de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes se relacionan negativamente. En cuanto a los tipos de suelos, los esqueleticos y fluvisoles se relacionan de manera significativa y positiva con la humedad, reactividad y nutrientes, mientras que los liticos mostraría una relación negativa significativa con estos indices, pero igualmente sin alcanzar una correlación moderada. El tipo de suelo Cambisol presenta una relación negativa significativa, sin embargo la correlación es bastante debil al igual que con el resto de las variables.
+En el correlograma presentado en la \@fig-fig2 observamos los grados de correlación entre las variables topográficas y topológicas con las variables ambientales medidas de manera indirecta mediante el promedio de índices de Hellinberg en cada parcela. Los seis índices se relacionan con la profundidad del suelo, la luz, la temperatura y la continentalidad se relacionan negativamente, mientras que la humedad, la reactividad y los nutrientes lo hacen positivamente, pero sin alcanzar un índice de correlación siquiera moderado. Cinco de los índices se relacionan de manera significativa con las variables de orientación y carga calorífica, de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes lo hacen negativamente. En cuanto a los tipos de suelos, los esqueléticos y fluvisoles se relacionan de manera significativa y positiva con la humedad, la reactividad y los nutrientes, mientras que los líticos muestran una relación negativa significativa con estos índices, pero igualmente sin alcanzar una correlación moderada. El tipo de suelo cambisol presenta una relación negativa significativa; sin embargo, la correlación es bastante débil, al igual que con el resto de las variables.
 
 ```{r,warning=FALSE,message=FALSE, fig.width=7,fig.height=3}
 #| label: fig-fig2 
@@ -246,7 +246,7 @@ corrplot(ellin_topocor,method = "ellipse",
          ,tl.cex = 1.0, number.cex = 0.9,addgrid.col = "#f5f5f5")
 ```
 
-### -Variación ambiental entre las parcelas según los tipos de suelo en los valles profundos del río de Moldavia (Análisis por componentes principales)
+### -Variación ambiental entre los sitios según sus tipos de suelo (Análisis por componentes principales)
 
 **Paso 1:** Se genera una matriz unicamente con las variables numericas.
 
@@ -411,7 +411,7 @@ g.pc4 <- ggplot() +
 (g.pc1 + g.pc2)/(g.pc3 + g.pc4)
 ```
 
-La @fig-fig4 nos presenta los resultados del análisis por componentes principales, en el que la variación se da en función de tres conjuntos de variables. Uno de ellos está conformado por la orientación sur-sureste, la temperatura, la continentalidad, la carga calorífica y la luz, los cuales tienen direcciones casi ortogonales respecto al resto de las variables. Otro conjunto está compuesto por la pendiente, la superficie en pendiente, la superficie en isohipsas y la elevación, en dirección contraria al primer grupo. Por lo tanto, es probable que estas variables tengan una relación negativa con el tercer conjunto, que incluye la humedad, la reactividad, los nutrientes del suelo, el pH, la temperatura y la continentalidad del clima.
+La @fig-fig4 nos presenta los resultados del análisis por componentes principales, en el que la variación se da en función de tres conjuntos de variables. Uno de ellos está conformado por la orientación sur-suroeste, la temperatura, la continentalidad, la carga calorífica y la luz, los cuales tienen direcciones casi ortogonales respecto al resto de las variables. Otro conjunto está compuesto por la pendiente, la superficie en pendiente, la superficie en isohipsas y la elevación, en dirección contraria al primer grupo. Por lo tanto, es probable que estas variables tengan una relación negativa con el tercer conjunto, que incluye la humedad, la reactividad, los nutrientes del suelo, el pH, la temperatura y la continentalidad del clima.
 
 En cuanto a los factores de agrupación, se podría interpretar que los suelos con condición de fluvisol, esqueléticos y líticos están más asociados a un grupo de variables, mientras que los cambisoles muestran una asociación menos estrecha con un grupo particular, lo que genera una elipse bastante amplia a lo largo de los ejes. No obstante, se requieren análisis exploratorios confirmatorios, ya que el porcentaje de variación acumulado entre los dos componentes principales podría no ser suficiente para una interpretación correcta (51.7%).
 
@@ -436,18 +436,18 @@ En la @fig-fig10 se observa que los vegetación tipo 1 exhibe una orientación m
 #| label: fig-fig10 
 #| fig-cap: "Distribución de los tipos de emsamblajes vegetales en relación con la orientación y la altitud. El círculo central representa el fondo del valle, el margen exterior representa el borde superior del valle y la dirección desde el centro representa la dirección hacia la que se orientan las laderas. Los tipos de puntos corresponden a los tipos de vegetación."
 
-dirección <- ifelse((datos_env$Orientación.S.SE-datos_env$Orientación.SE < 0),yes = datos_env$Orientación.SE*-1 , no = datos_env$Orientación.SE)
+dirección <- ifelse((datos_env$Orientación.S.SO-datos_env$Orientación.SO < 0),yes = datos_env$Orientación.SO*-1 , no = datos_env$Orientación.SO)
 
 # Crear el gráfico
 ggplot(datos_env) + 
   geom_point(aes(x = dirección, y = datos_env$Elevación, shape = factor(datos_env$Grupos), colour = factor(datos_env$Grupos)), size = 2.5) + 
-  coord_polar(start = 2.35619 ,direction = 1) +  # Transforma el gráfico en circular
+  coord_polar(start = 2.35619 ,direction = -1) +  # Transforma el gráfico en circular
   theme_minimal() +
-  labs(title = "Distribución de los TC en altitud y orientación",
+  labs(title = "Distribución de los TV en altitud y orientación",
        x = "Orientación",
-       y = "Altitud", colour = "TC",shape ="TC") + 
+       y = "Altitud", colour = "TV",shape ="TV") + 
   scale_x_continuous(limits = c(-180,180), breaks = c(-45,45,135,-135), 
-                     labels = c("O","N","E","S"), minor_breaks = c(-90,0,90,180)) + # Ejes con direcciones cardinales
+                     labels = c("E","N","O","S"), minor_breaks = c(-90,0,90,180)) + # Ejes con direcciones cardinales
   theme(legend.position = "right") +
   scale_y_continuous(limits = c(380, 540), breaks = c(400,425,450,475,500,525,550)) + # Dejar un espacio en el centro
 theme_light()
@@ -461,47 +461,108 @@ A pesar del patrón decreciente de la continentalidad en los los vegetación veg
 
 Respecto a la humedad, se identificaron valores más altos en los vegetación tipo 4, los cuales sugieren ser diferentes en comparación con los demás tipos, dado que sus intervalos de confianza (muescas) no se solapan. Por su parte, aunque las vegetaciones tipo 1 y 2, así como los tipos 2 y 3 presentaron medianas diferentes, sus intervalos de confianza se superponen; por lo tanto, no se sugieren diferencias entre estos pares de grupos. Sin embargo, sí se sugiere diferencias entre los grupos 1 y 3.Finalmente, con relación a la reactividad, los mayores valores se observaron en los vegetación tipo 4. No obstante, las muescas de este grupo se solapan con las de las vegetaciones tipo 1 y 3, por lo que posiblemente se podría considerar la no existencia de diferencia entre estos. En contraste, los vegetación tipo 2 presentó los menores valores de reactividad y sugiere una posible diferencia con respecto a los demás tipos debido a que sus intervalos de confianza no se solapan con ninguna otra caja del gráfico.
 
-```{r,warning=FALSE,message=FALSE, fig.width=5,fig.height=5}
+```{r,warning=FALSE,message=FALSE, fig.width=10}
 #| label: fig-fig11 
-#| fig-cap: "Variación de las variables topológicas y topográficas en los cuatro tipos de vegetación evaluados. A) Comparación del índice de luz entre los distintos tipos vegetación. B) Comparación del índice de temperatura entre los distintos tipos de vegetación. C) Comparación de la continentalidad entre los distintos tipos de vegetación. D) Comparación del índice de nutrientes entre los distintos tipos de vegetación. E) Comparación del índice de humedad entre los distintos tipos de vegetación. F) Comparación del índice de reactividad entre los distintos tipos de vegetación."
+#| fig-cap: "Comparación de las variables topológicas y topográficas en los cuatro tipos de vegetación. A)Luz; B)Temperatura; C)Indice de CC E)Profundidad del suelo; F)Nutrientes; G)pH del suelo; H)Cobertura del suelo(%); I)Humedad; J)Reactividad; K)Riqueza de sps; L)Pendiente (°)."
 
 f1 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Luz)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
-  guides(fill = "none") + 
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
   labs( x = "Tipos de vegetación", y = "Luz", tag = "A)")
 
 f2 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Nutrientes)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
-  guides(fill = "none") + 
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
   labs( x = "Tipos de vegetación", y = "Nutrientes", tag = "B)")
 
 f3 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Temperatura)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
-  guides(fill = "none") + 
-  labs( x = "Tipos de vegetación", y = "Temperatura", tag = "c)")
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "Temperatura", tag = "E)")
 
 f4 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Humedad)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
-  guides(fill = "none") + 
-  labs( x = "Tipos de vegetación", y = "Humedad", tag = "D)") 
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "Humedad", tag = "F)") 
 
 f5  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Continentalidad)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
-  guides(fill = "none") + 
-  labs( x = "Tipos de vegetación", y = "Continentalidad", tag = "E)")
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "Continentalidad", tag = "I)")
 
 f6  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Reactividad)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
-  guides(fill = "none") + 
-  labs( x = "Tipos de vegetación", y = "Reactividad", tag = "F)")
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "Reactividad", tag = "J)")
+#---------------------------------------------------------------------------------#
+
+f7 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$CCS.SE)) + 
+  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "Indice CC", tag = "C)")
+
+f8 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$`P.del suelo`)) + 
+  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "P. del suelo (cm)", tag = "D)")
+
+f9 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$pH)) + 
+  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "pH del suelo", tag = "G)")
+
+f10 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$`Cobertura veg.`)) + 
+  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "Cobertura veg. (%)", tag = "H)") 
+
+f11 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$`Riqueza sp`)) + 
+  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "Riqueza de Sps", tag = "K)")
+
+f12  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Pendiente)) + 
+  geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
+  guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
+  labs( x = "Tipos de vegetación", y = "Pendiente (°)", tag = "L)")
+
+grid.arrange(f1,f2,f7,f8,f3,f4,f9,f10,f5,f6,f11,f12, ncol= 4, nrow = 3)
 
 
-
-
-(f1 + f2)/(f3+f4)/(f5+f6)
 ```
 
-### **-Selección de las 15 especies más abundantes**
+### **-Comparación de las condiciones de suelo en los distintos tipos de vegetación**
+
+Los tipos de vegetación 1,2 y 3 evidencian proporciones de condiciones de suelos similares, con una mayor incidencia de sitios con tipo de suelo cambisol, los tipo de vegetación 1 y 2 presentan más sitios con condición Lítica que esqueletica, mientras que los tipos 3 y 4 muestran lo contrario. Solo un sitio con el tipo de vegatación 2 presento suelo fluvisol, y el tipo de vegetación 4 presento suelo fluvisol en todos los sitios.
+
+```{r,message=F,warning=FALSE, fig.width=6,fig.height=2}
+#| label: fig-fig12 
+#| fig-cap: "Comparación de las condiciones de suelo en los distintos tipos de vegetación."
+
+datos_g1 <- datos_env[,c("Grupos","Esqueletico","Lítico","Cambisoles","Fluvisoles")]
+
+datos_g1$Grupos <- factor(datos_g1$Grupos, levels = c(1,2,3,4))
+
+datos_resum.s <- melt(datos_g1)
+
+colnames(datos_resum.s) <- c("Grupos","Suelos","valor")
+
+datos_resum2 <- datos_resum.s %>%        # Base de datos resumida
+  group_by(Grupos,Suelos)  %>%          # Factor o variable agrupadora
+  summarise(datos.sum = sum(valor))  # Error estándar de cada grupo
+
+
+g12 <- ggplot(datos_resum2, aes(x= Grupos , y=datos.sum, fill = Suelos)) + 
+     geom_bar(stat="identity", 
+              position= "dodge") +theme_classic() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + labs(x= "Tipos de vegetación", y = "Frecuencia", fill = "Condiciones de suelo")  + 
+  scale_fill_manual(values = c("#d7191c","#fdae61","#ffffbf","#91cf60"))
+
+g12
+```
+
+### **-Comparación del area de cobertura contribuida por las 15 especies más representativas en la totalidad de las parcelas**
+
+#### **Selección de las 15 especies más abundantes**
 
 Se convierten los porcentajes de cobertura de cada especie a valores en metros cuadrados (\$m\^2\$) para, posteriormente, seleccionar las 15 especies con mayor cobertura. Luego, se determina cuánto contribuye en cobertura cada una de estas especies en los diferentes tipos de vegetación .
 
@@ -529,69 +590,54 @@ datos_bio1 <- data.frame(datos_bio1)
 datos_g <- cbind(datos_bio1,datos_env) #unimos con las variables ambientales
 ```
 
--   **Determinamos la cantidad de cobertura por especie, tanto de forma general como para cada tipo de comunidad.**
+-   **Determinamos la cantidad de cobertura por especie en la totalidad de sitios distiguiendo los tipos de vegetación.**
 
 ```{r,warning=FALSE,message=FALSE, fig.width=4,fig.height=3}
 #| label: tbl-tbl1
 #| tbl-cap: "Área de cobertura total de cada especie."
 
-datos_g1 <- datos_g
+datos_g$Grupos <- factor(datos_g$Grupos)
 
-datos_g1$Grupos <- factor(datos_g$Grupos, levels = c(1,2,3,4))
+datos_resum <- melt(datos_g[,c(1:15,39)])%>% arrange(desc(value))
 
-datos_resum <- melt(datos_g1[,c(1:15,39)])
-
-datos_resum.s <- melt(datos_g1[,c(27:30,39)])
-
-colnames(datos_resum) <- c("Grupos","Especies", "Area de cobertura m^2")
-
-colnames(datos_resum.s) <- c("Grupos","Suelos","valor")
-
+colnames(datos_resum) <- c("Grupos","Especies", "Area de cobertura m^2")  
 
 datos_resum1 <- datos_resum %>%        # Base de datos resumida
   group_by(Grupos,Especies)  %>%          # Factor o variable agrupadora
-  summarise(datos.sum = sum(`Area de cobertura m^2`))   # Error estándar de cada grupo
-
-datos_resum2 <- datos_resum.s %>%        # Base de datos resumida
-  group_by(Grupos,Suelos)  %>%          # Factor o variable agrupadora
-  summarise(datos.sum = sum(valor))  # Error estándar de cada grupo
-
+  summarise(datos.sum = sum(`Area de cobertura m^2`))
 
 
 head(datos_resum1) %>% 
   kbl(caption =  "", booktabs = F, longtable = T) %>% 
   kable_classic(full_width = F, html_font = "cambria")
 
+
 ```
 
-### **-Comparación del area de cobertura contribuida por las 15 especies más representativas en la totalidad de las parcelas**
+-   **Se realiza el diagrama de barras para determinar diferencias en la contribución de cobertura de las 15 especies a los tipos de vegetación**
 
-La @fig-fig12 ilustra el área de cobertura que ocupa cada especie y cómo varía esta entre los diferentes tipos de vegetación. Se observa que las especies que más contribuyen a la cobertura (m²), en orden de importancia, son Tilicor1, Coryave4, Querpea1, Abiealb1, Fagusyl1 y Sambrig4. La contribución de cobertura de Tilicor1 se distribuyó de manera similar en los tipos de ensamblaje 1, 2 y 4, mientras que fue menor en el tipo 3. Para Coryave4, los tipos de vegetación que más aportaron a la cobertura fueron los tipos 3 y 4, con contribuciones similares. En el caso de Querpea1, la mayor contribución provino del tipo de vegetación 2, seguida por el tipo 1. En cuanto a Abiealb1, la mayor contribución se registró en los vegetación tipo 3, y se notó que el tipo 4 no aportó nada a esta especie. Por último, para las especies Fagusyl1 y Sambrig4, la mayor contribución también se observó en los vegetación tipo 3.
+La @fig-fig13 ilustra el área de cobertura que ocupa cada especie y cómo varía esta entre los diferentes tipos de vegetación. Se observa que las especies que más contribuyen a la cobertura (m²), en orden de importancia, son ***Tilia cordata*** (Tilicor1), ***Corylus avellana*** (Coryave4), ***Quercus petraea agg***. (Querpea1), ***Abies alba*** (Abiealb1), ***Fagus sylvatica*** (Fagusyl1) y ***Sambucus nigra*** (Sambnig4.) La contribución de cobertura de ***Tilia cordata*** se distribuyó de manera similar en los tipos de vegetación 1, 2 y 4, mientras que fue menor en el tipo 3. Para ***Corylus avellana***, los tipos de vegetación que más aportaron a la cobertura fueron los tipos 3 y 4, con contribuciones similares. En el caso de ***Quercus petraea agg***., la mayor contribución provino del tipo de vegetación 2, seguida por el tipo 1. En cuanto a ***Abies alba***, la mayor contribución se registró en los vegetación tipo 3, y se notó que el tipo 4 no aportó nada a esta especie. Por último, para las especies ***Fagus sylvatica*** y ***Sambucus nigra***, la mayor contribución también se observó en el tipo de vegetación 3.
 
-```{r,warning=FALSE,message=FALSE, fig.width=6,fig.height=5}
-#| label: fig-fig12 
+```{r,warning=FALSE,message=FALSE, fig.width=6,fig.height=2}
+#| label: fig-fig13 
 #| fig-cap: "Áreas de cobertura total de las especies más representativas en general y por cada tipo de vegetación en los valles profundos del río de Moldavia."
 
 
 g11 <- ggplot(datos_resum1, aes(x= reorder(Especies, -datos.sum) , y=datos.sum, fill = Grupos)) + 
      geom_bar(stat="identity", 
-              position= "stack") +theme_classic() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + labs(x= "", y = expression("Cobertura total"~(m^2)), fill = "tipos de vegetación")
+              position= "stack") +theme_classic() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + labs(x= "", y = expression("Cob. total"~(m^2)), fill = "tipos de vegetación")
  
-g12 <- ggplot(datos_resum2, aes(x= Grupos , y=datos.sum, fill = Suelos)) + 
-     geom_bar(stat="identity", 
-              position= "stack") +theme_classic() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + labs(x= "Tipos de vegetación", y = "Frecuencia", fill = "Condiciones de suelo")  + 
-  scale_fill_manual(values = c("#d7191c","#fdae61","#ffffbf","#91cf60"))
 
-g11/g12
+g11
 
 ```
 
 ## **3.** Evaluar el efecto de las condiciones ambientales sobre la composición y riqueza de plantas en los valles profundos del río Moldavia
 
-Mediante un correlograma se pueden observar de forma general las relaciones entre variables topográficas y biologicas, observando la fuerza de la relación y su sentido. En la @fig-fig13 se puede observar que en general las correlaciones entre parámetros topográficos y biologicas fueron débiles, siendo aproximadamente la mitad de ellas positivas y negativas, dentro de estas relaciones, destaca de forma moderada la relación entre la luz y Abieal1. Por otro lado, dentro de las relaciones débiles de forma negativa, las menos débiles, o sea, las que presentaron valores mayores en ese rango, se dieron entre la luz con Dryofil6, Lunared6 y Galemon6. La temperatura con Abieal1, Dryofil6 y Lunared6. Mientras que, de manera positiva débil destacó la relación entre los nutrientes con Querpea1, Sambrig4, Galemon6, Lunared6, Alnuglu1 e Impapar6. Reactividad con Galemon6 y reactividad con Alnuglu1.
+Mediante un correlograma se pueden observar de forma general las relaciones entre variables topográficas y biologicas, observando la fuerza de la relación y su sentido. En la @fig-fig14 se puede observar que en general las correlaciones entre parámetros topográficos y biologicas fueron débiles, siendo aproximadamente la mitad de ellas positivas y negativas, dentro de estas relaciones, destaca de forma moderada la relación entre la luz y Abieal1. Por otro lado, dentro de las relaciones débiles de forma negativa, las menos débiles, o sea, las que presentaron valores mayores en ese rango, se dieron entre la luz con Dryofil6, Lunared6 y Galemon6. La temperatura con Abieal1, Dryofil6 y Lunared6. Mientras que, de manera positiva débil destacó la relación entre los nutrientes con Querpea1, Sambrig4, Galemon6, Lunared6, Alnuglu1 e Impapar6. Reactividad con Galemon6 y reactividad con Alnuglu1.
 
 ```{r,warning=FALSE,message=FALSE, fig.width=5,fig.height=3}
-#| label: fig-fig13 
+#| label: fig-fig14 
 #| fig-cap: "Resumen de las relaciones entre las especies y las condiciones de hábitat en los Valles profundos de Moldavia, usando el índice de correlación de Spearman: Las elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas." 
 
 c <- cor(datos_bio1, x = ellin, method = "spearman") #correlación entre topográficas.
@@ -601,20 +647,20 @@ corrplot(c,method = "ellipse", order ="original",tl.col = "black",addCoef.col= T
 
 ```
 
-En la @fig-fig14 se observan la relación entre las variables topográficas y las especies en los valles profundos de Moldavia, utilizando el método de Spearman. Se puede analizar que la gran mayoría de las relaciones que se presentaron fueron débiles, siendo que, dentro de estas, las negativas fueron más frecuentes. Dentro de las relaciones débiles positivas destacan la orientación hacia el sur-suroeste con Abielb1, Lunared6 y Dryofil6. La capacidad de carga caloríca en la orientación sur-suroeste con Abielb1, Dryofil6 y Lunared6. En cuanto a las relaciones débiles positivas, destaca la elevación y Fasugy1, Mientras que la única relación fuerte positiva se presento entre los fluvisoles y Alnuglu1.
+En la @fig-fig15 se observan la relación entre las variables topográficas y las especies en los valles profundos de Moldavia, utilizando el método de Spearman. Se puede analizar que la gran mayoría de las relaciones que se presentaron fueron débiles, siendo que, dentro de estas, las negativas fueron más frecuentes. Dentro de las relaciones débiles positivas destacan la orientación hacia el sur-suroeste con Abielb1, Lunared6 y Dryofil6. La capacidad de carga caloríca en la orientación sur-suroeste con Abielb1, Dryofil6 y Lunared6. En cuanto a las relaciones débiles positivas, destaca la elevación y Fasugy1, Mientras que la única relación fuerte positiva se presento entre los fluvisoles y Alnuglu1.
 
 ```{r,warning=FALSE,message=FALSE, fig.width=6,fig.height=6}
-#| label: fig-fig14 
+#| label: fig-fig15 
 #| fig-cap: "Resumen de las relaciones entre las especies y las variables topográficas de los Valles profundos de Moldavia, usando el índice de correlación de Spearman: Las elipses azules inclinadas a la derecha representan las relaciones lineales positivas, mientras que las elipses rojas inclinadas a la izquierda representan las relaciones lineales negativas." 
 c <- cor(y = datos_bio1, x = topo , method = "spearman") #correlación entre topográfica.
 corrplot(c,method = "ellipse", order ="original",tl.col = "black",addCoef.col= T, cl.pos = T,pch.cex = 0.5, pch.col ="black",tl.cex = 1.0, number.cex = 0.5, cl.cex = 0.8,addgrid.col = "#f5f5f5")
 
 ```
 
-En la @fig-fig15 se observa la relación entre la cobertura de ***Abies alba*** y el índice de luz, mostrando una correlación negativa. A medida que disminuyen los valores de luz, se registran mayores coberturas de la especie, mientras que con un aumento en la luz, la presencia de la especie disminuye mostrando un correlación de 0.60, bajo una tendencia logarítmica negativa. Además, se destaca que los menores valores de luz, y por lo tanto los mayores de cobertura de la especie se presentan mayormente en el tipo de vegetación 3. Siendo este un ejemplo de cómo la relación entre la abundancia relativa de una especie con una o más variables puede reflejar la importancia de dichas variables para determinar el nicho de la especie.
+En la @fig-fig16 se observa la relación entre la cobertura de ***Abies alba*** y el índice de luz, mostrando una correlación negativa. A medida que disminuyen los valores de luz, se registran mayores coberturas de la especie, mientras que con un aumento en la luz, la presencia de la especie disminuye mostrando un correlación de 0.60, bajo una tendencia logarítmica negativa. Además, se destaca que los menores valores de luz, y por lo tanto los mayores de cobertura de la especie se presentan mayormente en el tipo de vegetación 3. Siendo este un ejemplo de cómo la relación entre la abundancia relativa de una especie con una o más variables puede reflejar la importancia de dichas variables para determinar el nicho de la especie.
 
 ```{r,warning=FALSE,message=FALSE, fig.width=7,fig.height=3}
-#| label: fig-fig15 
+#| label: fig-fig16 
 #| fig-cap: "Relación entre la cobertura de la especie Abies alba con respecto a la variable de la luz." 
 
 f1 <- ggplot(datos_g,aes(x = Luz, y = Abiealb1)) + 
@@ -655,6 +701,7 @@ colnames(coord.sit)<- c("NMDS1","NMDS2","sitio","grp")
 coord.esp <- as.data.frame(scores(spe.mds, "species"))  # Coordenadas de las especies del nMDS
 coord.esp$especies <- rownames(coord.esp)                # Insertar columna con nombres de las especies
 
+coord.esp2 <- coord.esp[coord.esp$especies %in% c("Tilicor1", "Coryave4", "Querpea1", "Abiealb1", "Fagusyl1", "Sambnig4","Acerpse1", "Dryofil6", "Galemon6", "Lunared6","Alnuglu1","Acerpla1","Calaaru6", "Impapar6", "Tilicor"), ]
 ```
 
 -   **Paso 4:** Se aplica la función `envfit` para evaluar la significancia del efecto de las variables ambientales.
@@ -673,8 +720,8 @@ coord.amb.nsig$amb <- rownames(coord.amb.nsig)         # Insertar columna con no
 
 -   **Paso 5:** A partir de las coordenadas se grafica el análisis de escalamiento no metrico con ggplot2.
 
-```{r,warning=FALSE,message=FALSE, fig.width=12,fig.height=8}
-#| label: fig-fig16 
+```{r,warning=FALSE,message=FALSE, fig.width=9,fig.height=6}
+#| label: fig-fig17 
 #| fig-cap: "Análisis de escalamiento no metrico: Variación de la riqueza y composición entre los tipos de vegetación." 
 
 
@@ -698,15 +745,21 @@ geom_mark_ellipse(data=coord.sit, aes(x=NMDS1,y=NMDS2,group=grp,
    # Ambiental . no significativo 
   geom_segment(data = coord.amb.nsig,aes(x = 0, y = 0, xend = NMDS1*3, yend = NMDS2*3), 
                arrow = arrow(angle=22.5,length = unit(0.25,"cm"),
-                             type = "closed"),linetype=1, size=0.5,colour = "#3f007d")+
-  geom_text_repel(data = coord.amb.nsig,aes(NMDS1*3,NMDS2*3,label=row.names(coord.amb.nsig)),colour = "#3f007d", size = 3) +
+                             type = "closed"),linetype=1, size=0.5,colour = "black")+
+  geom_text_repel(data = coord.amb.nsig,aes(NMDS1*3,NMDS2*3,label=row.names(coord.amb.nsig)),colour = "black", size = 3) +
 labs(color = "Tipos de vegetación", shape = "Tipos de vegetación", fill = "Tipos de vegetación", subtitle = paste0("Stress = ",round(spe.mds$stress,3)*100,"%")) +
   
   # Taxones  *valores de cero para caracteres de las flechas (arrow)
   geom_segment(data = coord.esp,aes(x = 0, y = 0, xend = NMDS1, yend = NMDS2), 
                arrow = arrow(angle=0,length = unit(0,"cm"),
                              type = "closed"),linetype=0, size=0,colour = "red")+
-  geom_text_repel(data = coord.esp,aes(NMDS1,NMDS2,label=especies),colour = "red",size = 2,   max.overlaps = getOption("ggrepel.max.overlaps", default = 400))
+  geom_text_repel(data = coord.esp,aes(NMDS1,NMDS2,label=especies),colour = "red",size = 2,   max.overlaps = getOption("ggrepel.max.overlaps", default = 400),alpha = 0.3) +
+  
+# Taxones  *valores de cero para caracteres de las flechas (arrow)
+  geom_segment(data = coord.esp2,aes(x = 0, y = 0, xend = NMDS1, yend = NMDS2), 
+               arrow = arrow(angle=0,length = unit(0,"cm"),
+                             type = "closed"),linetype=0, size=0,colour = "red")+
+  geom_text_repel(data = coord.esp2,aes(NMDS1,NMDS2,label=especies),colour = "red",size = 4,   max.overlaps = getOption("ggrepel.max.overlaps", default = 400),alpha = 1)
 
 
 ```
@@ -719,6 +772,6 @@ El análisis NMDS revela la existencia de dos gradientes ambientales principales
 
 Por otro lado, el **tipo de vegetación 2** muestra una relación inversa con estas condiciones. Estas parcelas están ubicadas en suelos líticos, que son menos profundos y se encuentran en áreas de superficies convexas, generalmente a mayor elevación y en pendientes más inclinadas. Esto sugiere que este tipo de vegetación está adaptado a ambientes más extremos o menos favorables en cuanto a la disponibilidad de recursos, en contraste con el tipo de vegetación 4.
 
-El **tipo de vegetación 1** parece estar influenciado por variables ambientales como la temperatura, la luz, el clima continental y la capacidad calorífica del suelo. Este tipo de vegetación podría estar asociado a áreas con una mayor incidencia de luz solar, ya que, como se ha evidenciado en otros análisis (@fig-fig10), tiende a estar ubicado en parcelas orientadas hacia el sur-sureste. Estas áreas tienen una mayor exposición solar diaria, lo que podría explicar el predominio de especies adaptadas a estas condiciones ambientales.
+El **tipo de vegetación 1** parece estar influenciado por variables ambientales como la temperatura, la luz, el clima continental y la capacidad calorífica del suelo. Este tipo de vegetación podría estar asociado a áreas con una mayor incidencia de luz solar, ya que, como se ha evidenciado en otros análisis (@fig-fig10), tiende a estar ubicado en parcelas orientadas hacia el sur-suroeste. Estas áreas tienen una mayor exposición solar diaria, lo que podría explicar el predominio de especies adaptadas a estas condiciones ambientales.
 
 Finalmente, el **tipo de vegetación 3** se encuentra en niveles intermedios de las variables ambientales mencionadas, asociándose principalmente a los niveles de nutrientes y a la elevación. Esto indica que este tipo de vegetación podría estar ocupando zonas de transición entre los extremos representados por los otros tipos de vegetación. Así, el análisis muestra que la composición de especies y la estructura de las comunidades vegetales están fuertemente influenciadas por una interacción compleja de factores ambientales, lo que da lugar a una diferenciación clara entre los tipos de vegetación presentes en las parcelas del río Moldavia.
