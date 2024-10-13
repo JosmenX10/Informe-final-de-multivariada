@@ -496,7 +496,7 @@ f6  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Reactividad))
   labs( x = "Tipos de vegetación", y = "Reactividad", tag = "J)")
 #---------------------------------------------------------------------------------#
 
-f7 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$CCS.SE)) + 
+f7 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$CCSO)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
   guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
   labs( x = "Tipos de vegetación", y = "Indice CC", tag = "C)")
@@ -521,12 +521,13 @@ f11 = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$`Riqueza sp`)
   guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
   labs( x = "Tipos de vegetación", y = "Riqueza de Sps", tag = "K)")
 
-f12  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$Pendiente)) + 
+f12  = ggplot(datos_env,aes(x=factor(datos_env$Grupos),y= datos_env$CCSO)) + 
   geom_boxplot(aes(fill = factor(datos_env$Grupos)), notch = TRUE) + theme_classic() + 
   guides(fill = "none") +   scale_fill_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) +
   labs( x = "Tipos de vegetación", y = "Pendiente (°)", tag = "L)")
 
 grid.arrange(f1,f2,f7,f8,f3,f4,f9,f10,f5,f6,f11,f12, ncol= 4, nrow = 3)
+
 
 
 ```
