@@ -16,6 +16,7 @@ lang: "ES-es"
 csl: apa.csl
 ---
 
+
 ## **Introducción**
 
 Las técnicas multivariadas han sido ampliamente utilizadas en la biología y ecología, permitiendo la caracterización o clasificación de las comunidades biológicas considerando la variación en la estructura comunitaria entre las unidades de muestreo, a la vez que se puede evaluar la influencia de gradientes ambientales sobre esta variación. Esto es posible gracias a que estos análisis permiten dilucidar patrones que brindan información sobre la relación de múltiples elementos inherentes a estos sistemas naturales, facilitando la interpretación de generalidades y especificidades de estas relaciones [@Borcard2011NumericalEW; @book; @Javier]. Además, la aplicación de estas técnicas multivariadas por medio de algoritmos computacionales han facilitado que estos se vuelvan cada vez más sofisticados en sus calculos, permitiendo que existan métodos cada vez más eficaces según las bases de datos y objetivos de estudio [@AYOUBHANNAA201348; @LI2022104806].
@@ -118,6 +119,7 @@ Las variables biológicas consisten en las abundancias estimadas para cada espec
 
 ### Cargue de librerias y bases de datos
 
+
 ```{r, warning=FALSE,message=FALSE}
 library(psych)
 library(readxl)
@@ -152,9 +154,11 @@ datos <- read_xlsx("C:\\Users\\Asus\\Desktop\\Analisis multivariado\\Informe-fin
 
 ```
 
+
 ### Organización de las bases de datos
 
 En la matriz de datos biológicos las variables (especies) se presentan como filas, mientras que las unidades de muestreo(parcelas) estarían en columnas por lo que se debe realizar una transposición de la matriz original.
+
 
 ```{r, warning=FALSE,message=FALSE}
 #Se transpone la base de datos dejando las parcelas como filas
@@ -168,7 +172,9 @@ write.csv(datos_bio,file = "datos_bio.csv")
 
 ```
 
+
 En la matriz de datos ambientales simplemente se debe organizar las variables y generar un cambio de los nombres para la visualización.
+
 
 ```{r}
 # Preparamos la base de datos ambientales 
@@ -196,11 +202,13 @@ datos_env <- datos_env[,-1]
 
 ```
 
+
 ## **1. Determinar la relación entre las variables ambientales evaluadas en los valles profundos del rió de Moldavia**
 
 ### **-Relación entre variables topográficas y topológicas**
 
 A partir de correlogramas se puede tener una vista general de la relaciones entre las variables, visualizando el grado de correlación con el indice de Spearman y el nivel de significancia de estas relaciones. Por ejemplo, la @fig-fig1 refleja la estrecha relación positiva entre las variables de orientación suroeste y la orientación sur-suroeste con un valor de 0.83 de correlación entre sus datos con el mayor nivel de significancia(p-value\<0.001), así mismo pasaría con los indices de carga calorifica que se derivan de estos, los cuales tienen una correlación positiva entre si, en la que las variaciones de uno se explicarian por las variaciones del otro en el 0.79 de los datos, esto se entiende ya que el cambio en la orientación suroeste entre las parcelas también deberia ser acompañada por cambios en la orientación sur-suroeste. El tipo de relieve a favor de la pendiente tiende a ser más convexa a medida que aumenta la altitud, esto se evidencia por un grado de correlación del 0.62 . Entre los tipos de suelo, el fluvisol tiene una correlación considerablemente negativa con la altitud y las superficies en dirección a la pendiente (-0.62 y -0.67), teniendo el mayor nivel de significancia.
+
 
 ```{r, warning=FALSE,message=FALSE,fig.height=4,fig.width=5}
 #| label: fig-fig1 
@@ -232,9 +240,11 @@ corrplot(topocor,method = "ellipse",type ="lower",diag = FALSE,
         
 ```
 
+
 ### **-Relación entre variables topográficas y topológicas con los indices de Hellinberg.**
 
 En el correlograma presentado en la \@fig-fig2 se observan los grados de correlación entre las variables topográficas y topológicas con las variables ambientales medidas de manera indirecta mediante el promedio de índices de Hellinberg en cada parcela. Los seis índices se relacionan con la profundidad del suelo, la luz, la temperatura y la continentalidad se relacionan negativamente, mientras que la humedad, la reactividad y los nutrientes lo hacen positivamente, pero sin alcanzar un índice de correlación siquiera moderado. Cinco de los índices se relacionan de manera significativa con las variables de orientación y carga calorífica, de las cuales la luz, la temperatura y la continentalidad se relacionan positivamente, mientras que la humedad y los nutrientes lo hacen negativamente. En cuanto a los tipos de suelos, los esqueléticos y fluvisoles se relacionan de manera significativa y positiva con la humedad, la reactividad y los nutrientes, mientras que los líticos muestran una relación negativa significativa con estos índices, pero igualmente sin alcanzar una correlación moderada. El tipo de suelo cambisol presenta una relación negativa significativa; sin embargo, la correlación es bastante débil, al igual que con el resto de las variables.
+
 
 ```{r,warning=FALSE,message=FALSE, fig.width=7,fig.height=3}
 #| label: fig-fig2 
@@ -246,9 +256,11 @@ corrplot(ellin_topocor,method = "ellipse",
          ,tl.cex = 1.0, number.cex = 0.9,addgrid.col = "#f5f5f5")
 ```
 
+
 ### -Variación ambiental entre los sitios según sus tipos de suelo (Análisis por componentes principales)
 
 **Paso 1:** Se genera una matriz unicamente con las variables numericas.
+
 
 ```{r, warning=FALSE, message=FALSE}
 
@@ -260,7 +272,9 @@ factores <- read_excel("Base de datos y contextos/vltava.xlsx",
                                  sheet = "Condiciones de suelo")[,1:4]
 ```
 
+
 **Paso 2:** Se realiza una normalización y escalamiento con la función `scale` y se aplica la función `prcomp` para generar los componentes principales.
+
 
 ```{r,warning=FALSE,message=FALSE, fig.width= 6,fig.height=3}
 #| label: fig-fig3
@@ -276,9 +290,11 @@ coord.amb2$amb <- rownames(coord.amb2)         # Insertar columna con nombres de
 fviz_contrib(pca2,choice="var",axes=1) + labs(title = "Contribución de las variables al Componente Principal 1", y = "Contribución (%)")
 ```
 
+
 A partir del análisis por componentes, se extraen las variables que más contribuyeron en la variación para el primer eje como muestra la @fig-fig3 , evidenciando que la variable que más contribuye es el indice de nutrientes, seguido por el humedad y luz. Y los que menos contribuyen son el pH, el tipo de superficie en isohipsas y la elevación.
 
 **Paso 3.** Se agregan los factores de agrupación y se grafica a partir de los dos primeros componentes principales.
+
 
 ```{r, warning=FALSE, message=FALSE, fig.width= 10,fig.height=8}
 #| label: fig-fig4
@@ -411,6 +427,7 @@ g.pc4 <- ggplot() +
 (g.pc1 + g.pc2)/(g.pc3 + g.pc4)
 ```
 
+
 La @fig-fig4 nos presenta los resultados del análisis por componentes principales, en el que la variación se da en función de tres conjuntos de variables. Uno de ellos está conformado por la orientación sur-suroeste, la temperatura, la continentalidad, la carga calorífica y la luz, los cuales tienen direcciones casi ortogonales respecto al resto de las variables. Otro conjunto está compuesto por la pendiente, la superficie en pendiente, la superficie en isohipsas y la elevación, en dirección contraria al primer grupo. Por lo tanto, es probable que estas variables tengan una relación negativa con el tercer conjunto, que incluye la humedad, la reactividad, los nutrientes del suelo, el pH, la temperatura y la continentalidad del clima.
 
 En cuanto a los factores de agrupación, se podría interpretar que los suelos con condición de fluvisol, esqueléticos y líticos están más asociados a un grupo de variables, mientras que los cambisoles muestran una asociación menos estrecha con un grupo particular, lo que genera una elipse bastante amplia a lo largo de los ejes. No obstante, se requieren análisis exploratorios confirmatorios, ya que el porcentaje de variación acumulado entre los dos componentes principales podría no ser suficiente para una interpretación correcta (51.7%).
@@ -419,6 +436,7 @@ En el caso de los fluvisoles, estos son suelos con altos valores de humedad, nut
 
 Estas características le otorgan a los sitios la capacidad de ser sumideros, acumulando humedad, nutrientes y sedimentos, lo que favorece una mayor profundidad del suelo, como evidencian los resultados del PCA (@fig-fig4) y los gráficos exploratorios de la @fig-fig5 (E y F). Por otro lado, los suelos líticos y cambisoles tienden a aumentar su incidencia a medida que incrementa la altitud y la pendiente, manteniéndose en relieves neutros o convexos (@fig-fig5 A y C). Esto sugiere que son sitios con menor acumulación de recursos.
 
+
 ```{r}
 #| label: fig-fig5
 #| fig-cap: Condiciones ambientales asociadas a los tipos de suelos.A) Porcentaje de incidencia del suelo lítico según el tipo de superficie; B) Porcentaje de incidencia del suelo esqueletico; C)  Porcentaje de incidencia del suelo cambisol; D) Porcentaje de incidencia del suelo fluvisol; E)Comparación del indice de humedad; F) Comparación del indice de nutriente.
@@ -426,11 +444,13 @@ Estas características le otorgan a los sitios la capacidad de ser sumideros, ac
 include_graphics("C:/Users/Asus/Desktop/Analisis multivariado/Informe-final-de-multivariada/Graficos/Excel/Tipos de suelo.svg")
 ```
 
+
 ## **2.** Determinar diferencias en las condiciones ambientales de las parcelas de acuerdo a los tipos de vegetación en los valles profundos del río Moldavia
 
 ### **-Diferencias en la altitud y orientación de las parcelas de acuerdo a los tipos de vegetación**
 
 En la @fig-fig10 se observa que los **bosques termófilos(1)** exhiben una orientación mayormente hacia el suroeste, con una distribución altitudinal amplia que varía entre 425 y 525 m.s.n.m. , **los bosques acidófilos(2)**, por su parte, se distribuyen en mayor medida hacie el este y sureste, con altitudes que oscilan entre 430 y 490 m.s.n.m. En cuanto a **los bosques de barranco(3)**, este se presenta en un rango de elevación, que va de 425 a 500 m.s.n.m., con una orientación predominante hacia el noreste, con algunos sitios al suroeste. Por último, **los bosques aluviales(4)** tienen un rango de distribución más limitado en cuanto a su elevación, con datos que se sitúan entre 400 y 450 m.s.n.m., y una orientación más homogénea a comparación del resto de vegetación.
+
 
 ```{r,warning=FALSE,message=FALSE, fig.width=5,fig.height=5}
 #| label: fig-fig10 
@@ -453,6 +473,7 @@ ggplot(datos_env) +
 theme_light() + scale_colour_manual(values = c("#fc8d59","#af8dc3","#d8b365","#1a9850")) 
 ```
 
+
 ### **-Diferencias en las condiciones ambientales entre los tipos de vegetación**
 
 La @fig-fig11 permite visualizar patrones de variación de las parcelas en función de variables topológicas, topográficas (a parte de la altura y la orientación) y los diferentes tipos de vegetación. En esta se resaltan dos tipos de tendencias; una en la que los sitios que corresponden a **bosques termófilos(1)**, los cuales se concentran en mayor medida hacia el sur en las zonas altas con pendientes inclinadas de los valles, manteniendo los mayores niveles de luz, temperatura, carga calorifica y clima continental **(A; E; I; C; L)**. Teniendo diferencias sustanciales con **los bosques acidofilos(2) y aluviales(4)**, y por el análisis visual podrían existir diferencias significativas con **los bosques de barranco(3)** en algunas de estas variables (la falta de solapamiento de muescas puede no ser suficiente para determinar diferencias significativas).
@@ -460,6 +481,7 @@ La @fig-fig11 permite visualizar patrones de variación de las parcelas en funci
 Otra tendencia se observa en las variables de nutrientes, reactividad. ph, profundidad del suelo y especialmente la humedad se mantienen mayores niveles en los **bosques aluviales(4)** que se ubican en zonas de baja altitud, donde hay más sumideros e incidencia de sombra, favoreciendo el efecto de fenomeno de rivera**(B;D;F;G y J)**. Los **bosques de barrancos(3)** también mantienen niveles sutancialmente más altos que los otros dos tipos de vegetación (**bosques termófilos** y **acidofilos)**, debido a que se ubican más hacia el norte donde la exposición a los rayos del sol es menor a lo largo del año **(esto se cumple solo para el hemisferio norte)**. Por esta razón los bosques de barranco también mantienen los menores valores de temperatura, luz, clima continental y carga calorifica.
 
 -   <div>
+
 
     ```{r,warning=FALSE,message=FALSE, fig.width=12}
     #| label: fig-fig11 
@@ -532,11 +554,13 @@ Otra tendencia se observa en las variables de nutrientes, reactividad. ph, profu
 
     ```
 
+
     </div>
 
 ### **-Comparación de las condiciones de suelo en los distintos tipos de vegetación**
 
 **Los bosques termófilos, acidófilos y de barranco(1,2 y 3, respectivamente)** evidencian proporciones de tipos de suelo similares, con una mayor incidencia de sitios con tipo de suelo cambisol, los **bosques termófilos(1)** y **acidófilos(2)** presentan más sitios con condición Lítica que esqueletica, mientras que los **bosques de barranco(3)** y **bosques de aluviales(4)** muestran lo contrario. Solo un sitio de los **bosques acidófilos(2)** presento suelo fluvisol, y **bosques aluviales(4)** presento suelo fluvisol en todos los sitios.
+
 
 ```{r,message=F,warning=FALSE, fig.width=6,fig.height=2}
 #| label: fig-fig12 
@@ -563,6 +587,7 @@ g12 <- ggplot(datos_resum2, aes(x= Grupos , y=datos.sum, fill = Suelos)) +
 g12
 ```
 
+
 ### **-Comparación del area de cobertura contribuida por las 15 especies con más cobertura en la totalidad de las parcelas**
 
 #### **Selección de las 15 especies con más cobertura**
@@ -570,6 +595,7 @@ g12
 Se convierten los porcentajes de cobertura de cada especie a valores en metros cuadrados (\$m\^2\$) para, posteriormente, seleccionar las 15 especies con mayor cobertura. Luego, se determina cuánto contribuye en cobertura cada una de estas especies en los diferentes tipos de vegetación.
 
 -   **Conversión del porcentaje de cobertura a área de cobertura:**
+
 
 ```{r, message=FALSE,warning=FALSE}
 #Seleccionamos las 15 especies más abundantes 
@@ -593,7 +619,9 @@ datos_bio1 <- data.frame(datos_bio1)
 datos_g <- cbind(datos_bio1,datos_env) #unimos con las variables ambientales
 ```
 
+
 -   **Se determina la cantidad de cobertura por especie en la totalidad de sitios distiguiendo los tipos de vegetación.**
+
 
 ```{r,warning=FALSE,message=FALSE, fig.width=4,fig.height=3}
 #| label: tbl-tbl1
@@ -617,9 +645,11 @@ head(datos_resum1) %>%
 
 ```
 
+
 -   **Se realiza el diagrama de barras para determinar diferencias en la contribución de cobertura de las 15 especies a los tipos de vegetación**
 
 La @fig-fig13 ilustra el área de cobertura que ocupa cada especie y cómo varía esta entre los diferentes tipos de vegetación. Se observa que las especies que más contribuyen a la cobertura (m²), en orden de importancia, son ***Tilia cordata*** (Tilicor1), ***Corylus avellana*** (Coryave4), ***Quercus petraea agg***. (Querpea1), ***Abies alba*** (Abiealb1), ***Fagus sylvatica*** (Fagusyl1) y ***Sambucus nigra*** (Sambnig4). La contribución de cobertura de ***Tilia cordata*** se distribuyó de manera similar en los **bosques termofilos, acidofilos y aluviales(1,2 y 4)**, mientras que fue menor en los **bosques de barranco(3)**. Para ***Corylus avellana***, los tipos de vegetación que más aportaron a la cobertura fueron los **bosques de barranco(3)** y **bosques aluviales(4)**, con contribuciones similares. En el caso de ***Quercus petraea agg***., la mayor contribución provino de los **bosques de acidofilos(2)**, seguido por los **bosques termofilos(1)**. En cuanto a ***Abies alba***, la mayor contribución se registró en los **bosques de barranco(3)**, y se notó que los **bosques aluviales(4)** no aportaron nada a esta especie. Por último, para las especies ***Fagus sylvatica*** y ***Sambucus nigra***, la mayor contribución también se observó en los **bosques de barranco(3)**.
+
 
 ```{r,warning=FALSE,message=FALSE, fig.width=6,fig.height=2}
 #| label: fig-fig13 
@@ -635,9 +665,11 @@ g11
 
 ```
 
+
 ## **3.** Evaluar el efecto de las condiciones ambientales sobre la composición y riqueza de plantas en los valles profundos del río Moldavia
 
 Mediante un correlograma se pueden observar de forma general las relaciones entre variables topográficas y biologicas, observando la fuerza de la relación y su sentido. En la @fig-fig14 se puede observar que en general las correlaciones entre parámetros topográficos y biologicas fueron débiles, siendo aproximadamente la mitad de ellas positivas y negativas, dentro de estas relaciones, destaca de forma moderada la relación entre la luz y Abieal1. Por otro lado, dentro de las relaciones débiles de forma negativa, las menos débiles, o sea, las que presentaron valores mayores en ese rango, se dieron entre la luz con Dryofil6, Lunared6 y Galemon6. La temperatura con Abieal1, Dryofil6 y Lunared6. Mientras que, de manera positiva débil destacó la relación entre los nutrientes con Querpea1, Sambrig4, Galemon6, Lunared6, Alnuglu1 e Impapar6. Reactividad con Galemon6 y reactividad con Alnuglu1.
+
 
 ```{r,warning=FALSE,message=FALSE, fig.width=5,fig.height=3}
 #| label: fig-fig14 
@@ -650,7 +682,9 @@ corrplot(c,method = "ellipse", order ="original",tl.col = "black",addCoef.col= T
 
 ```
 
+
 En la @fig-fig15 se observan la relación entre las variables topográficas y las especies en los valles profundos de Moldavia, utilizando el método de Spearman. Se puede analizar que la gran mayoría de las relaciones que se presentaron fueron débiles, siendo que, dentro de estas, las negativas fueron más frecuentes. Dentro de las relaciones débiles positivas destacan la orientación hacia el sur-suroeste con Abielb1, Lunared6 y Dryofil6. La carga caloríca en la orientación sur-suroeste con Abielb1, Dryofil6 y Lunared6. En cuanto a las relaciones débiles positivas, destaca la elevación y Fasugy1, Mientras que la única relación fuerte positiva se presento entre los fluvisoles y Alnuglu1.
+
 
 ```{r,warning=FALSE,message=FALSE, fig.width=6,fig.height=6}
 #| label: fig-fig15 
@@ -660,7 +694,9 @@ corrplot(c,method = "ellipse", order ="original",tl.col = "black",addCoef.col= T
 
 ```
 
+
 En la @fig-fig16 se observa la relación entre la cobertura de ***Abies alba*** y el índice de luz, mostrando una correlación negativa. A medida que disminuyen los valores de luz, se registran mayores coberturas de la especie, mientras que con un aumento en la luz, la presencia de la especie disminuye mostrando un correlación de 0.60, bajo una tendencia logarítmica negativa. Además, se destaca que los menores valores de luz, y por lo tanto los mayores de cobertura de la especie se presentan mayormente en los **bosques de barranco(3)**. Siendo este un ejemplo de cómo la relación entre la abundancia relativa de una especie con una o más variables puede reflejar la importancia de dichas variables para determinar el nicho de la especie.
+
 
 ```{r,warning=FALSE,message=FALSE, fig.width=7,fig.height=3}
 #| label: fig-fig16 
@@ -679,7 +715,9 @@ f1
   
 ```
 
+
 -   **Paso 1:** Se define la distancia de Bray-curtis para el ordenamiento de los porcentajes de cobertura de los taxones de plantas. Aplicando la función `metaMDS.`
+
 
 ```{r}
 # Correr el Escalamiento - nMDS
@@ -688,7 +726,9 @@ spe.mds <- metaMDS(log1p(datos_bio), distance = "bray", trace = FALSE)
 
 ```
 
+
 -   **Paso 2:** Se determinan las coordenadas de los sitios en los ejes **NMDS1** y **NMDS2**.
+
 
 ```{r}
 coord.sit <- as.data.frame(scores(spe.mds$points))     # Coordenadas de los sitios
@@ -697,7 +737,9 @@ coord.sit$grp <-  factor(datos_env$Grupos)                   # Adicionar columna
 colnames(coord.sit)<- c("NMDS1","NMDS2","sitio","grp")
 ```
 
+
 -   **Paso 3:** Se determinan las coordenadas de las especies en los ejes **NMDS1** y **NMDS2**.
+
 
 ```{r}
 # Coordenadas de especies "coord.esp"
@@ -707,7 +749,9 @@ coord.esp$especies <- rownames(coord.esp)                # Insertar columna con 
 coord.esp2 <- coord.esp[coord.esp$especies %in% c("Tilicor1", "Coryave4", "Querpea1", "Abiealb1", "Fagusyl1", "Sambnig4","Acerpse1", "Dryofil6", "Galemon6", "Lunared6","Alnuglu1","Acerpla1","Calaaru6", "Impapar6", "Tilicor"), ]
 ```
 
+
 -   **Paso 4:** Se aplica la función `envfit` para evaluar la significancia del efecto de las variables ambientales.
+
 
 ```{r}
 amb1 <- datos_env[,c(2,3,4,7:13,14:22)]
@@ -721,7 +765,9 @@ coord.amb.nsig$amb <- rownames(coord.amb.nsig)         # Insertar columna con no
 # coord.amb = as.data.frame(amb$vectors$arrows)
 ```
 
+
 -   **Paso 5:** A partir de las coordenadas se grafica el análisis de escalamiento no metrico con ggplot2.
+
 
 ```{r,warning=FALSE,message=FALSE, fig.width=9,fig.height=6}
 #| label: fig-fig17 
@@ -767,6 +813,7 @@ labs(color = "Tipos de vegetación", shape = "Tipos de vegetación", fill = "Tip
 
 ```
 
+
 **Nota:** El **Stress** de aproximadamente un 21% alcanza a sobrepasar el limite del 20%, por lo que se hace uso de los graficos exploratorios anteriormente realizados para la sustentar una correcta interpretación del escalamiento.
 
 Los resultados del análisis de Escalamiento No Métrico Multidimensional (NMDS) en la @fig-fig17 permiten visualizar la influencia de variables ambientales sobre la composición de taxones de plantas en las parcelas del río Moldavia. Las elipses que rodean los puntos en el gráfico agrupan las parcelas según los cuatro tipos de vegetación identificados en el estudio. Cada flecha o vector representa una variable ambiental que podría influir en la composición de especies, donde las flechas azules corresponden a variables significativas, y las negras representan aquellas que no alcanzaron significancia estadística, según el ajuste de vectores realizado con la función envfit. Los nombres en texto rojo corresponden a los taxones de plantas presentes en las parcelas estudiadas.
@@ -778,3 +825,4 @@ Los bosques aluviales se caracterizan por encontrarse en áreas con superficies 
 Los bosques termófilos se sustentan en condiciones de mayores niveles de temperatura, luz, clima continental y la carga calorífica del suelo. Este tipo de vegetación podría estar asociado a áreas con una mayor incidencia de luz solar, ya que, como se ha evidenciado en otros análisis exploratorios (@fig-fig10), tiende a ubicarse en parcelas orientadas hacia el sur-suroeste. Estas áreas tienen una mayor exposición solar diaria, lo que podría explicar el predominio de especies adaptadas a estas condiciones ambientales.
 
 Finalmente, los bosques de barranco se encuentran en sitios que en su mayoría se orientan al norte, generando condiciones frías y con poca exposición a la luz. Mantienen niveles intermedios y bajos en las variables que sustentan a los bosques termófilos (@fig-fig11), asociándose principalmente a los niveles de nutrientes y la elevación. De esta manera el análisis muestra que la variación en la composición de especies y estructura de las comunidades vegetales se podría explicar principalmente por la orientación y la altitud de las parcelas que modulan a otras variables ambientales.
+
