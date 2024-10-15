@@ -3,7 +3,7 @@ library(ggforce)
 
 #PCA 
 amb1 <- datos_env[,c(2,3,4,7:10,11:16,17:22)]
-pca <- prcomp(decostand(datos_bio,method = "hellinger"))
+pca <- prcomp(datos_bio)
 
 #pca <- prcomp(datos_bio1)
 
